@@ -1,14 +1,9 @@
 <?php
 /*
 Plugin Name: Product Catalog
-Plugin URI: http://www.EtoileWebDesign.com/plugins/ultimate-product-catalog/
-Description: Product catalog plugin that is responsive and easily customizable for all your product catalog needs.
-Author: Etoile Web Design
-Author URI: http://www.EtoileWebDesign.com/plugins/ultimate-product-catalog/
-Terms and Conditions: http://www.etoilewebdesign.com/plugin-terms-and-conditions/
-Text Domain: ultimate-product-catalogue
-Version: 4.4.15
+Version: 1.0
 */
+include_once('updater.php');
 
 global $UPCP_db_version;
 global 	$categories_table_name, 
@@ -32,6 +27,7 @@ global $upcp_message;
 global $Full_Version;
 global $WC_Item_ID;
 global $UPCP_Options;
+
 $categories_table_name = $wpdb->prefix . "UPCP_Categories";
 $subcategories_table_name = $wpdb->prefix . "UPCP_SubCategories";
 $items_table_name = $wpdb->prefix . "UPCP_Items";
@@ -404,4 +400,19 @@ function UPCP_Adjust_SEO() {
 }
 add_action("init", "UPCP_Adjust_SEO");
 
+if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
+    $config = array(
+        'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
+        'proper_folder_name' => 'UPC_MC', // this is the name of the folder your plugin lives in
+        'api_url' => 'https://api.github.com/repos/2andr/UPC_MC', // the github API url of your github repo
+        'raw_url' => 'https://raw.github.com/2andr/UPC_MC/master', // the github raw url of your github repo
+        'github_url' => 'https://github.com/2andr/UPC_MC', // the github url of your github repo
+        'zip_url' => 'https://github.com/2andr/UPC_MC/zipball/master', // the zip url of the github repo
+        'sslverify' => true // wether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
+        'requires' => '3.0', // which version of WordPress does your plugin require?
+        'tested' => '3.3', // which version of WordPress is your plugin tested up to?
+        'readme' => 'README.MD' // which file to use as the readme for the version number
+    );
+    new WPGitHubUpdater($config);
+}
 ?>
