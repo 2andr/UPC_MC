@@ -1,9 +1,25 @@
 <?php
 /*
-Plugin Name: Product Catalog
-Version: 1.0
+Plugin Name: MontajClub Product Catalog
+Current Version:1.0
 */
 include_once('updater.php');
+
+if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
+    $config = array(
+        'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
+        'proper_folder_name' => 'UPC_MC-master', // this is the name of the folder your plugin lives in
+        'api_url' => 'https://api.github.com/repos/2andr/UPC_MC', // the github API url of your github repo
+        'raw_url' => 'https://raw.github.com/2andr/UPC_MC/master', // the github raw url of your github repo
+        'github_url' => 'https://github.com/2andr/UPC_MC', // the github url of your github repo
+        'zip_url' => 'https://github.com/2andr/UPC_MC/zipball/master', // the zip url of the github repo
+        'sslverify' => true, // wether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and  https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
+        'requires' => '3.0', // which version of WordPress does your plugin require?
+        'tested' => '3.3', // which version of WordPress is your plugin tested up to?
+        'readme' => 'README.MD' // which file to use as the readme for the version number
+    );
+    new WP_GitHub_Updater($config);
+}
 
 global $UPCP_db_version;
 global 	$categories_table_name, 
@@ -49,11 +65,8 @@ $UPCP_db_version = "4.4.7a_2";
 define( 'UPCP_CD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'UPCP_CD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-/* define('WP_DEBUG', true);
-$wpdb->show_errors(); */
-
 /* When plugin is activated */
-register_activation_hook(__FILE__,'Install_UPCP_DB');
+//register_activation_hook(__FILE__,'Install_UPCP_DB');
 register_activation_hook(__FILE__,'Initial_UPCP_Options');
 register_activation_hook(__FILE__,'Run_UPCP_Tutorial');
 register_activation_hook(__FILE__,'UPCP_Show_Dashboard_Link');
