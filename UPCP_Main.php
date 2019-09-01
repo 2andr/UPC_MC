@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: MontajClub Product Catalog
-Current Version:1.0
+Current Version:1.01
 */
 include_once('updater.php');
 
