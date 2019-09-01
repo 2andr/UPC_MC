@@ -40,6 +40,8 @@ function Insert_Product_Catalog($atts) {
 	global $ProductString, $Product_Attributes, $ProdCats, $ProdSubCats, $ProdTags, $ProdCustomFields, $ProdMakers, $ProdProfuses, $ProdCatString, $ProdSubCatString, $ProdTagString, $ProdCustomFieldsString, $ProdMakersString, $ProdProfusesString, $Catalogue_ID, $Catalogue_Layout_Format, $Catalogue_Sidebar, $Full_Version, $TagGroupName, $Max_Price_Product, $Min_Price_Product;
 	global $link_base;
 	global $UPCP_Options;
+	
+	// TODO добавить переключатель 3д/чертеж
 
 	$Bottom_JS = "";
 	$Top_JS = "";
