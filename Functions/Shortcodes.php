@@ -2918,7 +2918,7 @@ function UPCP_Product_Comparison($Products = array(), $omit_fields) {
 		//$PhotoURL = $Product->Get_Field_Value("Item_Photo_URL");
 		$PhotoURL = "";
 		
-		$Item_Images = $wpdb->get_results("SELECT Item_Image_URL, Item_Image_ID FROM $item_images_table_name WHERE Item_ID=" . $Product_ID . " ORDER BY Item_Image_ID");
+		$Item_Images = $wpdb->get_results("SELECT Item_Image_URL, Item_Image_ID FROM $item_images_table_name WHERE Item_ID=" . $Product_ID . " AND Item_Image_URL LIKE '%_dwg.png' ORDER BY Item_Image_ID");
 		
 		$Item_Image = array_shift ($Item_Images);
 		if ( $Item_Image )
