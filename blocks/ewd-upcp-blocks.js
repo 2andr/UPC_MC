@@ -5,7 +5,7 @@ var el = wp.element.createElement,
 	SelectControl = wp.components.SelectControl,
 	InspectorControls = wp.editor.InspectorControls;
 
-registerBlockType( 'ultimate-product-catalogue/ewd-upcp-display-catalog-block', {
+registerBlockType( 'UPC_MC/ewd-upcp-display-catalog-block', {
 	title: 'Display Product Catalog',
 	icon: 'feedback',
 	category: 'ewd-upcp-blocks',

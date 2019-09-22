@@ -10,11 +10,11 @@ $ProfuseValue = $wpdb->get_results($wpdb->prepare("SELECT Profuse_ID FROM $profu
 ?>
 
 <div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box<?php echo ( empty($MakerValue) ? ' ewd-upcp-admin-widget-box-start-closed' : '' ); ?>" id="ewd-upcp-admin-edit-product-Makers-widget-box">
-	<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Maker', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+	<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Maker', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 	<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 		<table class="form-table">
 			<tr>
-			<th><label for="Item_Maker"><?php _e("Maker", 'ultimate-product-catalogue') ?></label></th>
+			<th><label for="Item_Maker"><?php _e("Maker", 'UPC_MC') ?></label></th>
 			<td>
 				<select name="Makers[]" id="Item_Maker" >
 					<option value=""></option>
@@ -32,21 +32,21 @@ $ProfuseValue = $wpdb->get_results($wpdb->prepare("SELECT Profuse_ID FROM $profu
 </div>
 
 <div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box<?php echo ( empty($ProfuseValue) ? ' ewd-upcp-admin-widget-box-start-closed' : '' ); ?>" id="ewd-upcp-admin-edit-product-Profuses-widget-box">
-	<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Profuse', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+	<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Profuse', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 	<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 		<table class="form-table">
 			<tr>
-			<th><label for="Item_Profuse"><?php _e("Profuse", 'ultimate-product-catalogue') ?></label></th>
+			<th><label for="Item_Profuse"><?php _e("Profuse", 'UPC_MC') ?></label></th>
 			<td>
 
 				<?php 
 				$Profuses = $wpdb->get_results("SELECT * FROM $profuses_table_name ORDER BY Profuse_Name ASC" );
-if(!empty($Profuses)){
-foreach ($Profuses as $Profuse) {
-  $Is_Used = false;
-  foreach ($ProfuseValue as $Profuse_Item) {
-  if ($Profuse_Item->Profuse_ID == $Profuse->Profuse_ID) {$Is_Used = true;}
-  }
+				if(!empty($Profuses)){
+				foreach ($Profuses as $Profuse) {
+				  $Is_Used = false;
+				  foreach ($ProfuseValue as $Profuse_Item) {
+				  if ($Profuse_Item->Profuse_ID == $Profuse->Profuse_ID) {$Is_Used = true;}
+				  }
 						                                
 				?>
 							<input type="checkbox" class='upcp-profuse-input' name="Profuses[]" value="<?php echo $Profuse->Profuse_ID; ?>" id="Profuse-<?php echo $Profuse->Profuse_ID; ?>"

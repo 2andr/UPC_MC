@@ -5,7 +5,7 @@
 				<div id="col-right">
 				<div class="col-wrap">
 				<div id="add-page" class="postbox metabox-holder" >
-				<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Products in Tag", 'ultimate-product-catalogue') ?></span></h3>
+				<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Products in Tag", 'UPC_MC') ?></span></h3>
 				<div class="inside">
 				<div id="posttype-page" class="posttypediv">
 
@@ -28,7 +28,7 @@
 				<div id="col-left">
 				<div class="col-wrap">
 				<div class="form-wrap TagDetail">
-						<a href="admin.php?page=UPCP-options&DisplayPage=Tags" class="NoUnderline">&#171; <?php _e("Back", 'ultimate-product-catalogue') ?></a>
+						<a href="admin.php?page=UPCP-options&DisplayPage=Tags" class="NoUnderline">&#171; <?php _e("Back", 'UPC_MC') ?></a>
 						<h3>Edit  <?php echo $Tag->Tag_Name; echo"( ID:"; echo $Tag->Tag_ID; echo" )";?></h3>
 						<form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_EditTag&Update_Item=Tag&Tag_ID=<?php echo $Tag->Tag_ID; ?>" class="validate" enctype="multipart/form-data">
 						<input type="hidden" name="action" value="Edit_Tag" />
@@ -37,18 +37,18 @@
 						<?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 						<?php wp_referer_field(); ?>
 						<div class='form-field'>
-								<label for="Tag_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+								<label for="Tag_Name"><?php _e("Name", 'UPC_MC') ?></label>
 								<input name="Tag_Name" id="Tag_Name" type="text" value="<?php echo $Tag->Tag_Name;?>" size="60" />
-								<p><?php _e("The name of the tag your users will see and search for.", 'ultimate-product-catalogue') ?></p>
+								<p><?php _e("The name of the tag your users will see and search for.", 'UPC_MC') ?></p>
 						</div>
 						<div class='form-field'>
-								<label for="Tag_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+								<label for="Tag_Description"><?php _e("Description", 'UPC_MC') ?></label>
 								<textarea name="Tag_Description" id="Tag_Description" rows="5" cols="40"><?php echo $Tag->Tag_Description;?></textarea>
-								<p><?php _e("The description of the tag. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+								<p><?php _e("The description of the tag. What products are included in this?", 'UPC_MC') ?></p>
 						</div>
 
 						<div class='form-field'>
-                        	<label for="Tag_Group"><?php _e("Tag Group:", 'ultimate-product-catalogue') ?></label>
+                        	<label for="Tag_Group"><?php _e("Tag Group:", 'UPC_MC') ?></label>
                             <select name="Tag_Group_ID" id="Tag_Group_ID">
                             <option value="0">Uncategorized Tags</option>
                             <?php 
@@ -67,7 +67,7 @@
                             </select>
 						</div>
 
-						<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'ultimate-product-catalogue') ?>"  /></p>
+						<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'UPC_MC') ?>"  /></p>
 						</form>
 				</div>
 				</div>

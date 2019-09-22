@@ -14,7 +14,7 @@
 				<div id="col-right">
 				<div class="col-wrap">
 				<div id="add-page" class="postbox metabox-holder" >
-				<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Products in Sub-Category", 'ultimate-product-catalogue') ?></span></h3>
+				<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Products in Sub-Category", 'UPC_MC') ?></span></h3>
 				<div class="inside">
 				<div id="posttype-page" class="posttypediv">
 
@@ -36,7 +36,7 @@
 				<div id="col-left">
 				<div class="col-wrap">
 				<div class="form-wrap SubCategoryDetail">
-					<a href="admin.php?page=UPCP-options&DisplayPage=SubCategories" class="NoUnderline">&#171; <?php _e("Back", 'ultimate-product-catalogue')?></a>
+					<a href="admin.php?page=UPCP-options&DisplayPage=SubCategories" class="NoUnderline">&#171; <?php _e("Back", 'UPC_MC')?></a>
 					<h3>Edit  <?php echo $SubCategory->SubCategory_Name; echo "( ID: "; echo $SubCategory->SubCategory_ID; echo " )"; ?></h3>
 					<form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_EditSubCategory&Update_Item=SubCategory&SubCategory_ID=<?php echo $SubCategory->SubCategory_ID ?>" class="validate" enctype="multipart/form-data">
 					<input type="hidden" name="action" value="Edit_SubCategory" />
@@ -45,12 +45,12 @@
 					<?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 					<?php wp_referer_field(); ?>
 					<div class='form-field'>
-						<label for="SubCategory_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+						<label for="SubCategory_Name"><?php _e("Name", 'UPC_MC') ?></label>
 						<input name="SubCategory_Name" id="SubCategory_Name" type="text" value="<?php echo $SubCategory->SubCategory_Name;?>" size="60" />
-						<p><?php _e("The name of the sub-category your users will see and search for.", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The name of the sub-category your users will see and search for.", 'UPC_MC') ?></p>
 					</div>
 					<div class='form-field'>
-						<label for="Item_Category"><?php _e("Category:", 'ultimate-product-catalogue') ?></label>
+						<label for="Item_Category"><?php _e("Category:", 'UPC_MC') ?></label>
 						<select name="Category_ID" id="Item_Category">
 							<option value=""></option>
 							<?php $Categories = $wpdb->get_results("SELECT * FROM $categories_table_name"); ?>
@@ -60,22 +60,22 @@
 							echo " >" . $Category->Category_Name . "</option>";
 							} ?>
 						</select>
-						<p><?php _e("What category is this product in? Categories help to organize your product catalogs and help your customers to find what they're looking for.", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("What category is this product in? Categories help to organize your product catalogs and help your customers to find what they're looking for.", 'UPC_MC') ?></p>
 					</div>
 					<div class='form-field'>
-						<label for="SubCategory_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+						<label for="SubCategory_Description"><?php _e("Description", 'UPC_MC') ?></label>
 						<textarea name="SubCategory_Description" id="SubCategory_Description" rows="5" cols="40"><?php echo $SubCategory->SubCategory_Description;?></textarea>
-						<p><?php _e("The description of the sub-category. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The description of the sub-category. What products are included in this?", 'UPC_MC') ?></p>
 					</div>
 					<div class='form-field'>
-						<label for="SubCategory_Image"><?php _e("Image", 'ultimate-product-catalogue') ?></label>
+						<label for="SubCategory_Image"><?php _e("Image", 'UPC_MC') ?></label>
 						<input id="SubCategory_Image" type="text" size="36" name="SubCategory_Image" value="<?php echo $SubCategory->SubCategory_Image;?>" /> 
 						<input id="SubCategory_Image_Button" class="button" type="button" value="Upload Image" />
-						<p><?php _e("An image that will be displayed in association with this sub-category, if that option is selected in the 'Options' tab. Current Image:", 'ultimate-product-catalogue') ?><br/><img class="PreviewImage" height="100" width="100" src="<?php echo $SubCategory->SubCategory_Image;?>" /></p>
+						<p><?php _e("An image that will be displayed in association with this sub-category, if that option is selected in the 'Options' tab. Current Image:", 'UPC_MC') ?><br/><img class="PreviewImage" height="100" width="100" src="<?php echo $SubCategory->SubCategory_Image;?>" /></p>
 						<div class='clear'></div>
 					</div>
 
-					<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'ultimate-product-catalogue') ?>"  /></p>
+					<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'UPC_MC') ?>"  /></p>
 					</form>
 				</div>
 				</div>

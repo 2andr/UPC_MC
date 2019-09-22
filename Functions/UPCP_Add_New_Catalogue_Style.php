@@ -33,7 +33,7 @@ function UPCP_Add_New_Catalogue_Style() {
 
 	UPCP_Move_Additional_Catalogue_Styles();
 
-	$update = __("New style has been successfully added.", 'ultimate-product-catalogue');
+	$update = __("New style has been successfully added.", 'UPC_MC');
 	$user_update = array("Message_Type" => "Update", "Message" => $update);
 	
 	return $user_update;

@@ -37,7 +37,7 @@ function Add_UPCP_Maker($Maker_Name, $Maker_Slug, $Maker_Description, $Maker_Lat
 	}
 	*/
 
-	$update = __("Maker has been successfully created.", 'ultimate-product-catalogue');
+	$update = __("Maker has been successfully created.", 'UPC_MC');
 	return $update;
 }
 
@@ -84,7 +84,7 @@ function  Edit_UPCP_Maker($Maker_ID, $Maker_Name, $Maker_Slug, $Maker_Descriptio
 	}
 	*/
 	
-	$update = __("Maker has been successfully edited.", 'ultimate-product-catalogue');
+	$update = __("Maker has been successfully edited.", 'UPC_MC');
 	return $update;
 }
 
@@ -102,7 +102,7 @@ function Delete_UPCP_Maker($Maker_ID) {
 		array('Maker_ID' => $Maker_ID)
 	);
 
-	$update = __("Maker has been successfully deleted.", 'ultimate-product-catalogue');
+	$update = __("Maker has been successfully deleted.", 'UPC_MC');
 	return $update;
 }
 
@@ -171,7 +171,7 @@ function Add_UPCP_Profuse($Profuse_Name, $Profuse_Slug, $Profuse_Description, $P
 	}
 	*/
 
-	$update = __("Profuse has been successfully created.", 'ultimate-product-catalogue');
+	$update = __("Profuse has been successfully created.", 'UPC_MC');
 	return $update;
 }
 
@@ -197,7 +197,7 @@ function  Edit_UPCP_Profuse($Profuse_ID, $Profuse_Name, $Profuse_Slug, $Profuse_
 		array( 'Profuse_ID' => $Profuse_ID)
 	);
 
-	$update = __("Profuse has been successfully edited.", 'ultimate-product-catalogue');
+	$update = __("Profuse has been successfully edited.", 'UPC_MC');
 	return $update;
 }
 
@@ -215,7 +215,7 @@ function Delete_UPCP_Profuse($Profuse_ID) {
 		array('Profuse_ID' => $Profuse_ID)
 	);
 
-	$update = __("Profuse has been successfully deleted.", 'ultimate-product-catalogue');
+	$update = __("Profuse has been successfully deleted.", 'UPC_MC');
 	return $update;
 }
 

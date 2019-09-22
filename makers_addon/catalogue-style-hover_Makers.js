@@ -1,6 +1,6 @@
 /*
 // add string to end of file catalogue-style-hover.js
-jQuery.getScript("/wp-content/plugins/ultimate-product-catalogue/makers_addon/catalogue-style-hover_Makers.js")
+jQuery.getScript("/wp-content/plugins/UPC_MC/makers_addon/catalogue-style-hover_Makers.js")
 
 */
 

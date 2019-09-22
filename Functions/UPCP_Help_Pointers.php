@@ -60,7 +60,7 @@ function UPCP_Return_Pointers() {
 
   $pointers['tutorial-six'] = array(
     'title'     => "<h3>" . 'Need More Help?' . "</h3>",
-    'content'   => "<div><p><a href='https://wordpress.org/support/plugin/ultimate-product-catalogue/reviews/'>Help us spread the word with a 5 star rating!</a><br><br>We've got a number of videos on how to use the plugin:<br /><iframe width='560' height='315' src='https://www.youtube.com/embed/-AwTj0pfooo?list=PLEndQUuhlvSoTRGeY6nWXbxbhmgepTyLi' frameborder='0' allowfullscreen></iframe></p></div><div class='upcp-pointer-count'><p>6 of 6 - <span class='upcp-skip-all-tutorial-pop-ups'>Skip All</span></p></div>",
+    'content'   => "<div><p><a href='https://wordpress.org/support/plugin/UPC_MC/reviews/'>Help us spread the word with a 5 star rating!</a><br><br>We've got a number of videos on how to use the plugin:<br /><iframe width='560' height='315' src='https://www.youtube.com/embed/-AwTj0pfooo?list=PLEndQUuhlvSoTRGeY6nWXbxbhmgepTyLi' frameborder='0' allowfullscreen></iframe></p></div><div class='upcp-pointer-count'><p>6 of 6 - <span class='upcp-skip-all-tutorial-pop-ups'>Skip All</span></p></div>",
     'anchor_id' => '#wp-admin-bar-site-name',
     'edge'      => 'top',
     'align'     => 'left',

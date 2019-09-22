@@ -1,6 +1,6 @@
 		<div class="UPCPMenu">
 				 <h2 class="nav-tab-wrapper">
-						 <a id="ewd-upcp-dash-mobile-menu-open" href="#" class="MenuTab nav-tab"><?php _e("MENU", 'ultimate-product-catalogue'); ?><span id="ewd-upcp-dash-mobile-menu-down-caret">&nbsp;&nbsp;&#9660;</span><span id="ewd-upcp-dash-mobile-menu-up-caret">&nbsp;&nbsp;&#9650;</span></a>
+						 <a id="ewd-upcp-dash-mobile-menu-open" href="#" class="MenuTab nav-tab"><?php _e("MENU", 'UPC_MC'); ?><span id="ewd-upcp-dash-mobile-menu-down-caret">&nbsp;&nbsp;&#9660;</span><span id="ewd-upcp-dash-mobile-menu-up-caret">&nbsp;&nbsp;&#9650;</span></a>
 				 		 <a id="Dashboard_Menu" class="MenuTab nav-tab <?php if ($Display_Page == '' or $Display_Page == 'Dashboard') {echo 'nav-tab-active';}?>" onclick="ShowTab('Dashboard');">Dashboard</a>
 				 		 <a id="Products_Menu" class="MenuTab nav-tab <?php if ($Display_Page == 'Products') {echo 'nav-tab-active';}?>" onclick="ShowTab('Products');">Products</a>
 				 		 <a id="Catalogues_Menu" class="MenuTab nav-tab <?php if ($Display_Page == 'Catalogues') {echo 'nav-tab-active';}?>" onclick="ShowTab('Catalogues');">Catalogs</a>

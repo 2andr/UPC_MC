@@ -1,9 +1,25 @@
 <?php
 /*
 Plugin Name: MontajClub Product Catalog
-Current Version:1.2
+Current Version:1.1
 */
-include_once('wp_updater.php');
+include_once('updater.php');
+
+if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
+    $config = array(
+        'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
+        'proper_folder_name' => 'UPC_MC-master', // this is the name of the folder your plugin lives in
+        'api_url' => 'https://api.github.com/repos/2andr/UPC_MC', // the github API url of your github repo
+        'raw_url' => 'https://raw.github.com/2andr/UPC_MC/master', // the github raw url of your github repo
+        'github_url' => 'https://github.com/2andr/UPC_MC', // the github url of your github repo
+        'zip_url' => 'https://github.com/2andr/UPC_MC/zipball/master', // the zip url of the github repo
+        'sslverify' => true, // wether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and  https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
+        'requires' => '3.0', // which version of WordPress does your plugin require?
+        'tested' => '3.3', // which version of WordPress is your plugin tested up to?
+        'readme' => 'README.MD' // which file to use as the readme for the version number
+    );
+    new WP_GitHub_Updater($config);
+}
 
 global $UPCP_db_version;
 global 	$categories_table_name, 
@@ -105,7 +121,7 @@ function UPCP_Screen_Options() {
 		return;
 
 	$args = array(
-		'label' => __('Products per page', 'ultimate-product-catalogue'),
+		'label' => __('Products per page', 'UPC_MC'),
 		'default' => 20,
 		'option' => 'upcp_products_per_page'
 	);
@@ -120,7 +136,7 @@ add_filter('set-screen-option', 'UPCP_Set_Screen_Options', 10, 3);
 
 /* Add localization support */
 function UPCP_localization_setup() {
-	load_plugin_textdomain('ultimate-product-catalogue', false, dirname(plugin_basename(__FILE__)) . '/lang/');
+	load_plugin_textdomain('UPC_MC', false, dirname(plugin_basename(__FILE__)) . '/lang/');
 }
 add_action('after_setup_theme', 'UPCP_localization_setup');
 
@@ -143,15 +159,15 @@ function Add_UPCP_Scripts() {
 	wp_enqueue_script('ewd-upcp-review-ask', plugins_url("js/ewd-upcp-dashboard-review-ask.js", __FILE__), array('jquery'), $UPCP_db_version);
 
 	if (isset($_GET['page']) && $_GET['page'] == 'UPCP-options') {
-		$url_one = plugins_url("ultimate-product-catalogue/js/Admin.js");
-		$url_two = plugins_url("ultimate-product-catalogue/js/sorttable.js");
-		$url_three = plugins_url("ultimate-product-catalogue/js/get_sub_cats.js");
-		$url_four = plugins_url("ultimate-product-catalogue/js/wp_upcp_uploader.js");
-		$url_five = plugins_url("ultimate-product-catalogue/js/bootstrap.min.js");
-		$url_six = plugins_url("ultimate-product-catalogue/js/jquery.confirm.min.js");
-		$url_seven = plugins_url("ultimate-product-catalogue/js/product-page-builder.js");
-		$url_eight = plugins_url("ultimate-product-catalogue/js/jquery.gridster.js");
-		$url_nine = plugins_url("ultimate-product-catalogue/js/spectrum.js");
+		$url_one = plugins_url("UPC_MC/js/Admin.js");
+		$url_two = plugins_url("UPC_MC/js/sorttable.js");
+		$url_three = plugins_url("UPC_MC/js/get_sub_cats.js");
+		$url_four = plugins_url("UPC_MC/js/wp_upcp_uploader.js");
+		$url_five = plugins_url("UPC_MC/js/bootstrap.min.js");
+		$url_six = plugins_url("UPC_MC/js/jquery.confirm.min.js");
+		$url_seven = plugins_url("UPC_MC/js/product-page-builder.js");
+		$url_eight = plugins_url("UPC_MC/js/jquery.gridster.js");
+		$url_nine = plugins_url("UPC_MC/js/spectrum.js");
 
 		wp_enqueue_script('PageSwitch', $url_one, array('jquery'));
 		wp_enqueue_script('sorttable', $url_two, array('jquery'));
@@ -246,11 +262,11 @@ function Add_UPCP_FrontEnd_Scripts() {
 	wp_register_script('upcpjquery', plugins_url( '/js/upcp-jquery-functions.js' , __FILE__ ), array( 'jquery', 'jquery-ui-core', 'jquery-ui-slider' ), $UPCP_db_version);
 
 	$Updating_Results_Label = get_option('UPCP_Updating_Results_Label');
-	if ($Updating_Results_Label == "") {$Updating_Results_Label = __("Updating Results...", 'ultimate-product-catalogue');}
+	if ($Updating_Results_Label == "") {$Updating_Results_Label = __("Updating Results...", 'UPC_MC');}
 	$Compare_Label = get_option('UPCP_Compare_Label');
-	if ($Compare_Label == "") {$Compare_Label = __("Compare", 'ultimate-product-catalogue');}
+	if ($Compare_Label == "") {$Compare_Label = __("Compare", 'UPC_MC');}
 	$Side_By_Side_Label = get_option('UPCP_Side_By_Side_Label');
-	if ($Side_By_Side_Label == "") {$Side_By_Side_Label = __("side by side", 'ultimate-product-catalogue');}
+	if ($Side_By_Side_Label == "") {$Side_By_Side_Label = __("side by side", 'UPC_MC');}
 	$Translation_Array = array(
 		'updating_results_label' => $Updating_Results_Label,
 		'compare_label' => $Compare_Label,
@@ -265,12 +281,12 @@ function Add_UPCP_FrontEnd_Scripts() {
 function UPCP_Admin_Options() {
 	global $UPCP_db_version;
 
-	//$url = plugins_url("ultimate-product-catalogue/css/Admin.css");
+	//$url = plugins_url("UPC_MC/css/Admin.css");
 	//echo "<link rel='stylesheet' type='text/css' href='$url' />\n";
-	wp_enqueue_style( 'upcp-admin', plugins_url("ultimate-product-catalogue/css/Admin.css"));
-	wp_enqueue_style( 'upcp-gridster', plugins_url("ultimate-product-catalogue/css/jquery.gridster.css"));
-	wp_enqueue_style( 'upcp-spectrum', plugins_url("ultimate-product-catalogue/css/spectrum.css"));
-    //wp_enqueue_style( 'bootstrap', plugins_url("ultimate-product-catalogue/css/bootstrap.min.css"));
+	wp_enqueue_style( 'upcp-admin', plugins_url("UPC_MC/css/Admin.css"));
+	wp_enqueue_style( 'upcp-gridster', plugins_url("UPC_MC/css/jquery.gridster.css"));
+	wp_enqueue_style( 'upcp-spectrum', plugins_url("UPC_MC/css/spectrum.css"));
+    //wp_enqueue_style( 'bootstrap', plugins_url("UPC_MC/css/bootstrap.min.css"));
 
     //if (isset($_GET['page']) && $_GET['page'] == 'upcp-getting-started') {
 		wp_enqueue_style('upcp-welcome-screen', UPCP_CD_PLUGIN_URL . 'css/upcp-welcome-screen.css', array(), $UPCP_db_version);

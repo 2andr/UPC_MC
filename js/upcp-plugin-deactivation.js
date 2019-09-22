@@ -1,5 +1,5 @@
 jQuery(function($){
-	var $deactivateLink = $('#the-list').find('[data-slug="ultimate-product-catalogue"] span.deactivate a'),
+	var $deactivateLink = $('#the-list').find('[data-slug="UPC_MC"] span.deactivate a'),
 		$overlay        = $('#upcp-deactivate-survey-ultimate-faqs'),
 		$form           = $overlay.find('form'),
 		formOpen        = false;

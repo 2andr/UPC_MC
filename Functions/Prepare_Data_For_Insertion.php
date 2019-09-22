@@ -45,7 +45,7 @@ function Add_Edit_Product() {
 
 	$Skip_Nonce = "No";
 
-	if (!isset($error) or $error == __('No file was uploaded.', 'ultimate-product-catalogue')) {
+	if (!isset($error) or $error == __('No file was uploaded.', 'UPC_MC')) {
 			/* Pass the data to the appropriate function in Update_Admin_Databases.php to create the product */
 			if ($_POST['action'] == "Add_Product") {
 				  $user_update = Add_UPCP_Product($Item_Name, $Item_Slug, $Item_Photo_URL, $Item_Description, $Item_Price, $Item_Sale_Price, $Item_Sale_Mode, $Item_SEO_Description, $Item_Link, $Item_Display_Status, $Category_ID, $Global_Item_ID, $Item_Special_Attr, $SubCategory_ID, $Tags, $Makers, $Profuses, $Related_Products, $Next_Previous);
@@ -79,45 +79,45 @@ function Add_Products_From_Spreadsheet() {
 				{
 
 				case '1':
-						$error = __('The uploaded file exceeds the upload_max_filesize directive in php.ini', 'ultimate-product-catalogue');
+						$error = __('The uploaded file exceeds the upload_max_filesize directive in php.ini', 'UPC_MC');
 						break;
 				case '2':
-						$error = __('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form', 'ultimate-product-catalogue');
+						$error = __('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form', 'UPC_MC');
 						break;
 				case '3':
-						$error = __('The uploaded file was only partially uploaded', 'ultimate-product-catalogue');
+						$error = __('The uploaded file was only partially uploaded', 'UPC_MC');
 						break;
 				case '4':
-						$error = __('No file was uploaded.', 'ultimate-product-catalogue');
+						$error = __('No file was uploaded.', 'UPC_MC');
 						break;
 
 				case '6':
-						$error = __('Missing a temporary folder', 'ultimate-product-catalogue');
+						$error = __('Missing a temporary folder', 'UPC_MC');
 						break;
 				case '7':
-						$error = __('Failed to write file to disk', 'ultimate-product-catalogue');
+						$error = __('Failed to write file to disk', 'UPC_MC');
 						break;
 				case '8':
-						$error = __('File upload stopped by extension', 'ultimate-product-catalogue');
+						$error = __('File upload stopped by extension', 'UPC_MC');
 						break;
 				case '999':
 						default:
-						$error = __('No error code avaiable', 'ultimate-product-catalogue');
+						$error = __('No error code avaiable', 'UPC_MC');
 				}
 		}
 		/* Make sure that the file exists */
 		elseif (empty($_FILES['Products_Spreadsheet']['tmp_name']) || $_FILES['Products_Spreadsheet']['tmp_name'] == 'none') {
-				$error = __('No file was uploaded here..', 'ultimate-product-catalogue');
+				$error = __('No file was uploaded here..', 'UPC_MC');
 		}
 		/* Check that it is a .xls or .xlsx file */
 		if(!preg_match("/\.(xls.?)$/", $_FILES['Products_Spreadsheet']['name']) and !preg_match("/\.(csv.?)$/", $_FILES['Products_Spreadsheet']['name'])) {
-			$error = __('File must be .csv, .xls, .xlsx', 'ultimate-product-catalogue');
+			$error = __('File must be .csv, .xls, .xlsx', 'UPC_MC');
 		}
 		/* Move the file and store the URL to pass it onwards*/
 		else {
 						$msg .= $_FILES['Products_Spreadsheet']['name'];
 						//for security reason, we force to remove all uploaded file
-						$target_path = ABSPATH . 'wp-content/plugins/ultimate-product-catalogue/product-sheets/';
+						$target_path = ABSPATH . 'wp-content/plugins/UPC_MC/product-sheets/';
 
 						$target_path = $target_path . basename( $_FILES['Products_Spreadsheet']['name']);
 
@@ -152,7 +152,7 @@ function Mass_Delete_Products() {
 				}
 		}
 
-		$update = __("Products have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Products have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }
@@ -170,7 +170,7 @@ function Delete_All_Products() {
 				}
 		}
 
-		$update = __("Products have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Products have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }
@@ -322,7 +322,7 @@ function Mass_Delete_Categories() {
 				}
 		}
 
-		$update = __("Categories have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Categories have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }
@@ -371,7 +371,7 @@ function Mass_Delete_SubCategories() {
 				}
 		}
 
-		$update = __("Sub-Categories have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Sub-Categories have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }
@@ -421,7 +421,7 @@ function Mass_Delete_UPCP_Tags() {
 		}
 	}
 
-	$update = __("Tag(s) have been successfully deleted.", 'ultimate-product-catalogue');
+	$update = __("Tag(s) have been successfully deleted.", 'UPC_MC');
 	$user_update = array("Message_Type" => "Update", "Message" => $update);
 	return $user_update;
 }
@@ -504,7 +504,7 @@ function Mass_Delete_UPCP_Custom_Fields() {
 				}
 		}
 
-		$update = __("Field(s) have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Field(s) have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }
@@ -552,7 +552,7 @@ function Mass_Delete_Catalogues() {
 		}
 	}
 
-	$update = __("Catalogues have been successfully deleted.", 'ultimate-product-catalogue');
+	$update = __("Catalogues have been successfully deleted.", 'UPC_MC');
 	$user_update = array("Message_Type" => "Update", "Message" => $update);
 	return $user_update;
 }
@@ -568,7 +568,7 @@ function Mass_Delete_Catalogue_Items() {
 		}
 	}
 
-	$update = __("Catalogue items have been successfully deleted.", 'ultimate-product-catalogue');
+	$update = __("Catalogue items have been successfully deleted.", 'UPC_MC');
 	$user_update = array("Message_Type" => "Update", "Message" => $update);
 	return $user_update;
 }
@@ -583,35 +583,35 @@ function UPCP_Handle_File_Upload($Field_Name) {
 				{
 
 				case '1':
-						$error = __('The uploaded file exceeds the upload_max_filesize directive in php.ini', 'ultimate-product-catalogue');
+						$error = __('The uploaded file exceeds the upload_max_filesize directive in php.ini', 'UPC_MC');
 						break;
 				case '2':
-						$error = __('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form', 'ultimate-product-catalogue');
+						$error = __('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form', 'UPC_MC');
 						break;
 				case '3':
-						$error = __('The uploaded file was only partially uploaded', 'ultimate-product-catalogue');
+						$error = __('The uploaded file was only partially uploaded', 'UPC_MC');
 						break;
 				case '4':
-						$error = __('No file was uploaded.', 'ultimate-product-catalogue');
+						$error = __('No file was uploaded.', 'UPC_MC');
 						break;
 
 				case '6':
-						$error = __('Missing a temporary folder', 'ultimate-product-catalogue');
+						$error = __('Missing a temporary folder', 'UPC_MC');
 						break;
 				case '7':
-						$error = __('Failed to write file to disk', 'ultimate-product-catalogue');
+						$error = __('Failed to write file to disk', 'UPC_MC');
 						break;
 				case '8':
-						$error = __('File upload stopped by extension', 'ultimate-product-catalogue');
+						$error = __('File upload stopped by extension', 'UPC_MC');
 						break;
 				case '999':
 						default:
-						$error = __('No error code avaiable', 'ultimate-product-catalogue');
+						$error = __('No error code avaiable', 'UPC_MC');
 				}
 		}
 		/* Make sure that the file exists */
 		elseif (empty($_FILES[$Field_Name]['tmp_name']) || $_FILES[$Field_Name]['tmp_name'] == 'none') {
-				$error = __('No file was uploaded here..', 'ultimate-product-catalogue');
+				$error = __('No file was uploaded here..', 'UPC_MC');
 		}
 		/* Move the file and store the URL to pass it onwards*/
 		else {
@@ -636,9 +636,9 @@ function UPCP_Handle_File_Upload($Field_Name) {
 		}
 
 		/* Return the file name, or the error that was generated. */
-		if (isset($error) and $error == __('No file was uploaded.', 'ultimate-product-catalogue')) {
+		if (isset($error) and $error == __('No file was uploaded.', 'UPC_MC')) {
 			  $Return['Success'] = "N/A";
-				$Return['Data'] = __('No file was uploaded.', 'ultimate-product-catalogue');
+				$Return['Data'] = __('No file was uploaded.', 'UPC_MC');
 		}
 		elseif (!isset($error)) {
 				$Return['Success'] = "Yes";

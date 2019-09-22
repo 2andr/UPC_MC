@@ -5,7 +5,7 @@ function UPCP_Display_Catalog_Block() {
     if(function_exists('render_block_core_block')){  
 		wp_register_script( 'ewd-upcp-blocks-js', plugins_url( '../blocks/ewd-upcp-blocks.js', __FILE__ ), array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor' ) );
 		wp_register_style( 'ewd-upcp-blocks-css', plugins_url( '../blocks/ewd-upcp-blocks.css', __FILE__ ), array( 'wp-edit-blocks' ), filemtime( plugin_dir_path( __FILE__ ) . '../blocks/ewd-upcp-blocks.css' ) );
-		register_block_type( 'ultimate-product-catalogue/ewd-upcp-display-catalog-block', array(
+		register_block_type( 'UPC_MC/ewd-upcp-display-catalog-block', array(
 			'attributes'      => array(
 				'id' => array(
 					'type' => 'string',
@@ -115,24 +115,24 @@ function Insert_Product_Catalog($atts) {
 	$Products_Pagination_Label = $UPCP_Options->Get_Option("UPCP_Products_Pagination_Label");
 	$No_Results_Found_Label = $UPCP_Options->Get_Option("UPCP_No_Results_Found_Label");
 	if ($Products_Pagination_Label != "") {$Products_Pagination_Text = $Products_Pagination_Label;}
-	else {$Products_Pagination_Text = __(' products', 'ultimate-product-catalogue');}
+	else {$Products_Pagination_Text = __(' products', 'UPC_MC');}
 	$Product_Name_Search_Label = $UPCP_Options->Get_Option("UPCP_Product_Name_Search_Label");
 	$Product_Search_Text_Label = $UPCP_Options->Get_Option("UPCP_Product_Name_Text_Label");
 	if ($Product_Name_Search_Label != "") {$SearchLabel = $Product_Name_Search_Label;}
 	else {
-		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$SearchLabel = __("Product Search:", 'ultimate-product-catalogue');}
-		else {$SearchLabel = __("Product Name:", 'ultimate-product-catalogue');}
+		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$SearchLabel = __("Product Search:", 'UPC_MC');}
+		else {$SearchLabel = __("Product Name:", 'UPC_MC');}
 	}
 	if ($prod_name != "") {$Product_Name_Text = $prod_name;}
 	elseif ($Product_Search_Text_Label != "") {$Product_Name_Text = $Product_Search_Text_Label;
 	}
 	else {
-		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$Product_Name_Text = __("Search...", 'ultimate-product-catalogue');}
-		else {$Product_Name_Text = __("Name...", 'ultimate-product-catalogue');}
+		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$Product_Name_Text = __("Search...", 'UPC_MC');}
+		else {$Product_Name_Text = __("Name...", 'UPC_MC');}
 	}
 
 	$Of_Pagination_Label = $UPCP_Options->Get_Option("UPCP_Of_Pagination_Label");
-	if($Of_Pagination_Label == ""){$Of_Pagination_Label = __(' of ', 'ultimate-product-catalogue');}
+	if($Of_Pagination_Label == ""){$Of_Pagination_Label = __(' of ', 'UPC_MC');}
 
 
 	if ($Infinite_Scroll == "Yes") {$Infinite_Scroll_Class = "upcp-infinite-scroll";}
@@ -250,7 +250,7 @@ function Insert_Product_Catalog($atts) {
 		$CatalogAreaTopString .= "<div id='upcp-lightbox-title-div'></div>";
 		$CatalogAreaTopString .= "<div id='upcp-lightbox-price-div'></div>";
 		$CatalogAreaTopString .= "<div id='upcp-lightbox-description-div'></div>";
-		$CatalogAreaTopString .= "<div id='upcp-lightbox-link-container-div'><a href='#'>" . __("Details", 'ultimate-product-catalogue') . "</a></div>";
+		$CatalogAreaTopString .= "<div id='upcp-lightbox-link-container-div'><a href='#'>" . __("Details", 'UPC_MC') . "</a></div>";
 		$CatalogAreaTopString .= "</div>"; //lightbox-text-div-inner
 		$CatalogAreaTopString .= "</div>"; //lightbox-text-div
 		$CatalogAreaTopString .= "</div>";
@@ -719,8 +719,8 @@ function Insert_Product_Catalog($atts) {
 	if ($Mobile_Style == "Yes") {
 		$MobileMenuString .= "<div id='prod-cat-mobile-menu' class='upcp-mobile-menu'>\n";
 		$MobileMenuString .= "<div id='prod-cat-mobile-search'>\n";
-		if ($Tag_Logic == "OR") {$MobileMenuString .= "<input type='text' id='upcp-mobile-search' class='jquery-prod-name-text mobile-search' name='Mobile_Search' value='" . __('Product Name', 'ultimate-product-catalogue') . "...' onfocus='FieldFocus(this);' onblur='FieldBlur(this);' onkeyup='UPCP_Filer_Results_OR();'>\n";}
-		else {$MobileMenuString .= "<input type='text' id='upcp-mobile-search' class='jquery-prod-name-text mobile-search' name='Mobile_Search' value='" . __('Product Name', 'ultimate-product-catalogue') . "...' onfocus='FieldFocus(this);' onblur='FieldBlur(this);'  onkeyup='UPCP_Filer_Results();'>\n";}
+		if ($Tag_Logic == "OR") {$MobileMenuString .= "<input type='text' id='upcp-mobile-search' class='jquery-prod-name-text mobile-search' name='Mobile_Search' value='" . __('Product Name', 'UPC_MC') . "...' onfocus='FieldFocus(this);' onblur='FieldBlur(this);' onkeyup='UPCP_Filer_Results_OR();'>\n";}
+		else {$MobileMenuString .= "<input type='text' id='upcp-mobile-search' class='jquery-prod-name-text mobile-search' name='Mobile_Search' value='" . __('Product Name', 'UPC_MC') . "...' onfocus='FieldFocus(this);' onblur='FieldBlur(this);'  onkeyup='UPCP_Filer_Results();'>\n";}
 		$MobileMenuString .= "</div>";
 		$MobileMenuString .= "</div>";
 	}
@@ -892,32 +892,32 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 
 	$Details_Label = $UPCP_Options->Get_Option("UPCP_Details_Label");
 	if ($Details_Label != "") {$Details_Text = $Details_Label;}
-	else {$Details_Text = __("Details", 'ultimate-product-catalogue');}
+	else {$Details_Text = __("Details", 'UPC_MC');}
 	if ($Details_Label != "") {$More_Images_Label = $Details_Label;}
-	else {$More_Images_Label = __("Images", 'ultimate-product-catalogue');}
+	else {$More_Images_Label = __("Images", 'UPC_MC');}
 	if ($UPCP_Options->Get_Option("UPCP_Read_More_Label") != "") {$Read_More_Label = $UPCP_Options->Get_Option("UPCP_Read_More_Label");}
-	else {$Read_More_Label = __("Read More", 'ultimate-product-catalogue');}
+	else {$Read_More_Label = __("Read More", 'UPC_MC');}
 	
 	if ($UPCP_Options->Get_Option("UPCP_Makers_Label") != "") {$Makers_Label = $UPCP_Options->Get_Option("UPCP_Makers_Label");}
-	else {$Makers_Label = __("Makers", 'ultimate-product-catalogue');}
+	else {$Makers_Label = __("Makers", 'UPC_MC');}
 	
 	if ($UPCP_Options->Get_Option("UPCP_MakersCard_Label") != "") {$Makers_Label = $UPCP_Options->Get_Option("UPCP_MakersCard_Label");}
-	else {$MakersCard_Label = __("", 'ultimate-product-catalogue');}
+	else {$MakersCard_Label = __("", 'UPC_MC');}
 
 	if ($UPCP_Options->Get_Option("UPCP_Profuses_Label") != "") {$Profuses_Label = $UPCP_Options->Get_Option("UPCP_Profuses_Label");}
-	else {$Profuses_Label = __("Profuses", 'ultimate-product-catalogue');}
+	else {$Profuses_Label = __("Profuses", 'UPC_MC');}
 	
 	if ($UPCP_Options->Get_Option("UPCP_ProfusesCard_Label") != "") {$Profuses_Label = $UPCP_Options->Get_Option("UPCP_ProfusesCard_Label");}
-	else {$ProfusesCard_Label = __("", 'ultimate-product-catalogue');}
+	else {$ProfusesCard_Label = __("", 'UPC_MC');}
 	
 	$Inquire_Button_Label = $UPCP_Options->Get_Option("UPCP_Inquire_Button_Label");
-	if($Inquire_Button_Label == ""){$Inquire_Button_Label = __('Inquire', 'ultimate-product-catalogue');}
+	if($Inquire_Button_Label == ""){$Inquire_Button_Label = __('Inquire', 'UPC_MC');}
 	$Add_To_Cart_Button_Label = $UPCP_Options->Get_Option("UPCP_Add_To_Cart_Button_Label");
-	if($Add_To_Cart_Button_Label == ""){$Add_To_Cart_Button_Label = __('Add to Cart', 'ultimate-product-catalogue');}
+	if($Add_To_Cart_Button_Label == ""){$Add_To_Cart_Button_Label = __('Add to Cart', 'UPC_MC');}
 	$Sale_Label = $UPCP_Options->Get_Option("UPCP_Sale_Label");
-	if ($Sale_Label == "") {$Sale_Label = __("Sale", 'ultimate-product-catalogue');}
+	if ($Sale_Label == "") {$Sale_Label = __("Sale", 'UPC_MC');}
 	$Compare_Label = $UPCP_Options->Get_Option("UPCP_Compare_Label");
-	if ($Compare_Label == "") {$Compare_Label = __("Compare", 'ultimate-product-catalogue');}
+	if ($Compare_Label == "") {$Compare_Label = __("Compare", 'UPC_MC');}
 
 	if ($Links == "New") {$NewWindowCode = "target='_blank'";}
 	else {$NewWindowCode = "";}
@@ -952,7 +952,7 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 		$PhotoCode = "<img src='" . $PhotoURL . "' alt='" . $Product_Object->Get_Field_Value('Item_Name') . " Image' id='prod-cat-thumb-" . $Product_Object->Get_Item_ID() . "' class='prod-cat-thumb-image upcp-thumb-image'>";
 	}
 	else {
-		$PhotoURL = plugins_url('ultimate-product-catalogue/images/No-Photo-Available.png');
+		$PhotoURL = plugins_url('UPC_MC/images/No-Photo-Available.png');
 		$PhotoCode = "<img src='" . $PhotoURL . "' alt='" . $Product_Object->Get_Field_Value('Item_Name') . " Image' id='prod-cat-thumb-" . $Product_Object->Get_Item_ID() . "' class='prod-cat-thumb-image upcp-thumb-image'>";
 	}
 
@@ -1012,13 +1012,13 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 
 		if($Display_Categories_In_Thumbnails == 'Yes' && $Product_Object->Get_Field_Value('Category_Name') != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-thumb-display-categories'>";
-				$ProductString .= "<span class='upcp-display-category-label'>" . __("Category: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-category-label'>" . __("Category: ", "UPC_MC") . "</span>";
 				$ProductString .= $Product_Object->Get_Field_Value('Category_Name');
 			$ProductString .= "</div>\n";
 		}
 		if($Display_Categories_In_Thumbnails == 'Yes' && $Product_Object->Get_Field_Value('SubCategory_Name') != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-thumb-display-subcategories'>";
-				$ProductString .= "<span class='upcp-display-subcategory-label'>" . __("Sub-Category: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-subcategory-label'>" . __("Sub-Category: ", "UPC_MC") . "</span>";
 				$ProductString .= $Product_Object->Get_Field_Value('SubCategory_Name');
 			$ProductString .= "</div>\n";
 		}
@@ -1034,7 +1034,7 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 		if (isset($thumbnailTagsString)) {$thumbnailTagsString = trim($thumbnailTagsString, " ,");}
 		if($Display_Tags_In_Thumbnails == 'Yes' && $thumbnailTagsString != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-thumb-display-tags'>";
-				$ProductString .= "<span class='upcp-display-tags-label'>" . __("Tags: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-tags-label'>" . __("Tags: ", "UPC_MC") . "</span>";
 				$ProductString .= $thumbnailTagsString;
 			$ProductString .= "</div>\n";
 		}
@@ -1124,13 +1124,13 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 
 		if($Display_Categories_In_Thumbnails == 'Yes' && $Product_Object->Get_Field_Value('Category_Name') != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-details-display-categories'>";
-				$ProductString .= "<span class='upcp-display-category-label'>" . __("Category: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-category-label'>" . __("Category: ", "UPC_MC") . "</span>";
 				$ProductString .= $Product_Object->Get_Field_Value('Category_Name');
 			$ProductString .= "</div>\n";
 		}
 		if($Display_Categories_In_Thumbnails == 'Yes' && $Product_Object->Get_Field_Value('SubCategory_Name') != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-details-display-subcategories'>";
-				$ProductString .= "<span class='upcp-display-subcategory-label'>" . __("Sub-Category: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-subcategory-label'>" . __("Sub-Category: ", "UPC_MC") . "</span>";
 				$ProductString .= $Product_Object->Get_Field_Value('SubCategory_Name');
 			$ProductString .= "</div>\n";
 		}
@@ -1145,7 +1145,7 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 		if (isset($thumbnailTagsString)) {$thumbnailTagsString = trim($thumbnailTagsString, " ,");}
 		if($Display_Tags_In_Thumbnails == 'Yes' && $thumbnailTagsString != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-details-display-tags'>";
-				$ProductString .= "<span class='upcp-display-tags-label'>" . __("Tags: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-tags-label'>" . __("Tags: ", "UPC_MC") . "</span>";
 				$ProductString .= $thumbnailTagsString;
 			$ProductString .= "</div>\n";
 		}
@@ -1241,13 +1241,13 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 
 		if($Display_Categories_In_Thumbnails == 'Yes' && $Product_Object->Get_Field_Value('Category_Name') != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-list-display-categories'>";
-				$ProductString .= "<span class='upcp-display-category-label'>" . __("Category: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-category-label'>" . __("Category: ", "UPC_MC") . "</span>";
 				$ProductString .= $Product_Object->Get_Field_Value('Category_Name');
 			$ProductString .= "</div>\n";
 		}
 		if($Display_Categories_In_Thumbnails == 'Yes' && $Product_Object->Get_Field_Value('SubCategory_Name') != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-list-display-subcategories'>";
-				$ProductString .= "<span class='upcp-display-subcategory-label'>" . __("Sub-Category: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-subcategory-label'>" . __("Sub-Category: ", "UPC_MC") . "</span>";
 				$ProductString .= $Product_Object->Get_Field_Value('SubCategory_Name');
 			$ProductString .= "</div>\n";
 		}
@@ -1262,7 +1262,7 @@ function UPCP_AddProduct($format, $Product_Object, $Tags, $AjaxReload = "No", $A
 		if (isset($thumbnailTagsString)) {$thumbnailTagsString = trim($thumbnailTagsString, " ,");}
 		if($Display_Tags_In_Thumbnails == 'Yes' && $thumbnailTagsString != ''){
 			$ProductString .= "<div class='prod-cat-display-categories-tags upcp-list-display-tags'>";
-				$ProductString .= "<span class='upcp-display-tags-label'>" . __("Tags: ", "ultimate-product-catalogue") . "</span>";
+				$ProductString .= "<span class='upcp-display-tags-label'>" . __("Tags: ", "UPC_MC") . "</span>";
 				$ProductString .= $thumbnailTagsString;
 			$ProductString .= "</div>\n";
 		}
@@ -1357,11 +1357,11 @@ function SingleProductPage() {
 
 	$TagGroupName = "";
 	$Additional_Info_Category_Label = $UPCP_Options->Get_Option("UPCP_Additional_Info_Category_Label");
-	if($Additional_Info_Category_Label == ""){$Additional_Info_Category_Label = __("Category:", 'ultimate-product-catalogue');}
+	if($Additional_Info_Category_Label == ""){$Additional_Info_Category_Label = __("Category:", 'UPC_MC');}
 	$Additional_Info_SubCategory_Label = $UPCP_Options->Get_Option("UPCP_Additional_Info_SubCategory_Label");
-	if($Additional_Info_SubCategory_Label == ""){$Additional_Info_SubCategory_Label = __("Sub-Category:", 'ultimate-product-catalogue');}
+	if($Additional_Info_SubCategory_Label == ""){$Additional_Info_SubCategory_Label = __("Sub-Category:", 'UPC_MC');}
 	$Additional_Info_Tags_Label = $UPCP_Options->Get_Option("UPCP_Additional_Info_Tags_Label");
-	if($Additional_Info_Tags_Label == ""){$Additional_Info_Tags_Label = __("Tags:", 'ultimate-product-catalogue');}
+	if($Additional_Info_Tags_Label == ""){$Additional_Info_Tags_Label = __("Tags:", 'UPC_MC');}
 
 	$Protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 
@@ -1449,7 +1449,7 @@ function SingleProductPage() {
 		$PhotoCodeMobile .= "<img src='" . $PhotoURL . "' alt='" . $Product->Item_Name . " Image' id='prod-cat-addt-details-main-mobile-" . $Product->Item_ID . "' class='prod-cat-addt-details-main'>";
 	}
 	else {
-		$PhotoURL = plugins_url('ultimate-product-catalogue/images/No-Photo-Available.png');
+		$PhotoURL = plugins_url('UPC_MC/images/No-Photo-Available.png');
 		$PhotoCode .= "<img src='" . $PhotoURL . "' alt='" . $Product->Item_Name . " Image' id='prod-cat-addt-details-main-" . $Product->Item_ID . "' class='prod-cat-addt-details-main'>";
 		$PhotoCodeMobile .= "<img src='" . $PhotoURL . "' alt='" . $Product->Item_Name . " Image' id='prod-cat-addt-details-main-mobile-" . $Product->Item_ID . "' class='prod-cat-addt-details-main'>";
 	}
@@ -1492,7 +1492,7 @@ function SingleProductPage() {
 		$ProductString .= UPCP_Get_Product_Page_Breadcrumbs($Product, $Return_URL);
 
 		$ProductString .= "<div id='prod-cat-addt-details-" . $Product->Item_ID . "' class='prod-cat-addt-details'>";
-		$ProductString .= "<div class='prod-cat-addt-details-title-and-price'><h2 class='prod-cat-addt-details-title'>" . apply_filters('upcp_product_page_title', $Product->Item_Name, array('Item_ID' => $Product->Item_ID, 'Item_Title' => $Product->Item_Name)) . "<img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/ultimate-product-catalogue/images/insert_link.png' /></h2>";
+		$ProductString .= "<div class='prod-cat-addt-details-title-and-price'><h2 class='prod-cat-addt-details-title'>" . apply_filters('upcp_product_page_title', $Product->Item_Name, array('Item_ID' => $Product->Item_ID, 'Item_Title' => $Product->Item_Name)) . "<img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/UPC_MC/images/insert_link.png' /></h2>";
 		if ($Single_Page_Price == "Yes") {$ProductString .= "<h3 class='prod-cat-addt-details-price'>" . $Item_Display_Price . "</h3>";}
 		$ProductString .= "</div>";
 		$ProductString .= "<div class='upcp-clear'></div>";
@@ -1594,7 +1594,7 @@ function SingleProductPage() {
 
 		$ProductString .= UPCP_Get_Product_Page_Breadcrumbs($Product, $Return_URL);
 
-		$ProductString .= "<h2 class='prod-cat-addt-details-title'>" . apply_filters('upcp_product_page_title', $Product->Item_Name, array('Item_ID' => $Product->Item_ID, 'Item_Title' => $Product->Item_Name)) . "<img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/ultimate-product-catalogue/images/insert_link.png' /></h2>";
+		$ProductString .= "<h2 class='prod-cat-addt-details-title'>" . apply_filters('upcp_product_page_title', $Product->Item_Name, array('Item_ID' => $Product->Item_ID, 'Item_Title' => $Product->Item_Name)) . "<img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/UPC_MC/images/insert_link.png' /></h2>";
 		if ($Single_Page_Price == "Yes") {apply_filters('upcp_product_page_price', $ProductString .= "<h3 class='prod-cat-addt-details-price'>" . $Item_Display_Price . "</h3>", array('Item_ID' => $Product->Item_ID, 'Item_Price' => $Product->Item_Price));}
 		$ProductString .= $PhotoCodeMobile;
 		$ProductString .= "<div class='upcp-clear'></div>";
@@ -1618,15 +1618,15 @@ function SingleProductPage() {
 	elseif ($Custom_Product_Page == "Tabbed" || $Custom_Product_Page == "Shop_Style") {
 
 		if ($UPCP_Options->Get_Option("UPCP_Product_Details_Label") != "") {$Product_Details_Label = $UPCP_Options->Get_Option("UPCP_Product_Details_Label");}
-		else {$Product_Details_Label = __("<span class='upcp-tab-break'>". __('Product', 'ultimate-product-catalogue') . "</span> <span class='upcp-tab-break'>" . __('Details', 'ultimate-product-catalogue') . "</span>", 'ultimate-product-catalogue');}
+		else {$Product_Details_Label = __("<span class='upcp-tab-break'>". __('Product', 'UPC_MC') . "</span> <span class='upcp-tab-break'>" . __('Details', 'UPC_MC') . "</span>", 'UPC_MC');}
 		if ($UPCP_Options->Get_Option("UPCP_Additional_Info_Label") != "") {$Additional_Info_Label = $UPCP_Options->Get_Option("UPCP_Additional_Info_Label");}
-		else {$Additional_Info_Label = __("<span class='upcp-tab-break'>" . __('Additional', 'ultimate-product-catalogue') . "</span> <span class='upcp-tab-break'>" . __('Information', 'ultimate-product-catalogue') . " </span>", 'ultimate-product-catalogue');}
+		else {$Additional_Info_Label = __("<span class='upcp-tab-break'>" . __('Additional', 'UPC_MC') . "</span> <span class='upcp-tab-break'>" . __('Information', 'UPC_MC') . " </span>", 'UPC_MC');}
 		if ($UPCP_Options->Get_Option("UPCP_Contact_Us_Label") != "") {$Contact_Us_Label = $UPCP_Options->Get_Option("UPCP_Contact_Us_Label");}
-		else {$Contact_Us_Label = __("<span class='upcp-tab-break'>" . __('Contact', 'ultimate-product-catalogue') . "</span> <span class='upcp-tab-break'>" . __('Us', 'ultimate-product-catalogue') . "</span>", 'ultimate-product-catalogue');}
+		else {$Contact_Us_Label = __("<span class='upcp-tab-break'>" . __('Contact', 'UPC_MC') . "</span> <span class='upcp-tab-break'>" . __('Us', 'UPC_MC') . "</span>", 'UPC_MC');}
 		if ($UPCP_Options->Get_Option("UPCP_Customer_Reviews_Tab_Label") != "") {$Customer_Reviews_Tab_Label = $UPCP_Options->Get_Option("UPCP_Customer_Reviews_Tab_Label");}
-		else {$Customer_Reviews_Tab_Label = __("<span class='upcp-tab-break'>" . __('Customer', 'ultimate-product-catalogue') . "</span> <span class='upcp-tab-break'>" . __('Reviews', 'ultimate-product-catalogue') . "</span>", 'ultimate-product-catalogue');}
+		else {$Customer_Reviews_Tab_Label = __("<span class='upcp-tab-break'>" . __('Customer', 'UPC_MC') . "</span> <span class='upcp-tab-break'>" . __('Reviews', 'UPC_MC') . "</span>", 'UPC_MC');}
 		if ($UPCP_Options->Get_Option("UPCP_Product_FAQs_Label") != "") {$Product_FAQs_Tab_Label = $UPCP_Options->Get_Option("UPCP_Product_FAQs_Label");}
-		else {$Product_FAQs_Tab_Label = __("<span class='upcp-tab-break'>" . __('Product', 'ultimate-product-catalogue') . "</span> <span class='upcp-tab-break'>" . __('FAQs', 'ultimate-product-catalogue') . "</span>", 'ultimate-product-catalogue');}
+		else {$Product_FAQs_Tab_Label = __("<span class='upcp-tab-break'>" . __('Product', 'UPC_MC') . "</span> <span class='upcp-tab-break'>" . __('FAQs', 'UPC_MC') . "</span>", 'UPC_MC');}
 
 
 		$ProductString .= "<div class='upcp-tabbed-product-page upcp-product-page' itemscope itemtype='http://schema.org/Product'>";
@@ -1819,7 +1819,7 @@ function SingleProductPage() {
 
 			$ProductString .= UPCP_Get_Product_Page_Breadcrumbs($Product, $Return_URL);
 
-			$ProductString .= "<h2 class='prod-cat-addt-details-title'>" . apply_filters('upcp_product_page_title', $Product->Item_Name, array('Item_ID' => $Product->Item_ID, 'Item_Title' => $Product->Item_Name)) . "<img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/ultimate-product-catalogue/images/insert_link.png' /></h2>";
+			$ProductString .= "<h2 class='prod-cat-addt-details-title'>" . apply_filters('upcp_product_page_title', $Product->Item_Name, array('Item_ID' => $Product->Item_ID, 'Item_Title' => $Product->Item_Name)) . "<img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/UPC_MC/images/insert_link.png' /></h2>";
 			if ($Single_Page_Price == "Yes") {$ProductString .= apply_filters('upcp_product_page_price', "<h3 class='prod-cat-addt-details-price'>" . $Item_Display_Price . "</h3>", array('Item_ID' => $Product->Item_ID, 'Item_Price' => $Product->Item_Price));}
 			$ProductString .= $PhotoCodeMobile;
 			$ProductString .= "<div class='upcp-clear'></div>";
@@ -1909,40 +1909,40 @@ function BuildSidebar($category, $subcategory, $tags, $prod_name) {
 	$Product_Search_Text_Label = $UPCP_Options->Get_Option("UPCP_Product_Name_Text_Label");
 
 	if ($Categories_Label != "") {$Categories_Text = $Categories_Label;}
-	else {$Categories_Text = __("Categories:", 'ultimate-product-catalogue');}
+	else {$Categories_Text = __("Categories:", 'UPC_MC');}
 	if ($SubCategories_Label != "") {$SubCategories_Text = $SubCategories_Label;}
-	else {$SubCategories_Text = __("Sub-Categories:", 'ultimate-product-catalogue');}
+	else {$SubCategories_Text = __("Sub-Categories:", 'UPC_MC');}
 	if ($Tags_Label != "") {$Tags_Text = $Tags_Label;}
-	else {$Tags_Text = __("Tags:", 'ultimate-product-catalogue');}
+	else {$Tags_Text = __("Tags:", 'UPC_MC');}
 	if ($Show_All_Label != "") {$Show_All_Text = $Show_All_Label;}
-	else {$Show_All_Text = __("Show All", 'ultimate-product-catalogue');}
+	else {$Show_All_Text = __("Show All", 'UPC_MC');}
 	if ($Price_Filter_Label != "") {$Price_Filter_Label = $Price_Filter_Label;}
-	else {$Price_Filter_Label = __('Price:', 'ultimate-product-catalogue');}
+	else {$Price_Filter_Label = __('Price:', 'UPC_MC');}
 	if ($Sort_By_Label != "") {$Sort_Text = $Sort_By_Label;}
-	else {$Sort_Text = __('Sort By:', 'ultimate-product-catalogue');}
+	else {$Sort_Text = __('Sort By:', 'UPC_MC');}
 	if ($Price_Ascending_Label != "") {$Price_Ascending_Text = $Price_Ascending_Label;}
-	else {$Price_Ascending_Text = __('Price (Ascending)', 'ultimate-product-catalogue');}
+	else {$Price_Ascending_Text = __('Price (Ascending)', 'UPC_MC');}
 	if ($Price_Descending_Label != "") {$Price_Descending_Text = $Price_Descending_Label;}
-	else {$Price_Descending_Text = __('Price (Descending)', 'ultimate-product-catalogue');}
+	else {$Price_Descending_Text = __('Price (Descending)', 'UPC_MC');}
 	if ($Name_Ascending_Label != "") {$Name_Ascending_Text = $Name_Ascending_Label;}
-	else {$Name_Ascending_Text = __('Name (Ascending)', 'ultimate-product-catalogue');}
+	else {$Name_Ascending_Text = __('Name (Ascending)', 'UPC_MC');}
 	if ($Name_Descending_Label != "") {$Name_Descending_Text = $Name_Descending_Label;}
-	else {$Name_Descending_Text = __('Name (Descending)', 'ultimate-product-catalogue');}
+	else {$Name_Descending_Text = __('Name (Descending)', 'UPC_MC');}
 	if ($Rating_Ascending_Label != "") {$Rating_Ascending_Text = $Rating_Ascending_Label;}
-	else {$Rating_Ascending_Text = __('Rating (Ascending)', 'ultimate-product-catalogue');}
+	else {$Rating_Ascending_Text = __('Rating (Ascending)', 'UPC_MC');}
 	if ($Rating_Descending_Label != "") {$Rating_Descending_Text = $Rating_Descending_Label;}
-	else {$Rating_Descending_Text = __('Rating (Descending)', 'ultimate-product-catalogue');}
+	else {$Rating_Descending_Text = __('Rating (Descending)', 'UPC_MC');}
 	if ($Product_Name_Search_Label != "") {$SearchLabel = $Product_Name_Search_Label;}
 	else {
-		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$SearchLabel = __("Product Search:", 'ultimate-product-catalogue');}
-		else {$SearchLabel = __("Product Name:", 'ultimate-product-catalogue');}
+		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$SearchLabel = __("Product Search:", 'UPC_MC');}
+		else {$SearchLabel = __("Product Name:", 'UPC_MC');}
 	}
 	if ($prod_name != "") {$Product_Name_Text = $prod_name;}
 	elseif ($Product_Search_Text_Label != "") {$Product_Name_Text = $Product_Search_Text_Label;
 	}
 	else {
-		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$Product_Name_Text = __("Search...", 'ultimate-product-catalogue');}
-		else {$Product_Name_Text = __("Name...", 'ultimate-product-catalogue');}
+		if ($ProductSearch == "namedesc" or $ProductSearch == "namedesccust") {$Product_Name_Text = __("Search...", 'UPC_MC');}
+		else {$Product_Name_Text = __("Name...", 'UPC_MC');}
 	}
 
 	if ($Sidebar_Start_Collapsed == "yes") {$Sidebar_Start_Collapsed_HTML = "style='display:none;'";}
@@ -1959,7 +1959,7 @@ function BuildSidebar($category, $subcategory, $tags, $prod_name) {
 	$SidebarString = "";
 	if ($Hidden_Drop_Down_Sidebar_On_Mobile == "Yes") {
 		$SidebarString .= "<div class='ewd-upcp-filtering-toggle ewd-upcp-filtering-toggle-downcaret'>";
-		$SidebarString .= __("Filter", 'ultimate-product-catalogue');
+		$SidebarString .= __("Filter", 'UPC_MC');
 		$SidebarString .= "</div>";
 
 		$Sidebar_Mobile_Class = "prod-cat-sidebar-hidden";
@@ -1970,10 +1970,10 @@ function BuildSidebar($category, $subcategory, $tags, $prod_name) {
 	//$SidebarString .= "<form action='#' name='Product_Catalog_Sidebar_Form'>\n";
 	$SidebarString .= "<form onsubmit='return false;' name='Product_Catalog_Sidebar_Form'>\n";
 	
-	if ($Clear_All == "Yes") {$SidebarString .= "<div class='upcp-filtering-clear-all upcp-Hide-Item'>" . __("Clear All", 'ultimate-product-catalogue') . "</div>";}
+	if ($Clear_All == "Yes") {$SidebarString .= "<div class='upcp-filtering-clear-all upcp-Hide-Item'>" . __("Clear All", 'UPC_MC') . "</div>";}
 //Makers addon start 
 	if ($UPCP_Options->Get_Option("UPCP_Makers_Label") != "") {$Makers_Label = $UPCP_Options->Get_Option("UPCP_Makers_Label");}
-	else {$Makers_Label = __("Makers", 'ultimate-product-catalogue');}
+	else {$Makers_Label = __("Makers", 'UPC_MC');}
 	
 	$Makers_Show_Hide = $UPCP_Options->Get_Option("UPCP_Makers_Show_Hide");
 	$Makers_Control_Type = $UPCP_Options->Get_Option("UPCP_Makers_Control_Type");
@@ -1983,7 +1983,7 @@ function BuildSidebar($category, $subcategory, $tags, $prod_name) {
 	else {$Makers = array();}
 
 	if ($UPCP_Options->Get_Option("UPCP_Profuses_Label") != "") {$Profuses_Label = $UPCP_Options->Get_Option("UPCP_Profuses_Label");}
-	else {$Profuses_Label = __("Profuses", 'ultimate-product-catalogue');}
+	else {$Profuses_Label = __("Profuses", 'UPC_MC');}
 	
 	$Profuses_Show_Hide = $UPCP_Options->Get_Option("UPCP_Profuses_Show_Hide");
 	$Profuses_Control_Type = $UPCP_Options->Get_Option("UPCP_Profuses_Control_Type");
@@ -2322,7 +2322,7 @@ function BuildGridster($Gridster, $Product, $Item_Images, $Description, $PhotoUR
 	$Disable_Lightbox = "";
 	$Back_To_Catalogue_Label = $UPCP_Options->Get_Option("UPCP_Back_To_Catalogue_Label");
 	if ($Back_To_Catalogue_Label != "") {$Back_To_Catalogue_Text = $Back_To_Catalogue_Label;}
-	else {$Back_To_Catalogue_Text = __("Back to Catalog", 'ultimate-product-catalogue');}
+	else {$Back_To_Catalogue_Text = __("Back to Catalog", 'UPC_MC');}
 
 	$Product_Object = new UPCP_Product(array('ID' => $Product->Item_ID));
 	$Item_Display_Price = $Product_Object->Get_Product_Price("Display");
@@ -2352,7 +2352,7 @@ function BuildGridster($Gridster, $Product, $Item_Images, $Description, $PhotoUR
 					break;
 				case "category_label":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-cat-label-div gs-w' style='display: list-item; position:absolute;'>";
-					$ProductString .= __("Category:", 'ultimate-product-catalogue') . " ";
+					$ProductString .= __("Category:", 'UPC_MC') . " ";
 					break;
 				case "description":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-description-div gs-w' style='display: list-item; position:absolute;'>";
@@ -2378,7 +2378,7 @@ function BuildGridster($Gridster, $Product, $Item_Images, $Description, $PhotoUR
 					break;
 				case "product_link":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-prod-link-div gs-w' style='display: list-item; position:absolute;'>";
-					$ProductString .= "<a class='no-underline' href='http://" . $_SERVER['HTTP_HOST'] . $SP_Perm_URL . "'><img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/ultimate-product-catalogue/images/insert_link.png' /></a>";
+					$ProductString .= "<a class='no-underline' href='http://" . $_SERVER['HTTP_HOST'] . $SP_Perm_URL . "'><img class='upcp-product-url-icon' src='" . get_bloginfo('wpurl') . "/wp-content/plugins/UPC_MC/images/insert_link.png' /></a>";
 					break;
 				case "product_name":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-prod-name-div gs-w' style='display: list-item; position:absolute;'>";
@@ -2395,7 +2395,7 @@ function BuildGridster($Gridster, $Product, $Item_Images, $Description, $PhotoUR
 					break;
 				case "subcategory_label":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-sub-cat-label-div gs-w' style='display: list-item; position:absolute;'>";
-					$ProductString .= __("Sub-Category:", 'ultimate-product-catalogue') . " ";
+					$ProductString .= __("Sub-Category:", 'UPC_MC') . " ";
 					break;
 				case "tags":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-tags-div gs-w' style='display: list-item; position:absolute;'>";
@@ -2403,7 +2403,7 @@ function BuildGridster($Gridster, $Product, $Item_Images, $Description, $PhotoUR
 					break;
 				case "tags_label":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-tags-label-div gs-w' style='display: list-item; position:absolute;'>";
-					$ProductString .= __("Tags:", 'ultimate-product-catalogue') . " ";
+					$ProductString .= __("Tags:", 'UPC_MC') . " ";
 					break;
 				case "text":
 					$ProductString .= "<li data-col='" . $Element->col . "' data-row='" . $Element->row . "' data-sizex='" . $Element->size_x . "' data-sizey='" . $Element->size_y . "' class='prod-page-div prod-page-front-end prod-page-tags-label-div gs-w' style='display: list-item; position:absolute;'>";
@@ -2441,7 +2441,7 @@ function UPCP_Get_Product_Page_Breadcrumbs($Product, $Return_URL) {
 	$Breadcrumbs = $UPCP_Options->Get_Option("UPCP_Breadcrumbs");
 
 	$Back_To_Catalogue_Label = $UPCP_Options->Get_Option("UPCP_Back_To_Catalogue_Label");
-	if ($Back_To_Catalogue_Label == "") {$Back_To_Catalogue_Label = __("Back to Catalog", 'ultimate-product-catalogue');}
+	if ($Back_To_Catalogue_Label == "") {$Back_To_Catalogue_Label = __("Back to Catalog", 'UPC_MC');}
 
 	if ($Breadcrumbs == "None" or $Breadcrumbs == "") {
 		$BreadcrumbsString .= "<div class='prod-cat-back-link'>";
@@ -2450,7 +2450,7 @@ function UPCP_Get_Product_Page_Breadcrumbs($Product, $Return_URL) {
 	}
 	else {
 		$Catalogue_Label = get_the_title();
-		if ($Catalogue_Label == "") {$Catalogue_Label = __("Catalog", 'ultimate-product-catalogue');}
+		if ($Catalogue_Label == "") {$Catalogue_Label = __("Catalog", 'UPC_MC');}
 
 		$Return_URL = preg_replace("/sub-categories=(.*?)(&|$)/", "", $Return_URL);
 		$Return_URL = preg_replace("/categories=(.*?)(&|$)/", "", $Return_URL);
@@ -2504,10 +2504,10 @@ function Get_Next_Previous($Product, $Next_Previous_Type = "Manual") {
 
 	$Next_Product_Label = $UPCP_Options->Get_Option("UPCP_Next_Product_Label");
 	if ($Next_Product_Label != "") {$Next_Product_Text = $Next_Product_Label;}
-	else {$Next_Product_Text = __("Next Product:", 'ultimate-product-catalogue');}
+	else {$Next_Product_Text = __("Next Product:", 'UPC_MC');}
 	$Previous_Product_Label = $UPCP_Options->Get_Option("UPCP_Previous_Product_Label");
 	if ($Previous_Product_Label != "") {$Previous_Product_Text = $Previous_Product_Label;}
-	else {$Previous_Product_Text = __("Previous Product:", 'ultimate-product-catalogue');}
+	else {$Previous_Product_Text = __("Previous Product:", 'UPC_MC');}
 
 	if ($Next_Previous_Type == "Manual") {
 		$Next_Product_ID = substr($Product->Item_Next_Previous, 0, strpos($Product->Item_Next_Previous, ","));
@@ -2546,7 +2546,7 @@ function UPCP_Get_Related_Products($Product, $Related_Type = "Auto") {
 	$ProductString = "";
 
 	if ($UPCP_Options->Get_Option("UPCP_Related_Products_Label") != "") {$Related_Products_Label = $UPCP_Options->Get_Option("UPCP_Related_Products_Label");}
-	else {$Related_Products_Label = __("Related Products:", 'ultimate-product-catalogue');}
+	else {$Related_Products_Label = __("Related Products:", 'UPC_MC');}
 
 	if ($Related_Type == "Manual") {
 		$Related_Products_IDs = explode(",", $Product->Item_Related_Products);
@@ -2599,7 +2599,7 @@ function Add_Product_Inquiry_Form($Product) {
 	$ProductString = "";
 
 	if ($UPCP_Options->Get_Option("UPCP_Product_Inquiry_Form_Title_Label") != "") {$Product_Inquiry_Form_Title_Label = $UPCP_Options->Get_Option("UPCP_Product_Inquiry_Form_Title_Label");}
-	else {$Product_Inquiry_Form_Title_Label = __("Product Inquiry Form", 'ultimate-product-catalogue');}
+	else {$Product_Inquiry_Form_Title_Label = __("Product Inquiry Form", 'UPC_MC');}
 
 	$Product_Object = new UPCP_Product(array('ID' => $Product->Item_ID));
 
@@ -2714,7 +2714,7 @@ function UPCP_Get_Reviews_HTML($Product_Name) {
     }
 
     if ($Average_Rating != "") {
-    	$ReturnString .= "<span class='upcp-urp-review-score' title='" . __("Average Rating: ", 'ultimate-product-catalogue') . $Average_Rating . "'>";
+    	$ReturnString .= "<span class='upcp-urp-review-score' title='" . __("Average Rating: ", 'UPC_MC') . $Average_Rating . "'>";
     	for ($i = 1; $i <= 5; $i++) {
 			if ($i <= (($Average_Rating * $Adjustment_Factor) + .25)) {$ReturnString .= "<span class='" . $Filled_Class_Name . "'></span>";}
 			elseif ($i <= (($Average_Rating * $Adjustment_Factor) + .75)) {$ReturnString .= "<span class='" . $Half_Class_Name . "'></span>";}
@@ -2723,7 +2723,7 @@ function UPCP_Get_Reviews_HTML($Product_Name) {
     	$ReturnString .= "</span>";
     }
     else {
-    	$ReturnString .= "<span class='upcp-urp-review-score' title='" . __("Average Rating: ", 'ultimate-product-catalogue') . "0'></span>";
+    	$ReturnString .= "<span class='upcp-urp-review-score' title='" . __("Average Rating: ", 'UPC_MC') . "0'></span>";
     }
 
     return $ReturnString;
@@ -2801,7 +2801,7 @@ function Build_Minimal_Product_Listing($Product, $Catalogue_URL = "") {
             }
         }
 	}
-	else {$PhotoURL = plugins_url('ultimate-product-catalogue/images/No-Photo-Available.png');}
+	else {$PhotoURL = plugins_url('UPC_MC/images/No-Photo-Available.png');}
 
 	$ProductString .= "<a class='upcp-minimal-link' href='" . $ItemLink . "' " . ($Links == "New" ? "target='_blank'" : "") . ">";
 	$ProductString .= "<div class='upcp-minimal-img-div'>";
@@ -2837,20 +2837,20 @@ function UPCP_Product_Comparison($Products = array(), $omit_fields) {
 	$Back_To_Catalogue_Label = $UPCP_Options->Get_Option("UPCP_Back_To_Catalogue_Label");
 
 	if ($Categories_Label != "") {$Categories_Text = $Categories_Label;}
-	else {$Categories_Text = __("Categories:", 'ultimate-product-catalogue');}
+	else {$Categories_Text = __("Categories:", 'UPC_MC');}
 	if ($SubCategories_Label != "") {$SubCategories_Text = $SubCategories_Label;}
-	else {$SubCategories_Text = __("Sub-Categories:", 'ultimate-product-catalogue');}
+	else {$SubCategories_Text = __("Sub-Categories:", 'UPC_MC');}
 	if ($Tags_Label != "") {$Tags_Text = $Tags_Label;}
-	else {$Tags_Text = __("Tags:", 'ultimate-product-catalogue');}
+	else {$Tags_Text = __("Tags:", 'UPC_MC');}
 	
 	if ($Makers_Label != "") {$Makers_Text = $Makers_Label;}
-	else {$Makers_Text = __("Makers:", 'ultimate-product-catalogue');}
+	else {$Makers_Text = __("Makers:", 'UPC_MC');}
 	
 	if ($Profuses_Label != "") {$Profuses_Text = $Profuses_Label;}
-	else {$Profuses_Text = __("Profuses:", 'ultimate-product-catalogue');}
+	else {$Profuses_Text = __("Profuses:", 'UPC_MC');}
 	
 	if ($Back_To_Catalogue_Label != "") {$Back_To_Catalogue_Text = $Back_To_Catalogue_Label;}
-	else {$Back_To_Catalogue_Text = __("Back to Catalog", 'ultimate-product-catalogue');}
+	else {$Back_To_Catalogue_Text = __("Back to Catalog", 'UPC_MC');}
 
 	if(sizeOf($Products) <= 2){$Size_Class = "upcp-pc-half";}
 	elseif(sizeOf($Products) == 3){$Size_Class = "upcp-pc-third";}
@@ -2918,7 +2918,7 @@ function UPCP_Product_Comparison($Products = array(), $omit_fields) {
 		//$PhotoURL = $Product->Get_Field_Value("Item_Photo_URL");
 		$PhotoURL = "";
 		
-		$Item_Images = $wpdb->get_results("SELECT Item_Image_URL, Item_Image_ID FROM $item_images_table_name WHERE Item_ID=" . $Product_ID . " AND Item_Image_URL LIKE '%_dwg.png' ORDER BY Item_Image_ID");
+		$Item_Images = $wpdb->get_results("SELECT Item_Image_URL, Item_Image_ID FROM $item_images_table_name WHERE Item_ID=" . $Product_ID . " ORDER BY Item_Image_ID");
 		
 		$Item_Image = array_shift ($Item_Images);
 		if ( $Item_Image )
@@ -2937,7 +2937,7 @@ function UPCP_Product_Comparison($Products = array(), $omit_fields) {
 			$PhotoCode = "<img src='" . $PhotoURL . "' alt='" . $Product->Get_Product_Name() . " Image' id='prod-cat-thumb-" . $Product->Get_Item_ID() . "' class='prod-cat-thumb-image upcp-thumb-image'>";
 		}
 		else {
-			$PhotoURL = plugins_url('ultimate-product-catalogue/images/No-Photo-Available.png');
+			$PhotoURL = plugins_url('UPC_MC/images/No-Photo-Available.png');
 			$PhotoCode = "<img src='" . $PhotoURL . "' alt='" . $Product->Get_Product_Name() . " Image' id='prod-cat-thumb-" . $Product->Get_Item_ID() . "' class='prod-cat-thumb-image upcp-thumb-image'>";
 		}
 
@@ -3062,7 +3062,7 @@ function UPCP_Get_Catalog_Overview($Catalogue_Items, $Overview_Type, $Category_I
 		$ReturnString .= "<a class='upcp-overview-mode-link " . $Class_Added . "' href='" . $Permalink. "'>";
 		$ReturnString .= "<div class='upcp-overview-mode-item " . $Class_Added . "'>";
 		if ($Item->$Image_Name != "" and $Item->$Image_Name != "http://") {$ReturnString .= "<div class='upcp-overview-mode-image " . $Class_Added . "'><img src='" . $Item->$Image_Name . "' /></div>";}
-		else {$ReturnString .= "<div class='upcp-overview-mode-image " . $Class_Added . "'><img src='" . plugins_url() . "/ultimate-product-catalogue/images/No-Photo-Available.png' /></div>";}
+		else {$ReturnString .= "<div class='upcp-overview-mode-image " . $Class_Added . "'><img src='" . plugins_url() . "/UPC_MC/images/No-Photo-Available.png' /></div>";}
 		$ReturnString .= "<div class='upcp-overview-mode-title " . $Class_Added . "'>" . $Item->$Title_Name . "</div>";
 		
 		$ReturnString .= "</div>";
@@ -3370,11 +3370,11 @@ function UPCP_Add_WC_Cart_HTML() {
 	$WooCommerce_Show_Cart_Count = $UPCP_Options->Get_Option("UPCP_WooCommerce_Show_Cart_Count");
 
 	$Cart_Items_Label = $UPCP_Options->Get_Option("UPCP_Cart_Items_Label");
-	if($Cart_Items_Label == ""){$Cart_Items_Label = __('%s items in cart', 'ultimate-product-catalogue');}
+	if($Cart_Items_Label == ""){$Cart_Items_Label = __('%s items in cart', 'UPC_MC');}
 	$Checkout_Label = $UPCP_Options->Get_Option("UPCP_Checkout_Label");
-	if($Checkout_Label == ""){$Checkout_Label = __('Checkout!', 'ultimate-product-catalogue');}
+	if($Checkout_Label == ""){$Checkout_Label = __('Checkout!', 'UPC_MC');}
 	$Empty_Cart_Label = $UPCP_Options->Get_Option("UPCP_Empty_Cart_Label");
-	if($Empty_Cart_Label == ""){$Empty_Cart_Label = __('or empty cart', 'ultimate-product-catalogue');}
+	if($Empty_Cart_Label == ""){$Empty_Cart_Label = __('or empty cart', 'UPC_MC');}
 
 	if ($WooCommerce_Cart_Page == "Cart") {$WooCommerce_Checkout_Page_ID = get_option('woocommerce_cart_page_id');}
 	else {$WooCommerce_Checkout_Page_ID = $UPCP_Options->Get_Option("woocommerce_checkout_page_id");}
@@ -3410,11 +3410,11 @@ function UPCP_Add_Inquiry_Cart_HTML() {
 	global $UPCP_Options;
 
 	$Cart_Items_Label = $UPCP_Options->Get_Option("UPCP_Cart_Items_Label");
-	if($Cart_Items_Label == ""){$Cart_Items_Label = __('%s items in cart', 'ultimate-product-catalogue');}
+	if($Cart_Items_Label == ""){$Cart_Items_Label = __('%s items in cart', 'UPC_MC');}
 	$Send_Inquiry_Label = $UPCP_Options->Get_Option("UPCP_Send_Inquiry_Label");
-	if($Send_Inquiry_Label == ""){$Send_Inquiry_Label = __('Send Inquiry!', 'ultimate-product-catalogue');}
+	if($Send_Inquiry_Label == ""){$Send_Inquiry_Label = __('Send Inquiry!', 'UPC_MC');}
 	$Empty_Cart_Label = $UPCP_Options->Get_Option("UPCP_Empty_Cart_Label");
-	if($Empty_Cart_Label == ""){$Empty_Cart_Label = __('or empty cart', 'ultimate-product-catalogue');}
+	if($Empty_Cart_Label == ""){$Empty_Cart_Label = __('or empty cart', 'UPC_MC');}
 
 	if (isset($_COOKIE['upcp_cart_products'])) {
 		$Products_Array = explode(",", $_COOKIE['upcp_cart_products']);
@@ -3449,7 +3449,7 @@ function UPCP_Single_Page_Inquiry_Form() {
 	$Inquiry_Plugin = get_option("UPCP_Inquiry_Plugin");
 
 	if ($UPCP_Options->Get_Option("UPCP_Product_Inquiry_Form_Title_Label") != "") {$Product_Inquiry_Form_Title_Label = $UPCP_Options->Get_Option("UPCP_Product_Inquiry_Form_Title_Label");}
-	else {$Product_Inquiry_Form_Title_Label = __("Product Inquiry Form", 'ultimate-product-catalogue');}
+	else {$Product_Inquiry_Form_Title_Label = __("Product Inquiry Form", 'UPC_MC');}
 
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	if ($Inquiry_Plugin == 'WPForms') {
@@ -3467,9 +3467,9 @@ function UPCP_Single_Page_Inquiry_Form() {
 		$ReturnString .= "<div class='upcp-contact-form-7-product-form'>";
 		$ReturnString .= "<h4>" . $Product_Inquiry_Form_Title_Label . "</h4>";
 		$ReturnString .= "<div class='upcp-inquire-cart-explanation'>";
-		if (isset($_POST['return_URL'])) {$ReturnString .= "<div class='upcp-inquire-cart-back-link'><a href='" . $_POST['return_URL'] . "' >" . __("Back to Catalog", 'ultimate-product-catalogue') . "</a></div>";}
+		if (isset($_POST['return_URL'])) {$ReturnString .= "<div class='upcp-inquire-cart-back-link'><a href='" . $_POST['return_URL'] . "' >" . __("Back to Catalog", 'UPC_MC') . "</a></div>";}
 
-		$ReturnString .= __("Please use the form below to enquire about the following products:", 'ultimate-product-catalogue') . "<br>";
+		$ReturnString .= __("Please use the form below to enquire about the following products:", 'UPC_MC') . "<br>";
 		if (isset($_COOKIE['upcp_cart_products'])) {
 			$Products_Array = explode(",", $_COOKIE['upcp_cart_products']);
 			if (is_array($Products_Array)) {
@@ -3482,7 +3482,7 @@ function UPCP_Single_Page_Inquiry_Form() {
 				$Product_Names_String = substr($Product_Names_String, 0, -2);
 			}
 		}
-		else {$ReturnString .= __("No products selected", 'ultimate-product-catalogue');}
+		else {$ReturnString .= __("No products selected", 'UPC_MC');}
 		$ReturnString .= "</div>";
 
 		if ($Inquiry_Plugin == 'WPForms') {$ReturnString .= str_replace('%PRODUCT_NAME%', $Product_Names_String, do_shortcode('[wpforms id="' . $UPCP_Contact_Form->ID . '"]'));}

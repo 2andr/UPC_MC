@@ -24,17 +24,17 @@
 <div class="tablenav top">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
-				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'ultimate-product-catalogue') ?>"  />
+				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'UPC_MC') ?>"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e('items', 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e('items', 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?><span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?><span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -48,28 +48,28 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "SubCategory_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='parent-category' class='manage-column column-parent-category sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Category_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=Category_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=Category_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Parent Category", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Parent Category", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='description' class='manage-column column-description sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "SubCategory_Description" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Description&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Description&Order=ASC'>";} ?>
-											  <span><?php _e("Description", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Description", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "SubCategory_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products in Sub-Category", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products in Sub-Category", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -82,28 +82,28 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "SubCategory_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='parent-category' class='manage-column column-parent-category sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Category_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=Category_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=Category_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Parent Category", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Parent Category", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='description' class='manage-column column-description sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "SubCategory_Description" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Description&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Description&Order=ASC'>";} ?>
-											  <span><?php _e("Description", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Description", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "SubCategory_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=SubCategories&OrderBy=SubCategory_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products in Sub-Category", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products in Sub-Category", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -149,17 +149,17 @@
 <div class="tablenav bottom">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
 				<input type="submit" name="" id="doaction" class="button-secondary action" value="Apply"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -177,18 +177,18 @@
 <div class="col-wrap">
 
 <div class="form-wrap">
-<h3><?php _e("Add a New Sub-Category", 'ultimate-product-catalogue') ?></h3>
+<h3><?php _e("Add a New Sub-Category", 'UPC_MC') ?></h3>
 <form id="addsub" method="post" action="admin.php?page=UPCP-options&Action=UPCP_AddSubCategory&DisplayPage=SubCategory" class="validate" enctype="multipart/form-data">
 <input type="hidden" name="action" value="Add_SubCategory" />
 <?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 <?php wp_referer_field(); ?>
 <div class="form-field form-required">
-	<label for="SubCategory_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+	<label for="SubCategory_Name"><?php _e("Name", 'UPC_MC') ?></label>
 	<input name="SubCategory_Name" id="SubCategory_Name" type="text" value="" size="60" />
-	<p><?php _e("The name of the sub-category for your own purposes.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The name of the sub-category for your own purposes.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Item_Category"><?php _e("Parent Category:", 'ultimate-product-catalogue') ?></label>
+	<label for="Item_Category"><?php _e("Parent Category:", 'UPC_MC') ?></label>
 	<select name="Category_ID" id="Item_Category">
 	<option value=""></option>
 	<?php $Categories = $wpdb->get_results("SELECT * FROM $categories_table_name"); ?>
@@ -196,21 +196,21 @@
 						echo "<option value='" . $Category->Category_ID . "'>" . $Category->Category_Name . "</option>";
 				} ?>
 	</select>
-	<p><?php _e("What category is this product in? Categories help to organize your product catalogs and help your customers to find what they're looking for.", 'ultimate-product-catalogue') ?></p></td>
+	<p><?php _e("What category is this product in? Categories help to organize your product catalogs and help your customers to find what they're looking for.", 'UPC_MC') ?></p></td>
 </div>
 <div class="form-field">
-	<label for="SubCategory_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+	<label for="SubCategory_Description"><?php _e("Description", 'UPC_MC') ?></label>
 	<textarea name="SubCategory_Description" id="SubCategory_Description" rows="5" cols="40"></textarea>
-	<p><?php _e("The description of the sub-category. What will it be used to display?", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The description of the sub-category. What will it be used to display?", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="SubCategory_Image"><?php _e("Image", 'ultimate-product-catalogue') ?></label>
+	<label for="SubCategory_Image"><?php _e("Image", 'UPC_MC') ?></label>
 	<input id="SubCategory_Image" type="text" size="36" name="SubCategory_Image" value="http://" /> 
 	<input id="SubCategory_Image_Button" class="button" type="button" value="Upload Image" />
-	<p><?php _e("An image that will be displayed in association with this sub-category, if that option is selected in the 'Options' tab.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("An image that will be displayed in association with this sub-category, if that option is selected in the 'Options' tab.", 'UPC_MC') ?></p>
 </div>
 
-<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Sub-Category', 'ultimate-product-catalogue') ?>"  /></p></form></div>
+<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Sub-Category', 'UPC_MC') ?>"  /></p></form></div>
 <br class="clear" />
 </div>
 </div>

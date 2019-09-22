@@ -1,6 +1,6 @@
 /*
 // add string to end of file upcp-jquery-functions.js
-jQuery.getScript("/wp-content/plugins/ultimate-product-catalogue/makers_addon/upcp-jquery-functions_Makers.js")
+jQuery.getScript("/wp-content/plugins/UPC_MC/makers_addon/upcp-jquery-functions_Makers.js")
 */
 
 var Filtering_Running = "No";

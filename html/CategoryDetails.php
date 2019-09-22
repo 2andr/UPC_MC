@@ -6,14 +6,14 @@
 		<div class="col-wrap">
 			<div id="add-page" class="postbox metabox-holder" >
 				<div class="handlediv" title="Click to toggle"><br /></div>
-				<h3 class='hndle'><span><?php _e("Products in Category", 'ultimate-product-catalogue') ?></span></h3>
+				<h3 class='hndle'><span><?php _e("Products in Category", 'UPC_MC') ?></span></h3>
 				<div class="inside">
 					<div id="posttype-page" class="posttypediv">
 						<div id="tabs-panel-posttype-page-most-recent" class="tabs-panel tabs-panel-active">
 							<table class="wp-list-table striped widefat tags sorttable category-products-list">
 					    		<thead>
 					    			<tr>
-					        		    <th><?php _e("Product Name", 'ultimate-product-catalogue') ?></th>
+					        		    <th><?php _e("Product Name", 'UPC_MC') ?></th>
 					    			</tr>
 					    		</thead>
 					    		<tbody>
@@ -32,7 +32,7 @@
 					    		</tbody>
 					    		<tfoot>
 					    		    <tr>
-					    		        <th><?php _e("Product Name", 'ultimate-product-catalogue') ?></th>
+					    		        <th><?php _e("Product Name", 'UPC_MC') ?></th>
 					    		    </tr>
 					    		</tfoot>
 							</table>
@@ -54,7 +54,7 @@
 	<div id="col-left">
 		<div class="col-wrap">
 			<div class="form-wrap CategoryDetail">
-				<a href="admin.php?page=UPCP-options&DisplayPage=Categories" class="NoUnderline">&#171; <?php _e("Back", 'ultimate-product-catalogue') ?></a>
+				<a href="admin.php?page=UPCP-options&DisplayPage=Categories" class="NoUnderline">&#171; <?php _e("Back", 'UPC_MC') ?></a>
 				<h3>Edit <?php echo $Category->Category_Name;echo" (ID:";echo $Category->Category_ID;echo " )";?></h3>
 				<form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_EditCategory&DisplayPage=Categories" class="validate" enctype="multipart/form-data">
 					<input type="hidden" name="action" value="Edit_Category" />
@@ -63,24 +63,24 @@
 					<?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 					<?php wp_referer_field(); ?>
 					<div class="form-field">
-						<label for="Category_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+						<label for="Category_Name"><?php _e("Name", 'UPC_MC') ?></label>
 						<input name="Category_Name" id="Category_Name" type="text" value="<?php echo $Category->Category_Name;?>" size="60" />
-						<p><?php _e("The name of the category your users will see and search for.", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The name of the category your users will see and search for.", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Category_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+						<label for="Category_Description"><?php _e("Description", 'UPC_MC') ?></label>
 						<textarea name="Category_Description" id="Category_Description" rows="5" cols="40"><?php echo $Category->Category_Description;?></textarea>
-						<p><?php _e("The description of the category. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The description of the category. What products are included in this?", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Category_Image"><?php _e("Image", 'ultimate-product-catalogue') ?></label>
+						<label for="Category_Image"><?php _e("Image", 'UPC_MC') ?></label>
 						<input id="Category_Image" type="text" size="36" name="Category_Image" value="<?php echo $Category->Category_Image;?>" /> 
 						<input id="Category_Image_Button" class="button" type="button" value="Upload Image" />
-						<p><?php _e("An image that will be displayed in association with this category, if that option is selected in the 'Options' tab. Current Image:", 'ultimate-product-catalogue') ?><br/><img class="PreviewImage" height="100" width="100" src="<?php echo $Category->Category_Image;?>" /></p>
+						<p><?php _e("An image that will be displayed in association with this category, if that option is selected in the 'Options' tab. Current Image:", 'UPC_MC') ?><br/><img class="PreviewImage" height="100" width="100" src="<?php echo $Category->Category_Image;?>" /></p>
 						<div class='clear'></div>
 					</div>
 
-					<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'ultimate-product-catalogue') ?>" /></p>
+					<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'UPC_MC') ?>" /></p>
 				</form>
 			</div>
 		</div>

@@ -5,7 +5,7 @@ function UPCP_Upgrade_To_Full() {
 		$Key = trim($_POST['Key']);
 
 		if ($Key == "EWD Trial" and !get_option("UPCP_Trial_Happening")) {
-			$upcp_message = array("Message_Type" => "Update", "Message" => __("Trial successfully started!", 'ultimate-product-catalogue'));
+			$upcp_message = array("Message_Type" => "Update", "Message" => __("Trial successfully started!", 'UPC_MC'));
 	
 			update_option("UPCP_Trial_Expiry_Time", time() + (7*24*60*60));
 			update_option("UPCP_Trial_Happening", "Yes");
@@ -20,7 +20,7 @@ function UPCP_Upgrade_To_Full() {
 			$context = stream_context_create($opts);
 			$Response = unserialize(file_get_contents("http://www.etoilewebdesign.com/UPCP-Key-Check/Register_Trial.php?Plugin=UPCP&Admin_Email=" . $Admin_Email . "&Site=" . get_bloginfo('wpurl'), false, $context));
 
-			$upcp_message = array("Message_Type" => "Update", "Message" => __("Trial successfully started.", 'ultimate-product-catalogue'));
+			$upcp_message = array("Message_Type" => "Update", "Message" => __("Trial successfully started.", 'UPC_MC'));
 		}
 		elseif ($Key != "EWD Trial") {
 			$opts = array('http'=>array('method'=>"GET"));

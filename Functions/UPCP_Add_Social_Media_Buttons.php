@@ -1,7 +1,7 @@
 <?php 
 
 function UPCP_Add_Social_Media_Buttons($Social_Media, $Permalink, $Title) {
-    $Text = __("Check out this product", 'ultimate-product-catalogue');
+    $Text = __("Check out this product", 'UPC_MC');
 
     $URL_Encoded_Text = urlencode($Text);
     $URL_Encoded_Permalink = urlencode($Permalink);

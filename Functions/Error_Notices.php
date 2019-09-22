@@ -36,7 +36,7 @@ function UPCP_Error_Notices(){
 					<div class='ewd-upcp-review-ask-action ewd-upcp-review-ask-not-really ewd-upcp-review-ask-white'>Not Really</div>
 					<div class='ewd-upcp-review-ask-action ewd-upcp-review-ask-yes ewd-upcp-review-ask-green'>Yes!</div>
 					<div class='ewd-upcp-review-ask-action ewd-upcp-review-ask-no-thanks ewd-upcp-review-ask-white upcp-hidden'>No Thanks</div>
-					<a href='https://wordpress.org/support/plugin/ultimate-product-catalogue/reviews/' target='_blank'>
+					<a href='https://wordpress.org/support/plugin/UPC_MC/reviews/' target='_blank'>
 						<div class='ewd-upcp-review-ask-action ewd-upcp-review-ask-review ewd-upcp-review-ask-green upcp-hidden'>OK, Sure</div>
 					</a>
 				</div>
@@ -44,7 +44,7 @@ function UPCP_Error_Notices(){
 					<div class='ewd-upcp-review-ask-feedback-explanation'>
 						<textarea></textarea>
 						<br>
-						<input type="email" name="feedback_email_address" placeholder="<?php _e('Email Address', 'ultimate-product-catalogue'); ?>">
+						<input type="email" name="feedback_email_address" placeholder="<?php _e('Email Address', 'UPC_MC'); ?>">
 					</div>
 					<div class='ewd-upcp-review-ask-send-feedback ewd-upcp-review-ask-action ewd-upcp-review-ask-green'>Send Feedback</div>
 				</div>

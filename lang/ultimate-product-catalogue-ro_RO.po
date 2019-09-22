@@ -2110,8 +2110,8 @@ msgid "Ultimate Product Catalogue Plugin"
 msgstr "Ultimate Product Catalogue Plugin"
 
 #. Plugin URI of the plugin/theme
-msgid "http://www.EtoileWebDesign.com/ultimate-product-catalogue/"
-msgstr "http://www.EtoileWebDesign.com/ultimate-product-catalogue/"
+msgid "http://www.EtoileWebDesign.com/UPC_MC/"
+msgstr "http://www.EtoileWebDesign.com/UPC_MC/"
 
 #. Description of the plugin/theme
 msgid ""

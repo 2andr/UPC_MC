@@ -6,8 +6,8 @@ function UPCP_Output_Welcome_Screen() {
 
 function UPCP_Initial_Install_Screen() {
 	add_dashboard_page(
-			esc_html__( 'Ultimate Product Catalog - Welcome!', 'ultimate-product-catalogue' ),
-			esc_html__( 'Ultimate Product Catalog - Welcome!', 'ultimate-product-catalogue' ),
+			esc_html__( 'Ultimate Product Catalog - Welcome!', 'UPC_MC' ),
+			esc_html__( 'Ultimate Product Catalog - Welcome!', 'UPC_MC' ),
 			'manage_options',
 			'upcp-getting-started',
 			'UPCP_Output_Welcome_Screen'

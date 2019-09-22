@@ -25,17 +25,17 @@
 <div class="tablenav top">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
 						<option value='delete'>Delete</option>
 				</select>
-				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'ultimate-product-catalogue') ?>"  />
+				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'UPC_MC') ?>"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -49,21 +49,21 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "Maker_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='description' class='manage-column column-description sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Maker_Description" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Description&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Description&Order=ASC'>";} ?>
-											  <span><?php _e("Description", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Description", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Maker_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products in Maker", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products in Maker", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -76,21 +76,21 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "Maker_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='description' class='manage-column column-description sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Maker_Description" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Description&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Description&Order=ASC'>";} ?>
-											  <span><?php _e("Description", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Description", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Maker_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Makers&OrderBy=Maker_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products in Maker", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products in Maker", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -115,7 +115,7 @@
 								echo "<a href='admin.php?page=UPCP-options&Action=UPCP_Maker_Details&Selected=Maker&Maker_ID=" . $Maker->Maker_ID ."'>Edit</a>";
 		 						echo " | </span>";*/
 								echo "<span class='delete'>";
-								echo "<a class='delete-tag' href='admin.php?page=UPCP-options&Action=UPCP_DeleteMaker&DisplayPage=Makers&Maker_ID=" . $Maker->Maker_ID ."'>" . __("Delete", 'ultimate-product-catalogue') . "</a>";
+								echo "<a class='delete-tag' href='admin.php?page=UPCP-options&Action=UPCP_DeleteMaker&DisplayPage=Makers&Maker_ID=" . $Maker->Maker_ID ."'>" . __("Delete", 'UPC_MC') . "</a>";
 		 						echo "</span>";
 								echo "</div>";
 								echo "<div class='hidden' id='inline_" . $Maker->Maker_ID ."'>";
@@ -135,17 +135,17 @@
 <div class="tablenav bottom">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
 				<input type="submit" name="" id="doaction" class="button-secondary action" value="Apply"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page < 2) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -163,54 +163,54 @@
 <div class="col-wrap">
 
 <div class="form-wrap">
-<h3><?php _e("Add a New Maker", 'ultimate-product-catalogue') ?></h3>
+<h3><?php _e("Add a New Maker", 'UPC_MC') ?></h3>
 <form id="addcat" method="post" action="admin.php?page=UPCP-options&Action=UPCP_AddMaker&DisplayPage=Maker" class="validate" enctype="multipart/form-data">
 <input type="hidden" name="action" value="Add_Maker" />
 <?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 <?php wp_referer_field(); ?>
 <div class="form-field form-required">
-	<label for="Maker_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Name"><?php _e("Name", 'UPC_MC') ?></label>
 	<input name="Maker_Name" id="Maker_Name" type="text" value="" size="60" />
-	<p><?php _e("The name of the maker for your own purposes.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The name of the maker for your own purposes.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Maker_Lat"><?php _e("Lattitude", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Lat"><?php _e("Lattitude", 'UPC_MC') ?></label>
 	<input name="Maker_Lat" id="Maker_Lat" type="text" value="" size="60" />
-	<p><?php _e("Latitude of maker address.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("Latitude of maker address.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Maker_Lng"><?php _e("Longtitude", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Lng"><?php _e("Longtitude", 'UPC_MC') ?></label>
 	<input name="Maker_Lng" id="Maker_Lng" type="text" value="" size="60" />
-	<p><?php _e("Longtitude of maker address.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("Longtitude of maker address.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Maker_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Description"><?php _e("Description", 'UPC_MC') ?></label>
 	<textarea name="Maker_Description" id="Maker_Description" rows="5" cols="40"></textarea>
-	<p><?php _e("The description of the maker. What will it be used to display?", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The description of the maker. What will it be used to display?", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Maker_Image"><?php _e("Image", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Image"><?php _e("Image", 'UPC_MC') ?></label>
 	<input id="Maker_Image" type="text" size="36" name="Maker_Image" value="http://" /> 
 	<input id="Maker_Image_Button" class="button" type="button" value="Upload Image" />
-	<p><?php _e("An image that will be displayed in association with this maker, if that option is selected in the 'Options' tab.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("An image that will be displayed in association with this maker, if that option is selected in the 'Options' tab.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Maker_Addr"><?php _e("Address", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Addr"><?php _e("Address", 'UPC_MC') ?></label>
 	<input name="Maker_Addr" id="Maker_Addr" type="text" value="" size="60" />
-	<p><?php _e("Maker address.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("Maker address.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Maker_Site"><?php _e("Site url", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Site"><?php _e("Site url", 'UPC_MC') ?></label>
 	<input name="Maker_Site" id="Maker_Site" type="text" value="" size="60" />
-	<p><?php _e("Site url.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("Site url.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Maker_Phone"><?php _e("Maker phone", 'ultimate-product-catalogue') ?></label>
+	<label for="Maker_Phone"><?php _e("Maker phone", 'UPC_MC') ?></label>
 	<input name="Maker_Phone" id="Maker_Phone" type="text" value="" size="60" />
-	<p><?php _e("Maker phone.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("Maker phone.", 'UPC_MC') ?></p>
 </div>
 
-<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Maker', 'ultimate-product-catalogue') ?>"  /></p></form></div>
+<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Maker', 'UPC_MC') ?>"  /></p></form></div>
 <br class="clear" />
 </div>
 </div>

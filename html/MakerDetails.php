@@ -6,14 +6,14 @@
 		<div class="col-wrap">
 			<div id="add-page" class="postbox metabox-holder" >
 				<div class="handlediv" title="Click to toggle"><br /></div>
-				<h3 class='hndle'><span><?php _e("Products in Maker", 'ultimate-product-catalogue') ?></span></h3>
+				<h3 class='hndle'><span><?php _e("Products in Maker", 'UPC_MC') ?></span></h3>
 				<div class="inside">
 					<div id="posttype-page" class="posttypediv">
 						<div id="tabs-panel-posttype-page-most-recent" class="tabs-panel tabs-panel-active">
 							<table class="wp-list-table striped widefat tags sorttable maker-products-list">
 					    		<thead>
 					    			<tr>
-					        		    <th><?php _e("Product Name", 'ultimate-product-catalogue') ?></th>
+					        		    <th><?php _e("Product Name", 'UPC_MC') ?></th>
 					    			</tr>
 					    		</thead>
 					    		<tbody>
@@ -32,7 +32,7 @@
 					    		</tbody>
 					    		<tfoot>
 					    		    <tr>
-					    		        <th><?php _e("Product Name", 'ultimate-product-catalogue') ?></th>
+					    		        <th><?php _e("Product Name", 'UPC_MC') ?></th>
 					    		    </tr>
 					    		</tfoot>
 							</table>
@@ -54,7 +54,7 @@
 	<div id="col-left">
 		<div class="col-wrap">
 			<div class="form-wrap MakerDetail">
-				<a href="admin.php?page=UPCP-options&DisplayPage=Makers" class="NoUnderline">&#171; <?php _e("Back", 'ultimate-product-catalogue') ?></a>
+				<a href="admin.php?page=UPCP-options&DisplayPage=Makers" class="NoUnderline">&#171; <?php _e("Back", 'UPC_MC') ?></a>
 				<h3>Edit <?php echo $Maker->Maker_Name;echo" (ID:";echo $Maker->Maker_ID;echo " )";?></h3>
 				<form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_EditMaker&DisplayPage=Makers" class="validate" enctype="multipart/form-data">
 					<input type="hidden" name="action" value="Edit_Maker" />
@@ -63,49 +63,49 @@
 					<?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 					<?php wp_referer_field(); ?>
 					<div class="form-field">
-						<label for="Maker_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Name"><?php _e("Name", 'UPC_MC') ?></label>
 						<input name="Maker_Name" id="Maker_Name" type="text" value="<?php echo $Maker->Maker_Name;?>" size="60" />
-						<p><?php _e("The name of the maker your users will see and search for.", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The name of the maker your users will see and search for.", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Lat"><?php _e("Lattitude", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Lat"><?php _e("Lattitude", 'UPC_MC') ?></label>
 						<input name="Maker_Lat" id="Maker_Lat" type="text" value="<?php echo $Maker->Maker_Lat;?>" size="60" />
-						<p><?php _e("Latitude of maker address.", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("Latitude of maker address.", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Lng"><?php _e("Longtitude", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Lng"><?php _e("Longtitude", 'UPC_MC') ?></label>
 						<input name="Maker_Lng" id="Maker_Lng" type="text" value="<?php echo $Maker->Maker_Lng;?>" size="60" />
-						<p><?php _e("TLongtitude of maker address.", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("TLongtitude of maker address.", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Description"><?php _e("Description", 'UPC_MC') ?></label>
 						<textarea name="Maker_Description" id="Maker_Description" rows="5" cols="40"><?php echo $Maker->Maker_Description;?></textarea>
-						<p><?php _e("The description of the maker. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The description of the maker. What products are included in this?", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Image"><?php _e("Image", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Image"><?php _e("Image", 'UPC_MC') ?></label>
 						<input id="Maker_Image" type="text" size="36" name="Maker_Image" value="<?php echo $Maker->Maker_Image;?>" /> 
 						<input id="Maker_Image_Button" class="button" type="button" value="Upload Image" />
-						<p><?php _e("An image that will be displayed in association with this maker, if that option is selected in the 'Options' tab. Current Image:", 'ultimate-product-catalogue') ?><br/><img class="PreviewImage" height="100" width="100" src="<?php echo $Maker->Maker_Image;?>" /></p>
+						<p><?php _e("An image that will be displayed in association with this maker, if that option is selected in the 'Options' tab. Current Image:", 'UPC_MC') ?><br/><img class="PreviewImage" height="100" width="100" src="<?php echo $Maker->Maker_Image;?>" /></p>
 						<div class='clear'></div>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Addr"><?php _e("Address", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Addr"><?php _e("Address", 'UPC_MC') ?></label>
 						<textarea name="Maker_Addr" id="Maker_Addr" rows="5" cols="40"><?php echo $Maker->Maker_Addr;?></textarea>
-						<p><?php _e("The Address of the maker. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The Address of the maker. What products are included in this?", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Site"><?php _e("Site url", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Site"><?php _e("Site url", 'UPC_MC') ?></label>
 						<textarea name="Maker_Site" id="Maker_Site" rows="5" cols="40"><?php echo $Maker->Maker_Site;?></textarea>
-						<p><?php _e("The Site url of the maker. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The Site url of the maker. What products are included in this?", 'UPC_MC') ?></p>
 					</div>
 					<div class="form-field">
-						<label for="Maker_Phone"><?php _e("Maker phone", 'ultimate-product-catalogue') ?></label>
+						<label for="Maker_Phone"><?php _e("Maker phone", 'UPC_MC') ?></label>
 						<textarea name="Maker_Phone" id="Maker_Phone" rows="5" cols="40"><?php echo $Maker->Maker_Phone;?></textarea>
-						<p><?php _e("The phone of the maker. What products are included in this?", 'ultimate-product-catalogue') ?></p>
+						<p><?php _e("The phone of the maker. What products are included in this?", 'UPC_MC') ?></p>
 					</div>
 
-					<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'ultimate-product-catalogue') ?>" /></p>
+					<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes', 'UPC_MC') ?>" /></p>
 				</form>
 			</div>
 		</div>

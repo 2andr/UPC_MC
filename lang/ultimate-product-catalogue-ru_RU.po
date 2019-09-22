@@ -116,10 +116,10 @@ msgstr "Веб-дизайн Etoile"
 msgid "Product catalog plugin that is responsive and easily customizable for all your product catalog needs."
 msgstr "Плагин каталога товаров, который легко реагирует и легко настраивается для всех ваших каталогов."
 
-#. #-#-#-#-#  ultimate-product-catalogue-code.pot (Product Catalog 4.3.3) 
+#. #-#-#-#-#  UPC_MC-code.pot (Product Catalog 4.3.3) 
 #. #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  ultimate-product-catalogue-code.pot (Product Catalog 4.3.3) 
+#. #-#-#-#-#  UPC_MC-code.pot (Product Catalog 4.3.3) 
 #. #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://www.EtoileWebDesign.com/plugins/ultimate-product-catalog/"

@@ -19,30 +19,30 @@ function UPCP_Deactivation_Survey_HTML() {
 
 	$options = array(
 		1 => array(
-			'title'   => esc_html__( 'I no longer need the plugin', 'ultimate-product-catalogue' ),
+			'title'   => esc_html__( 'I no longer need the plugin', 'UPC_MC' ),
 		),
 		2 => array(
-			'title'   => esc_html__( 'I\'m switching to a different plugin', 'ultimate-product-catalogue' ),
-			'details' => esc_html__( 'Please share which plugin', 'ultimate-product-catalogue' ),
+			'title'   => esc_html__( 'I\'m switching to a different plugin', 'UPC_MC' ),
+			'details' => esc_html__( 'Please share which plugin', 'UPC_MC' ),
 		),
 		3 => array(
-			'title'   => esc_html__( 'I couldn\'t get the plugin to work', 'ultimate-product-catalogue' ),
-			'details' => esc_html__( 'Please share what wasn\'t working', 'ultimate-product-catalogue' ),
+			'title'   => esc_html__( 'I couldn\'t get the plugin to work', 'UPC_MC' ),
+			'details' => esc_html__( 'Please share what wasn\'t working', 'UPC_MC' ),
 		),
 		4 => array(
-			'title'   => esc_html__( 'It\'s a temporary deactivation', 'ultimate-product-catalogue' ),
+			'title'   => esc_html__( 'It\'s a temporary deactivation', 'UPC_MC' ),
 		),
 		5 => array(
-			'title'   => esc_html__( 'Other', 'ultimate-product-catalogue' ),
-			'details' => esc_html__( 'Please share the reason', 'ultimate-product-catalogue' ),
+			'title'   => esc_html__( 'Other', 'UPC_MC' ),
+			'details' => esc_html__( 'Please share the reason', 'UPC_MC' ),
 		),
 	);
 	?>
 	<div class="upcp-deactivate-survey-modal" id="upcp-deactivate-survey-ultimate-faqs">
 		<div class="upcp-deactivate-survey-wrap">
 			<form class="upcp-deactivate-survey" method="post" data-installtime="<?php echo $Install_Time; ?>">
-				<span class="upcp-deactivate-survey-title"><span class="dashicons dashicons-testimonial"></span><?php echo ' ' . __( 'Quick Feedback', 'ultimate-product-catalogue' ); ?></span>
-				<span class="upcp-deactivate-survey-desc"><?php echo __('If you have a moment, please share why you are deactivating Ultimate Product Catalog', 'ultimate-product-catalogue' ); ?></span>
+				<span class="upcp-deactivate-survey-title"><span class="dashicons dashicons-testimonial"></span><?php echo ' ' . __( 'Quick Feedback', 'UPC_MC' ); ?></span>
+				<span class="upcp-deactivate-survey-desc"><?php echo __('If you have a moment, please share why you are deactivating Ultimate Product Catalog', 'UPC_MC' ); ?></span>
 				<div class="upcp-deactivate-survey-options">
 					<?php foreach ( $options as $id => $option ) : ?>
 						<div class="upcp-deactivate-survey-option">
@@ -57,8 +57,8 @@ function UPCP_Deactivation_Survey_HTML() {
 					<?php endforeach; ?>
 				</div>
 				<div class="upcp-deactivate-survey-footer">
-					<button type="submit" class="upcp-deactivate-survey-submit button button-primary button-large"><?php _e('Submit and Deactivate', 'ultimate-product-catalogue' ); ?></button>
-					<a href="#" class="upcp-deactivate-survey-deactivate"><?php _e('Skip and Deactivate', 'ultimate-product-catalogue' ); ?></a>
+					<button type="submit" class="upcp-deactivate-survey-submit button button-primary button-large"><?php _e('Submit and Deactivate', 'UPC_MC' ); ?></button>
+					<a href="#" class="upcp-deactivate-survey-deactivate"><?php _e('Skip and Deactivate', 'UPC_MC' ); ?></a>
 				</div>
 			</form>
 		</div>

@@ -316,7 +316,7 @@ jQuery(document).ready(function($) {
 					}
 					else{
 						thisOption.find('td p').hide();
-						thisOption.find('th').css('background-image', 'url(../wp-content/plugins/ultimate-product-catalogue/images/options-asset-info.png)');			
+						thisOption.find('th').css('background-image', 'url(../wp-content/plugins/UPC_MC/images/options-asset-info.png)');			
 						thisOption.find('th').css('background-position', '95% 20px');			
 						thisOption.find('th').css('background-size', '18px 18px');			
 						thisOption.find('th').css('background-repeat', 'no-repeat');			
@@ -325,7 +325,7 @@ jQuery(document).ready(function($) {
 				}
 				else{
 					thisOption.find('td p').hide();
-					thisOption.find('th').css('background-image', 'url(../wp-content/plugins/ultimate-product-catalogue/images/options-asset-info.png)');			
+					thisOption.find('th').css('background-image', 'url(../wp-content/plugins/UPC_MC/images/options-asset-info.png)');			
 					thisOption.find('th').css('background-position', 'calc(100% - 20px) 15px');			
 					thisOption.find('th').css('background-size', '18px 18px');			
 					thisOption.find('th').css('background-repeat', 'no-repeat');			
@@ -342,7 +342,7 @@ jQuery(document).ready(function($) {
 					}
 					else{
 						thisStylingOption.find('td p').hide();
-						thisStylingOption.find('th').css('background-image', 'url(../wp-content/plugins/ultimate-product-catalogue/images/options-asset-info.png)');			
+						thisStylingOption.find('th').css('background-image', 'url(../wp-content/plugins/UPC_MC/images/options-asset-info.png)');			
 						thisStylingOption.find('th').css('background-position', '95% 20px');			
 						thisStylingOption.find('th').css('background-size', '18px 18px');			
 						thisStylingOption.find('th').css('background-repeat', 'no-repeat');			
@@ -351,7 +351,7 @@ jQuery(document).ready(function($) {
 				}
 				else{
 					thisStylingOption.find('td p').hide();
-					thisStylingOption.find('th').css('background-image', 'url(../wp-content/plugins/ultimate-product-catalogue/images/options-asset-info.png)');			
+					thisStylingOption.find('th').css('background-image', 'url(../wp-content/plugins/UPC_MC/images/options-asset-info.png)');			
 					thisStylingOption.find('th').css('background-position', 'calc(100% - 20px) 15px');			
 					thisStylingOption.find('th').css('background-size', '18px 18px');			
 					thisStylingOption.find('th').css('background-repeat', 'no-repeat');			
@@ -368,7 +368,7 @@ jQuery(document).ready(function($) {
 					}
 					else{
 						thisNonTableOption.find('fieldset p').hide();
-						thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-image', 'url(../wp-content/plugins/ultimate-product-catalogue/images/options-asset-info.png)');			
+						thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-image', 'url(../wp-content/plugins/UPC_MC/images/options-asset-info.png)');			
 						thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-position', 'calc(100% - 30px) 15px');			
 						thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-size', '18px 18px');			
 						thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-repeat', 'no-repeat');			
@@ -377,7 +377,7 @@ jQuery(document).ready(function($) {
 				}
 				else{
 					thisNonTableOption.find('fieldset p').hide();
-					thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-image', 'url(../wp-content/plugins/ultimate-product-catalogue/images/options-asset-info.png)');			
+					thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-image', 'url(../wp-content/plugins/UPC_MC/images/options-asset-info.png)');			
 					thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-position', 'calc(100% - 30px) 15px');			
 					thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-size', '18px 18px');			
 					thisNonTableOption.find('ewd-upcp-admin-styling-subsection-label').css('background-repeat', 'no-repeat');			
@@ -561,4 +561,4 @@ jQuery(document).ready(function($){
 		}
 	});
 });
-//jQuery.getScript("/wp-content/plugins/ultimate-product-catalogue/makers_addon/Admin_Makers.js")
+//jQuery.getScript("/wp-content/plugins/UPC_MC/makers_addon/Admin_Makers.js")

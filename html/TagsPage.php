@@ -27,17 +27,17 @@
 <div class="tablenav top">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue')?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC')?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
 				<input type="submit" name="" id="doaction" class="button-secondary action" value="Apply"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -51,28 +51,28 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "Tag_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='description' class='manage-column column-description sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Tag_Description" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Description&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Description&Order=ASC'>";} ?>
-											  <span><?php _e("Description", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Description", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Tag_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products Tagged", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products Tagged", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='groups' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Tag_Group_ID" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Group_ID&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Group_ID&Order=ASC'>";} ?>
-											  <span><?php _e("Tag Group", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Tag Group", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -85,28 +85,28 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "Tag_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='description' class='manage-column column-description sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Tag_Description" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Description&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Description&Order=ASC'>";} ?>
-											  <span><?php _e("Description", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Description", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Tag_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products Tagged", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products Tagged", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='groups' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Tag_Group_ID" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Group_ID&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Tags&OrderBy=Tag_Group_ID&Order=ASC'>";} ?>
-											  <span><?php _e("Tag Group", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Tag Group", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -131,7 +131,7 @@
 								echo "<a href='admin.php?page=UPCP-options&Action=UPCP_Tag_Details&Selected=Tag&Tag_ID=" . $Tag->Tag_ID ."'>Edit</a>";
 		 						echo " | </span>";*/
 								echo "<span class='delete'>";
-								echo "<a class='delete-tag' href='admin.php?page=UPCP-options&Action=UPCP_DeleteTag&DisplayPage=Tags&Tag_ID=" . $Tag->Tag_ID ."'>" . __("Delete", 'ultimate-product-catalogue') . "</a>";
+								echo "<a class='delete-tag' href='admin.php?page=UPCP-options&Action=UPCP_DeleteTag&DisplayPage=Tags&Tag_ID=" . $Tag->Tag_ID ."'>" . __("Delete", 'UPC_MC') . "</a>";
 		 						echo "</span>";
 								echo "</div>";
 								echo "<div class='hidden' id='inline_" . $Tag->Tag_ID ."'>";
@@ -157,19 +157,19 @@
 <div class="tablenav bottom">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='MassDelete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='MassDelete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
-				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'ultimate-product-catalogue')?>"  />
+				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'UPC_MC')?>"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
-						<a class='next-page <?php if ($Page >= $Number_of_Pages) {_e("disabled", 'ultimate-product-catalogue');} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
-						<a class='last-page <?php if ($Page == $Number_of_Pages) {_e("disabled", 'ultimate-product-catalogue');} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<a class='next-page <?php if ($Page >= $Number_of_Pages) {_e("disabled", 'UPC_MC');} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
+						<a class='last-page <?php if ($Page == $Number_of_Pages) {_e("disabled", 'UPC_MC');} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
 		</div>
 		<br class="clear" />
@@ -185,24 +185,24 @@
 <div class="col-wrap">
 
 <div class="form-wrap">
-<h3><?php _e("Add a New Tag", 'ultimate-product-catalogue') ?></h3>
+<h3><?php _e("Add a New Tag", 'UPC_MC') ?></h3>
 <form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_AddTag&DisplayPage=Tag" class="validate" enctype="multipart/form-data">
 <input type="hidden" name="action" value="Add_Tag" />
 <?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 <?php wp_referer_field(); ?>
 <div class="form-field form-required">
-	<label for="Tag_Name"><?php _e("Name", 'ultimate-product-catalogue')?></label>
+	<label for="Tag_Name"><?php _e("Name", 'UPC_MC')?></label>
 	<input name="Tag_Name" id="Tag_Name" type="text" value="" size="60" />
-	<p><?php _e("The name of the tag for your own purposes.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The name of the tag for your own purposes.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Tag_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+	<label for="Tag_Description"><?php _e("Description", 'UPC_MC') ?></label>
 	<textarea name="Tag_Description" id="Tag_Description" rows="5" cols="40"></textarea>
-	<p><?php _e("The description of the tag. What will it be used to display?", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The description of the tag. What will it be used to display?", 'UPC_MC') ?></p>
 </div>
 
 <div>
-	<label for="Tag_Group"><?php _e("Tag Group:", 'ultimate-product-catalogue') ?></label>
+	<label for="Tag_Group"><?php _e("Tag Group:", 'UPC_MC') ?></label>
 	<select name="Tag_Group_ID" id="Tag_Group_ID">
 	<option value="0">Uncategorized Tags</option>
 	<?php 
@@ -216,10 +216,10 @@
 		}
 	?>
 	</select>
-    <p><?php _e("Assign the tag to a group",'ultimate-product-catalogue') ?></p>
+    <p><?php _e("Assign the tag to a group",'UPC_MC') ?></p>
 </div>
 
-<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Tag', 'ultimate-product-catalogue') ?>"  /></p></form></div>
+<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Tag', 'UPC_MC') ?>"  /></p></form></div>
 <br class="clear" />
 </div>
 </div>
@@ -229,27 +229,27 @@
 <div class="col-wrap">
  
 <div class="form-wrap">
-<h3><?php _e("Add a New Tag Group", 'ultimate-product-catalogue') ?></h3>
+<h3><?php _e("Add a New Tag Group", 'UPC_MC') ?></h3>
 <form id="addtaggroup" method="post" action="admin.php?page=UPCP-options&Action=UPCP_AddTagGroup&DisplayPage=Tag" class="validate" enctype="multipart/form-data">
 <input type="hidden" name="action" value="Add_Tag_Group" />
 <?php wp_nonce_field('UPCP_Tag_Group_Nonce', 'UPCP_Tag_Group_Nonce'); ?>
 <?php wp_referer_field(); ?>
 <div class="form-field form-required">
-	<label for="Tag_Group_Name"><?php _e("New Tag Group",'ultimate-product-catalogue') ?></label>
+	<label for="Tag_Group_Name"><?php _e("New Tag Group",'UPC_MC') ?></label>
     <input name="Tag_Group_Name" id="Tag_Group_Name" type="text" value="" size="60" />
-    <p><?php _e("Create a name for the new tag group",'ultimate-product-catalogue') ?></p>
+    <p><?php _e("Create a name for the new tag group",'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Tag_Group_Description"><?php _e("Tag Group Description", 'ultimate-product-catalogue') ?></label>
+	<label for="Tag_Group_Description"><?php _e("Tag Group Description", 'UPC_MC') ?></label>
 	<textarea name="Tag_Group_Description" id="Tag_Group_Description" rows="5" cols="40"></textarea>
-	<p><?php _e("What tags should belong to this group?", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("What tags should belong to this group?", 'UPC_MC') ?></p>
 </div>
-<label for="Tag_Group_Display_Status"><?php _e("Display Tag Group", 'ultimate-product-catalogue') ?></label>
+<label for="Tag_Group_Display_Status"><?php _e("Display Tag Group", 'UPC_MC') ?></label>
 <label title='Yes'><input type='radio' name='Display_Tag_Group' value='Yes' checked='checked' /> <span>Show</span></label>
 <label title='No'><input type='radio' name='Display_Tag_Group' value='No' /> <span>Hide</span></label>
-<p><?php _e("Should this tag group be displayed on the page?", 'ultimate-product-catalogue') ?></p>
+<p><?php _e("Should this tag group be displayed on the page?", 'UPC_MC') ?></p>
 <br />
-<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Tag Group', 'ultimate-product-catalogue') ?>"  /></p></form></div>
+<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Tag Group', 'UPC_MC') ?>"  /></p></form></div>
 <br class="clear" />
 </div>
 </div>
@@ -260,14 +260,14 @@
         <div class="form-wrap">
 			<?php $EditTagGroups = $wpdb->get_results("SELECT * FROM $tag_groups_table_name ORDER BY Tag_Group_Order");
             ?>
-        	<h3><?php _e("Edit Tag Group", 'ultimate-product-catalogue') ?></h3>
-        		<label for="Edit_Tag_Group"><?php _e("Edit Tag Group:", 'ultimate-product-catalogue') ?></label>
+        	<h3><?php _e("Edit Tag Group", 'UPC_MC') ?></h3>
+        		<label for="Edit_Tag_Group"><?php _e("Edit Tag Group:", 'UPC_MC') ?></label>
                 <table class="wp-list-table widefat tags sorttable tag-group-list" style="width:100%;">
             <thead>
                 <tr>
-                    <th><?php _e("Edit/Delete", 'ultimate-product-catalogue') ?></th>
-                    <th><?php _e("Tag Group Name", 'ultimate-product-catalogue') ?></th>
-                    <th><?php _e("Tag Group Description", 'ultimate-product-catalogue') ?></th>
+                    <th><?php _e("Edit/Delete", 'UPC_MC') ?></th>
+                    <th><?php _e("Tag Group Name", 'UPC_MC') ?></th>
+                    <th><?php _e("Tag Group Description", 'UPC_MC') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -277,7 +277,7 @@
 				$TagGroupDescription = $EditTagGroup->Tag_Group_Description;
 				if($TagGroupID != 0){?>
                     <tr id="list-item-<?php echo $TagGroupID; ?>" class="list-item-tag-group">
-                        <td class="tag-group-edit-delete"><a href="admin.php?page=UPCP-options&Action=UPCP_Tag_Groups&Selected=Tag_Group&Tag_Group_ID=<?php echo $TagGroupID; ?>"><?php _e("Edit", 'ultimate-product-catalogue') ?></a>&nbsp;|&nbsp;<a href="admin.php?page=UPCP-options&Action=UPCP_DeleteTagGroup&DisplayPage=Tags&Tag_Group_ID=<?php echo $TagGroupID; ?>" class="confirm-delete"><?php _e("Delete", 'ultimate-product-catalogue') ?></a></td>
+                        <td class="tag-group-edit-delete"><a href="admin.php?page=UPCP-options&Action=UPCP_Tag_Groups&Selected=Tag_Group&Tag_Group_ID=<?php echo $TagGroupID; ?>"><?php _e("Edit", 'UPC_MC') ?></a>&nbsp;|&nbsp;<a href="admin.php?page=UPCP-options&Action=UPCP_DeleteTagGroup&DisplayPage=Tags&Tag_Group_ID=<?php echo $TagGroupID; ?>" class="confirm-delete"><?php _e("Delete", 'UPC_MC') ?></a></td>
                         <td class="tag-group-name"><p><?php echo $TagGroupName; ?></p></td>
                         <td class="tag-group-description" style="width:35%;"><p><?php echo $TagGroupDescription; ?></p></td>
 						</tr>
@@ -287,9 +287,9 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th><?php _e("Edit/Delete", 'ultimate-product-catalogue') ?></th>
-                    <th><?php _e("Tag Group Name", 'ultimate-product-catalogue') ?></th>
-                    <th><?php _e("Tag Group Description", 'ultimate-product-catalogue') ?></th>
+                    <th><?php _e("Edit/Delete", 'UPC_MC') ?></th>
+                    <th><?php _e("Tag Group Name", 'UPC_MC') ?></th>
+                    <th><?php _e("Tag Group Description", 'UPC_MC') ?></th>
                 </tr>
             </tfoot>
     	</table>
@@ -330,9 +330,9 @@
 <!--</div>-->
 <?php } else { ?>
 <div class="Info-Div">
-		<h2><?php _e("Full Version Required!", 'ultimate-product-catalogue') ?></h2>
+		<h2><?php _e("Full Version Required!", 'UPC_MC') ?></h2>
 		<div class="upcp-full-version-explanation">
-				<?php _e("The full version of the Ultimate Product Catalog Plugin is required to use tags.", 'ultimate-product-catalogue');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'ultimate-product-catalogue'); ?></a>
+				<?php _e("The full version of the Ultimate Product Catalog Plugin is required to use tags.", 'UPC_MC');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'UPC_MC'); ?></a>
 		</div>
 </div>
 <?php } ?>	

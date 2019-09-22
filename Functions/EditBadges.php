@@ -44,7 +44,7 @@ global $msg, $error;
 				 
 				 	  $msg .= $_FILES['Item_Image']['name'];
 						//for security reason, we force to remove all uploaded file
-						$target_path = ABSPATH . 'wp-content/plugins/ultimate-product-catalogue/images/';
+						$target_path = ABSPATH . 'wp-content/plugins/UPC_MC/images/';
 
 						$target_path = $target_path . basename( $_FILES['Item_Image']['name']); 
 
@@ -52,7 +52,7 @@ global $msg, $error;
 				 			  $error .= "There was an error uploading the file, please try again!";
 						}
 						else {
-				 				$ImageURL = get_bloginfo('url') . '/wp-content/plugins/ultimate-product-catalogue/images/' . basename( $_FILES['Item_Image']['name']);
+				 				$ImageURL = get_bloginfo('url') . '/wp-content/plugins/UPC_MC/images/' . basename( $_FILES['Item_Image']['name']);
 						}
 				}			
 		}

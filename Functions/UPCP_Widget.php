@@ -7,7 +7,7 @@ class UPCP_Widget_Product_List extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'upcp_product_list_widget', // Base ID
-			__('UPCP Product(s) List', 'ultimate-product-catalogue'), // Name
+			__('UPCP Product(s) List', 'UPC_MC'), // Name
 			array( 'description' => __( 'Insert a list of product(s)', 'UPCP' ), ) // Args
 		);
 	}
@@ -81,7 +81,7 @@ class UPCP_Widget_Random_Products extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'upcp_random_products_widget', // Base ID
-			__('UPCP Random Products', 'ultimate-product-catalogue'), // Name
+			__('UPCP Random Products', 'UPC_MC'), // Name
 			array( 'description' => __( 'Inserts a number of random products', 'UPCP' ), ) // Args
 		);
 	}
@@ -155,7 +155,7 @@ class UPCP_Widget_Recent_Products extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'upcp_recent_products_widget', // Base ID
-			__('UPCP Recent Products', 'ultimate-product-catalogue'), // Name
+			__('UPCP Recent Products', 'UPC_MC'), // Name
 			array( 'description' => __( 'Insert a number of recent products', 'UPCP' ), ) // Args
 		);
 	}
@@ -229,7 +229,7 @@ class UPCP_Widget_Popular_Products extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'upcp_popular_products_widget', // Base ID
-			__('UPCP Popular Products', 'ultimate-product-catalogue'), // Name
+			__('UPCP Popular Products', 'UPC_MC'), // Name
 			array( 'description' => __( 'Insert a number of popular products', 'UPCP' ), ) // Args
 		);
 	}
@@ -299,7 +299,7 @@ class UPCP_Widget_Product_Search extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'upcp_search_bar_widget', // Base ID
-			__('UPCP Search Bar', 'ultimate-product-catalogue'), // Name
+			__('UPCP Search Bar', 'UPC_MC'), // Name
 			array( 'description' => __( 'Insert a product search box', 'UPCP' ), ) // Args
 		);
 	}

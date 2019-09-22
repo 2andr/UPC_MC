@@ -81,7 +81,7 @@ if ($_GET['CPP_Mobile'] == "Tabbed" or $_GET['CPP_Mobile'] == "") {
 				</tr>
 			</table>
 			
-			<p class="submit"><input type="submit" name="Tabs_Submit" class="button button-primary" value='<?php _e("Save Tabs", 'ultimate-product-catalogue')?>'/></p>
+			<p class="submit"><input type="submit" name="Tabs_Submit" class="button button-primary" value='<?php _e("Save Tabs", 'UPC_MC')?>'/></p>
 		</form>
 	</div> <!-- wrap -->
 
@@ -106,9 +106,9 @@ else {
 	?>		
 		<div id="side-sortables" class="metabox-holder ">
 			<div id="cpp-message" class="postbox " >
-				<div class="handlediv" title="Click to toggle"></div><h3 class='hndle'><span><?php _e("Feature Update", 'ultimate-product-catalogue') ?></span></h3>
+				<div class="handlediv" title="Click to toggle"></div><h3 class='hndle'><span><?php _e("Feature Update", 'UPC_MC') ?></span></h3>
 				<div class="inside">
-						<?php _e("Some users have reported problems using the admin area functions of this feature with FireFox and IE browsers. No issues reported yet with Chrome, or with any browser on the visitor's side.", 'ultimate-product-catalogue'); ?>
+						<?php _e("Some users have reported problems using the admin area functions of this feature with FireFox and IE browsers. No issues reported yet with Chrome, or with any browser on the visitor's side.", 'UPC_MC'); ?>
 				</div>
 			</div>
 		</div>
@@ -128,7 +128,7 @@ else {
 				
 	<!-- Create a box with a form that users can add products to the catalogue with -->
 	<div id="add-page" class="postbox " >
-	<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Basic Elements", 'ultimate-product-catalogue') ?></span></h3>
+	<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Basic Elements", 'UPC_MC') ?></span></h3>
 	<div class="inside">
 		<div id="posttype-page" class="posttypediv">
 	
@@ -164,7 +164,7 @@ else {
 	
 	<!-- Create a box with a form that users can add categories to the catalogue with -->
 	<div id="add-page" class="postbox " >
-	<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Custom Fields", 'ultimate-product-catalogue') ?></span></h3>
+	<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Custom Fields", 'UPC_MC') ?></span></h3>
 	<div class="inside">
 		<div id="posttype-page" class="posttypediv">
 	
@@ -238,17 +238,17 @@ else {
 				
 <?php } else { ?>
 <div class="Info-Div">
-	<h2><?php _e("Full Version Required!", 'ultimate-product-catalogue') ?></h2>
+	<h2><?php _e("Full Version Required!", 'UPC_MC') ?></h2>
 	<div class="upcp-full-version-explanation">
-		<?php _e("The full version of the Ultimate Product Catalog Plugin is required to use tags.", 'ultimate-product-catalogue');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'ultimate-product-catalogue'); ?></a>
+		<?php _e("The full version of the Ultimate Product Catalog Plugin is required to use tags.", 'UPC_MC');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'UPC_MC'); ?></a>
 	</div>
 </div>
 
 <div id="side-sortables" class="metabox-holder ">
 	<div id="cpp-message" class="postbox " >
-		<div class="handlediv" title="Click to toggle"></div><h3 class='hndle'><span><?php _e("Feature Update", 'ultimate-product-catalogue') ?></span></h3>
+		<div class="handlediv" title="Click to toggle"></div><h3 class='hndle'><span><?php _e("Feature Update", 'UPC_MC') ?></span></h3>
 		<div class="inside">
-			<?php _e("Some users have reported problems using this feature with FireFox and IE browsers. No issues reported yet with Chrome.", 'ultimate-product-catalogue'); ?>
+			<?php _e("Some users have reported problems using this feature with FireFox and IE browsers. No issues reported yet with Chrome.", 'UPC_MC'); ?>
 		</div>
 	</div>
 </div>

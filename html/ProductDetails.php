@@ -11,7 +11,7 @@
 		<!-- add the ability to switch quickly between products -->
 
 		<div class="form-wrap ItemDetail upcp-product-details">
-			<a href="admin.php?page=UPCP-options&DisplayPage=Products" class="NoUnderline">&#171; <?php _e("Back", 'ultimate-product-catalogue') ?></a>
+			<a href="admin.php?page=UPCP-options&DisplayPage=Products" class="NoUnderline">&#171; <?php _e("Back", 'UPC_MC') ?></a>
 			<h3>Edit  <?php echo $Product->Item_Name . " (ID:" . $Product->Item_ID . " )"; ?></h3>
 			<form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_EditProduct&Update_Item=Product&Item_ID=<?php echo $Product->Item_ID ?>" class="validate" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="Edit_Product" />
@@ -23,10 +23,10 @@
 				<div class="ewd-upcp-admin-edit-product-left">
 					<table class="form-table ewd-upcp-admin-edit-product-table-no-th">
 						<tr>
-							<td><input name="Item_Name" id="Item_Name" type="text" value="<?php echo $Product->Item_Name;?>" placeholder="<?php _e('Name of Product', 'ultimate-product-catalogue') ?>" />
+							<td><input name="Item_Name" id="Item_Name" type="text" value="<?php echo $Product->Item_Name;?>" placeholder="<?php _e('Name of Product', 'UPC_MC') ?>" />
 						</tr>
 						<tr>
-							<th><label for="Item_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label></th>
+							<th><label for="Item_Description"><?php _e("Description", 'UPC_MC') ?></label></th>
 							<td><?php 
 								$settings = array( //'wpautotop' => false,
 												'textarea_rows' => 10);																						
@@ -35,66 +35,69 @@
 					</table>
 
 					<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box ewd-upcp-admin-edit-product-left-full-widget-box" id="ewd-upcp-admin-edit-product-details-widget-box">
-						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Product Details', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+						<div class="ewd-upcp-dashboard-new-widget-box-top">
+							<?php _e('Product Details', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span>
+						</div>
 						<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 							<table class="form-table">
 								<tr>
-									<th><label for="Item_Slug"><?php _e("Slug", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Slug"><?php _e("Slug", 'UPC_MC') ?></label></th>
 									<td><input name="Item_Slug" id="Item_Slug" type="text" value="<?php echo $Product->Item_Slug;?>" size="60" />
-									<p><?php _e("The slug for your product if you use pretty permalinks.", 'ultimate-product-catalogue') ?></p></td>
+									<p><?php _e("The slug for your product if you use pretty permalinks.", 'UPC_MC') ?></p></td>
 								</tr>
 								<tr>
-									<th><label for="Item_Price"><?php _e("Regular Price", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Price"><?php _e("Regular Price", 'UPC_MC') ?></label></th>
 									<td><input name="Item_Price" id="Item_Price" type="text" value="<?php echo $Product->Item_Price;?>" size="60" />
 								</tr>
 								<tr>
-									<th><label for="Item_Sale_Price"><?php _e("Sale Price", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Sale_Price"><?php _e("Sale Price", 'UPC_MC') ?></label></th>
 									<td><input name="Item_Sale_Price" id="Item_Sale_Price" type="text" value="<?php echo $Product->Item_Sale_Price;?>" size="60" />
-									<p><?php _e("What price should this product be on sale for? Only shown if the checkbox below is selected or 'Sale Mode' is selected in the 'Options' tab.", 'ultimate-product-catalogue') ?></p></td>
+									<p><?php _e("What price should this product be on sale for? Only shown if the checkbox below is selected or 'Sale Mode' is selected in the 'Options' tab.", 'UPC_MC') ?></p></td>
 								</tr>
 								<tr>
-									<th><label for="Item_Sale_Mode"><?php _e("On Sale", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Sale_Mode"><?php _e("On Sale", 'UPC_MC') ?></label></th>
 									<td><input name="Item_Sale_Mode" id="Item_Sale_Mode" type="checkbox" <?php if ($Product->Item_Sale_Mode == "Yes"){echo "checked";} ?> />
-									<p><?php _e("Should the sale price be displayed for this item?", 'ultimate-product-catalogue') ?></p></td>
+									<p><?php _e("Should the sale price be displayed for this item?", 'UPC_MC') ?></p></td>
 								</tr>
 								<tr>
-									<th><label for="Item_SEO_Description"><?php _e("SEO Description", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_SEO_Description"><?php _e("SEO Description", 'UPC_MC') ?></label></th>
 									<td><input name="Item_SEO_Description" id="Item_SEO_Description" type="text" value="<?php echo $Product->Item_SEO_Description;?>" size="60" />
-									<p><?php _e("The description to use for this product in the SEO By Yoast meta description tag.", 'ultimate-product-catalogue') ?></p></td>
+									<p><?php _e("The description to use for this product in the SEO By Yoast meta description tag.", 'UPC_MC') ?></p></td>
 								</tr>
 								<tr>
-									<th><label for="Item_Link"><?php _e("Product Link", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Link"><?php _e("Product Link", 'UPC_MC') ?></label></th>
 									<td><input name="Item_Link" id="Item_Link" type="text" value="<?php echo $Product->Item_Link;?>" size="60" />
-									<p><?php _e("A link that will replace the default product page. Useful if you participate in affiliate programs.", 'ultimate-product-catalogue') ?></p></td>
+									<p><?php _e("A link that will replace the default product page. Useful if you participate in affiliate programs.", 'UPC_MC') ?></p></td>
 								</tr>
 								<tr>
-									<th><label for="Item_Display_Status"><?php _e("Display Status", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Display_Status"><?php _e("Display Status", 'UPC_MC') ?></label></th>
 									<td><label title='Show'><input type='radio' name='Item_Display_Status' value='Show' <?php if($Product->Item_Display_Status == "Show" or $Product->Item_Display_Status == "") {echo "checked='checked'";} ?>/> <span>Show</span></label>
 									<label title='Hide'><input type='radio' name='Item_Display_Status' value='Hide' <?php if($Product->Item_Display_Status == "Hide") {echo "checked='checked'";} ?>/> <span>Hide</span></label>
-									<p><?php _e("Should this item be displayed if it's added to a catalog?", 'ultimate-product-catalogue') ?></p></td>
+									<p><?php _e("Should this item be displayed if it's added to a catalog?", 'UPC_MC') ?></p></td>
 								</tr>
 							</table>
 						</div>
 					</div>
 
 				</div> <!-- edit-product-left -->
+				
 				<div class="ewd-upcp-admin-edit-product-right">
 
-					<p class="submit ewd-upcp-admin-edit-product-submit-p"><input type="submit" name="submit" id="submit" class="button-primary ewd-upcp-admin-edit-product-save-button" value="<?php _e('Save Changes', 'ultimate-product-catalogue'); ?>"  /></p>
+					<p class="submit ewd-upcp-admin-edit-product-submit-p"><input type="submit" name="submit" id="submit" class="button-primary ewd-upcp-admin-edit-product-save-button" value="<?php _e('Save Changes', 'UPC_MC'); ?>"  /></p>
 
 					<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box" id="ewd-upcp-admin-edit-product-main-image-widget-box">
-						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Main Product Image', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Main Product Image', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 						<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 							<table class="form-table">
 								<tr>
-									<th><label for="Item_Image"><?php _e("Image URL", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Image"><?php _e("Image URL", 'UPC_MC') ?></label></th>
 									<td>
 										<input id="Item_Image" type="text" size="36" name="Item_Image" value="<?php echo $Product->Item_Photo_URL;?>" /> 
 										<input id="Item_Image_button" class="button" type="button" value="Upload Image" />
 									</td>
 								</tr>
 								<tr>
-									<th><label><?php _e("Current Image", 'ultimate-product-catalogue') ?></label></th>
+									<th><label><?php _e("Current Image", 'UPC_MC') ?></label></th>
 									<td>
 										<img class="PreviewImage" height="100" width="100" src="<?php echo $Product->Item_Photo_URL;?>" />
 									</td>
@@ -104,11 +107,11 @@
 					</div>
 
 					<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box" id="ewd-upcp-admin-edit-product-categories-widget-box">
-						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Categories', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Categories', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 						<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 							<table class="form-table">
 								<tr>
-									<th><label for="Item_Category"><?php _e("Category", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Category"><?php _e("Category", 'UPC_MC') ?></label></th>
 									<td><select name="Category_ID" id="Item_Category" onchange="UpdateSubCats();">
 										<option value=""></option>
 											<?php $Categories = $wpdb->get_results("SELECT * FROM $categories_table_name ORDER BY Category_Sidebar_Order, Category_Name"); ?>
@@ -121,7 +124,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th><label for="Item_SubCategory"><?php _e("Sub-Category", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_SubCategory"><?php _e("Sub-Category", 'UPC_MC') ?></label></th>
 									<td><select name="SubCategory_ID" id="Item_SubCategory">
 											<option value=""></option>
 											<?php $SubCategories = $wpdb->get_results("SELECT * FROM $subcategories_table_name WHERE Category_ID=" . $Product->Category_ID . " ORDER BY SubCategory_Sidebar_Order,SubCategory_Name"); ?>
@@ -141,11 +144,11 @@
 
 					<?php $Tagged_Items = $wpdb->get_results("SELECT Tag_ID FROM $tagged_items_table_name WHERE Item_ID='" . $Product->Item_ID ."'");?>
 					<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box<?php echo ( empty($Tagged_Items) ? ' ewd-upcp-admin-widget-box-start-closed' : '' ); ?>" id="ewd-upcp-admin-edit-product-tags-widget-box">
-						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Tags', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Tags', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 						<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 							<table class="form-table">
 								<tr>
-									<th><label for="Item_Tags"><?php _e('Tags', 'ultimate-product-catalogue'); ?></label></th>
+									<th><label for="Item_Tags"><?php _e('Tags', 'UPC_MC'); ?></label></th>
 									<td>
 										<?php $TagGroupNames = $wpdb->get_results("SELECT * FROM $tag_groups_table_name ORDER BY Tag_Group_ID ASC");
 										$NoTag = new stdClass(); //Create an object for the tags that don't have a group
@@ -180,7 +183,7 @@
 					$MetaValues = $wpdb->get_results($wpdb->prepare("SELECT Field_ID, Meta_Value FROM $fields_meta_table_name WHERE Meta_Value!='' AND Item_ID=%d", $_GET['Item_ID'])); 
 					?>
 					<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box<?php echo ( empty($MetaValues) ? ' ewd-upcp-admin-widget-box-start-closed' : '' ); ?>" id="ewd-upcp-admin-edit-product-custom-fields-widget-box">
-						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Custom Fields', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Custom Fields', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 						<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 							<table class="form-table">
 								<?php
@@ -195,17 +198,17 @@
 									$ReturnString .= "<tr><th><label for='" . $Field->Field_Name . "'>" . $Field->Field_Name . "</label></th>";
 									if ($Field->Field_Type == "text" or $Field->Field_Type == "mediumint") {
 							  		  $ReturnString .= "<td><input name='" . $Field->Field_Name . "' id='upcp-input-" . $Field->Field_ID . "' class='upcp-text-input' type='text' value='" . htmlspecialchars($Value, ENT_QUOTES) . "' />";
-							  		  if ($Field->Field_Values != "") {$ReturnString .= "<br />" . __('Accepted values', 'ultimate-product-catalogue') . ": " . $Field->Field_Values;}
+							  		  if ($Field->Field_Values != "") {$ReturnString .= "<br />" . __('Accepted values', 'UPC_MC') . ": " . $Field->Field_Values;}
 							  		  $ReturnString .= "</td>";
 									}
 									elseif ($Field->Field_Type == "link") {
 							  		  $ReturnString .= "<td><input name='" . $Field->Field_Name . "' id='upcp-input-" . $Field->Field_ID . "' class='upcp-text-input' type='url' value='" . htmlspecialchars($Value, ENT_QUOTES) . "' />";
-							  		  if ($Field->Field_Values != "") {$ReturnString .= "<br />" . __('Accepted values', 'ultimate-product-catalogue') . ": " . $Field->Field_Values;}
+							  		  if ($Field->Field_Values != "") {$ReturnString .= "<br />" . __('Accepted values', 'UPC_MC') . ": " . $Field->Field_Values;}
 							  		  $ReturnString .= "</td>";
 									}
 									elseif ($Field->Field_Type == "textarea") {
 										$ReturnString .= "<td><textarea name='" . $Field->Field_Name . "' id='upcp-input-" . $Field->Field_ID . "' class='upcp-textarea' cols='60' rows='6'>" . $Value . "</textarea>";
-										if ($Field->Field_Values != "") {$ReturnString .= "<br />" . __('Accepted values', 'ultimate-product-catalogue') . ": " . $Field->Field_Values;}
+										if ($Field->Field_Values != "") {$ReturnString .= "<br />" . __('Accepted values', 'UPC_MC') . ": " . $Field->Field_Values;}
 							  		  $ReturnString .= "</td>";
 									} 
 									elseif ($Field->Field_Type == "select") { 
@@ -248,7 +251,7 @@
 									elseif ($Field->Field_Type == "file") {
 										$ReturnString .= "<td><input name='" . $Field->Field_Name . "' class='upcp-file-input' type='file' value='" . $Value . "' /><br/>";
 										$ReturnString .= "Current Filename: " . $Value . "<br>";
-										$ReturnString .= "<input type='checkbox' name='Delete_" . $Field->Field_Name . "' value='Delete' />" . __("Delete Current File", 'ultimate-product-catalogue') . "</td>";
+										$ReturnString .= "<input type='checkbox' name='Delete_" . $Field->Field_Name . "' value='Delete' />" . __("Delete Current File", 'UPC_MC') . "</td>";
 									}
 									elseif ($Field->Field_Type == "date") {
 										$ReturnString .= "<td><input name='" . $Field->Field_Name . "' class='upcp-date-input' type='date' value='" . $Value . "' /></td>";
@@ -264,30 +267,30 @@
 					</div>
 
 					<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box ewd-upcp-admin-widget-box-start-closed" id="ewd-upcp-admin-edit-product-other-products-widget-box">
-						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Other Products', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+						<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Other Products', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 						<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 							<table class="form-table">
 								<?php $RelatedDisabled = ""; if ($Related_Products != "Manual") {$RelatedDisabled = "disabled";} ?>
 								<?php $Related_Products_Array = explode(",", $Product->Item_Related_Products); ?>
 								<tr>
-									<th><label for="Item_Related_Products"><?php _e("Related Products", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Related_Products"><?php _e("Related Products", 'UPC_MC') ?></label></th>
 									<td>
 									<label title='Product ID'></label><input type='text' name='Item_Related_Products_1' value="<?php echo $Related_Products_Array['0']; ?>" <?php echo $RelatedDisabled; ?>/><br />
 									<label title='Product ID'></label><input type='text' name='Item_Related_Products_2' value="<?php echo (array_key_exists(1,$Related_Products_Array) ? $Related_Products_Array['1'] : ''); ?>" <?php echo $RelatedDisabled; ?>/><br />
 									<label title='Product ID'></label><input type='text' name='Item_Related_Products_3' value="<?php echo (array_key_exists(2,$Related_Products_Array) ? $Related_Products_Array['2'] : ''); ?>" <?php echo $RelatedDisabled; ?>/><br />
 									<label title='Product ID'></label><input type='text' name='Item_Related_Products_4' value="<?php echo (array_key_exists(3,$Related_Products_Array) ? $Related_Products_Array['3'] : ''); ?>" <?php echo $RelatedDisabled; ?>/><br />
 									<label title='Product ID'></label><input type='text' name='Item_Related_Products_5' value="<?php echo (array_key_exists(4,$Related_Products_Array) ? $Related_Products_Array['4'] : ''); ?>" <?php echo $RelatedDisabled; ?>/><br />
-									<p><?php _e("What products are related to this one if set to manual related products? (premium feature, input product IDs)", 'ultimate-product-catalogue') ?></p>
+									<p><?php _e("What products are related to this one if set to manual related products? (premium feature, input product IDs)", 'UPC_MC') ?></p>
 									</td>
 								</tr>
 								
 								<?php if ($Next_Previous != "Manual") {$NextPreviousDisabled = "disabled";} ?>
 								<tr>
-									<th><label for="Item_Related_Products"><?php _e("Next/Previous Products", 'ultimate-product-catalogue') ?></label></th>
+									<th><label for="Item_Related_Products"><?php _e("Next/Previous Products", 'UPC_MC') ?></label></th>
 									<td>
 									<label title='Product ID'>Next Product ID:</label><input type='text' name='Item_Next_Product' value="<?php echo substr($Product->Item_Next_Previous, 0, strpos($Product->Item_Next_Previous, ',')); ?>" <?php echo $NextPreviousDisabled; ?>/><br />
 									<label title='Product ID'>Previous Product ID:</label><input type='text' name='Item_Previous_Product' value="<?php echo substr($Product->Item_Next_Previous, strpos($Product->Item_Next_Previous, ',')+1); ?>" <?php echo $NextPreviousDisabled; ?>/><br />
-									<p><?php _e("What products should be listed as the next/previous products? (premium feature, input product IDs)", 'ultimate-product-catalogue') ?></p>
+									<p><?php _e("What products should be listed as the next/previous products? (premium feature, input product IDs)", 'UPC_MC') ?></p>
 									</td>
 								</tr>
 							</table>
@@ -301,7 +304,7 @@
 
 				<?php $Images = $wpdb->get_results("SELECT * FROM $item_images_table_name WHERE Item_ID='" . $Product->Item_ID . "' ORDER BY Item_Image_Order"); ?>
 				<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box ewd-upcp-admin-edit-product-left-full-widget-box<?php echo ( empty($Images) ? ' ewd-upcp-admin-widget-box-start-closed' : '' ); ?>" id="ewd-upcp-admin-edit-product-add-images-widget-box">
-					<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Additional Product Images', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+					<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Additional Product Images', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 					<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 						<?php if ($Full_Version == "Yes") { ?>
 							<div class="form-wrap ItemImages" style="margin:10px 0 20px;">
@@ -312,14 +315,14 @@
 									<?php wp_referer_field(); ?>
 									<table class="form-table">
 										<tr>
-											<th><label for="Item_Image"><?php _e("Image URL", 'ultimate-product-catalogue') ?></label></th>
+											<th><label for="Item_Image"><?php _e("Image URL", 'UPC_MC') ?></label></th>
 											<td><input id="Item_Image_Addt" type="text" size="36" name="Item_Image[]" value="http://" /> 
-											<input id="Item_Image_Addt_button" class="button" type="button" value="<?php _e('Choose Image', 'ultimate-product-catalogue');?>" />
+											<input id="Item_Image_Addt_button" class="button" type="button" value="<?php _e('Choose Image', 'UPC_MC');?>" />
 										</tr>
 									</table>
-									<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Add Image', 'ultimate-product-catalogue');?>"  /></p>
+									<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Add Image', 'UPC_MC');?>"  /></p>
 								</form>
-								<p><?php _e("Current Images:", 'ultimate-product-catalogue') ?><p/>
+								<p><?php _e("Current Images:", 'UPC_MC') ?><p/>
 								<ul class="sorttable images-list" style="width:100%;">
 									<?php
 									if(empty($Images)){ echo "<p>No Current Images are uploaded</p>"; }
@@ -328,7 +331,7 @@
 											<li id="list-item-<?php echo $Image->Item_Image_ID; ?>" class="list-item-image" style="position:relative;float:left;">
 												<div class="item-image">
 												<img class="PreviewImage upcp-sortable-preview" height="100" width="100" src="<?php echo $Image->Item_Image_URL;?>" />
-												<a href="admin.php?page=UPCP-options&Action=UPCP_DeleteProductImage&Item_Image_ID=<?php echo $Image->Item_Image_ID; ?>&Update_Item=Product&Item_ID=<?php echo $Product->Item_ID ?>&#add-image" class="confirm-delete ewd-upcp-admin-edit-product-delete-add-image"><?php _e("Delete", 'ultimate-product-catalogue') ?></a>
+												<a href="admin.php?page=UPCP-options&Action=UPCP_DeleteProductImage&Item_Image_ID=<?php echo $Image->Item_Image_ID; ?>&Update_Item=Product&Item_ID=<?php echo $Product->Item_ID ?>&#add-image" class="confirm-delete ewd-upcp-admin-edit-product-delete-add-image"><?php _e("Delete", 'UPC_MC') ?></a>
 												</div>
 											</li>
 										<?php }
@@ -338,9 +341,9 @@
 							</div>
 						<?php } else { ?>
 							<div class="Explanation-Div">
-								<h2><?php _e("Full Version Required!", 'ultimate-product-catalogue') ?></h2>
+								<h2><?php _e("Full Version Required!", 'UPC_MC') ?></h2>
 								<div class="upcp-full-version-explanation">
-									<?php _e("The full version of the Ultimate Product Catalog Plugin is required to add additional product images.", 'ultimate-product-catalogue');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'ultimate-product-catalogue'); ?></a>
+									<?php _e("The full version of the Ultimate Product Catalog Plugin is required to add additional product images.", 'UPC_MC');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'UPC_MC'); ?></a>
 								</div>
 							</div>
 						<?php } ?>
@@ -349,7 +352,7 @@
 
 				<?php $ItemVideos = $wpdb->get_results($wpdb->prepare("SELECT * FROM $item_videos_table_name WHERE Item_ID='%d' ORDER BY Item_Video_Order ASC", $Product->Item_ID)); ?>
 				<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full ewd-upcp-admin-closeable-widget-box ewd-upcp-admin-edit-product-left-full-widget-box<?php echo ( empty($ItemVideos) ? ' ewd-upcp-admin-widget-box-start-closed' : '' ); ?>" id="ewd-upcp-admin-edit-product-add-videos-widget-box">
-					<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Add Product Videos', 'ultimate-product-catalogue'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
+					<div class="ewd-upcp-dashboard-new-widget-box-top"><?php _e('Add Product Videos', 'UPC_MC'); ?><span class="ewd-upcp-admin-edit-product-down-caret">&nbsp;&nbsp;&#9660;</span><span class="ewd-upcp-admin-edit-product-up-caret">&nbsp;&nbsp;&#9650;</span></div>
 					<div class="ewd-upcp-dashboard-new-widget-box-bottom">
 						<?php if ($Full_Version == "Yes") { ?>
 							<div class="form-wrap ItemVideos" style="margin:10px 0 20px;">
@@ -358,11 +361,11 @@
 							        <input type="hidden" name="Item_ID" value="<?php echo $Product->Item_ID; ?>" />
 							        <?php wp_nonce_field(); ?>
 							        <?php wp_referer_field(); ?>
-							        <!-- <p><?php _e("What type of video are you using?", 'ultimate-product-catalogue') ?></p>
+							        <!-- <p><?php _e("What type of video are you using?", 'UPC_MC') ?></p>
 							        <label title='YouTube'><input type='radio' name='Item_Video_Type' value='YouTube' /> <span>YouTube</span></label><br />  -->
 							        <table class="form-table">
 							            <tr>
-							                <th><label for="Item_Video"><?php _e("YouTube Video ID", 'ultimate-product-catalogue') ?></label></th>
+							                <th><label for="Item_Video"><?php _e("YouTube Video ID", 'UPC_MC') ?></label></th>
 							                <td>
 							                    <input type="text" size="36" name="Item_Video[]" value="" /><br />
 							                    <input type="text" size="36" name="Item_Video[]" value="" /><br />
@@ -386,9 +389,9 @@
 							<table class="wp-list-table widefat tags sorttable videos-list" style="width:75%;">
 							    <thead>
 							    	<tr>
-							            <th class="video-delete"><?php _e("Delete?", 'ultimate-product-catalogue') ?></th>
-							            <th class="video-image"><?php _e("Video Image", 'ultimate-product-catalogue') ?></th>
-							            <th class="video-description"><?php _e("Video Description", 'ultimate-product-catalogue') ?></th>
+							            <th class="video-delete"><?php _e("Delete?", 'UPC_MC') ?></th>
+							            <th class="video-image"><?php _e("Video Image", 'UPC_MC') ?></th>
+							            <th class="video-description"><?php _e("Video Description", 'UPC_MC') ?></th>
 							    	</tr>
 							    </thead>
 							    <tbody>
@@ -399,7 +402,7 @@
 									$ItemVideoDescription = $ItemVideoThumb;
 							    ?>
 							    <tr id="video-item-<?php echo $ItemVideo->Item_Video_ID; ?>" class="video-item">
-							        <td class="video-delete"><a href="admin.php?page=UPCP-options&Action=UPCP_DeleteProductVideo&DisplayPage=Product&Item_Video_ID=<?php echo $ItemVideo->Item_Video_ID; ?>" class="confirm-delete"><?php _e("Delete", 'ultimate-product-catalogue') ?></a></td>
+							        <td class="video-delete"><a href="admin.php?page=UPCP-options&Action=UPCP_DeleteProductVideo&DisplayPage=Product&Item_Video_ID=<?php echo $ItemVideo->Item_Video_ID; ?>" class="confirm-delete"><?php _e("Delete", 'UPC_MC') ?></a></td>
 							        <td class="video-image"><?php echo "<img class='PreviewVideoImage' height='100' width='100' src='https://img.youtube.com/vi/" . $ItemVideoThumb . "/0.jpg' title='" . $ItemVideoThumb . "' />"; ?></td>
 							        <td class="video-description"><?php echo $ItemVideoDescription; ?></td>
 							    </tr>
@@ -408,18 +411,18 @@
 							    </tbody>
 							    <tfoot>
 							        <tr>
-							            <th><?php _e("Delete?", 'ultimate-product-catalogue') ?></th>
-							            <th><?php _e("Video Image", 'ultimate-product-catalogue') ?></th>
-							            <th><?php _e("Video Description", 'ultimate-product-catalogue') ?></th>
+							            <th><?php _e("Delete?", 'UPC_MC') ?></th>
+							            <th><?php _e("Video Image", 'UPC_MC') ?></th>
+							            <th><?php _e("Video Description", 'UPC_MC') ?></th>
 							        </tr>
 							    </tfoot>
 							</table>
 							</div>
 						<?php } else { ?>
 							<div class="Explanation-Div">
-								<h2><?php _e("Full Version Required!", 'ultimate-product-catalogue') ?></h2>
+								<h2><?php _e("Full Version Required!", 'UPC_MC') ?></h2>
 								<div class="upcp-full-version-explanation">
-									<?php _e("The full version of the Ultimate Product Catalog Plugin is required to add additional product images.", 'ultimate-product-catalogue');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'ultimate-product-catalogue'); ?></a>
+									<?php _e("The full version of the Ultimate Product Catalog Plugin is required to add additional product images.", 'UPC_MC');?><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/"><?php _e(" Please upgrade to unlock this page!", 'UPC_MC'); ?></a>
 								</div>
 							</div>
 						<?php } ?>

@@ -1,6 +1,6 @@
 /*
 // add string to end of jQuery(document).ready(function() in file upcp-jquery-functions.js
-jQuery.getScript("/wp-content/plugins/ultimate-product-catalogue/makers_addon/update-catalogue-order_Makers.js")
+jQuery.getScript("/wp-content/plugins/UPC_MC/makers_addon/update-catalogue-order_Makers.js")
 */
 
 

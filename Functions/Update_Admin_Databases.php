@@ -21,7 +21,7 @@ function Add_UPCP_Category($Category_Name, $Category_Description = "", $Category
 		if ($WooCommerce_Sync == "Yes" and $WC_term_id != 0) {update_term_meta($WC_term_id, "upcp_ID", $wpdb->insert_id);}
 		if ($WooCommerce_Sync == "Yes" and $WC_Update != "Yes") {UPCP_Add_Category_To_WC($wpdb->get_row("SELECT * FROM $categories_table_name WHERE Category_ID=%d", $wpdb->insert_id));}
 
-		$update = __("Category has been successfully created.", 'ultimate-product-catalogue');
+		$update = __("Category has been successfully created.", 'UPC_MC');
 		return $update;
 }
 
@@ -49,7 +49,7 @@ function Edit_UPCP_Category($Category_ID, $Category_Name, $Category_Description 
 
 		if ($WooCommerce_Sync == "Yes" and $WC_Update != "Yes") {UPCP_Edit_Category_To_WC($wpdb->get_row($wpdb->prepare("SELECT * FROM $categories_table_name WHERE Category_ID=%d", $Category_ID)));}
 
-		$update = __("Category has been successfully edited.", 'ultimate-product-catalogue');
+		$update = __("Category has been successfully edited.", 'UPC_MC');
 		return $update;
 }
 
@@ -87,7 +87,7 @@ function Delete_UPCP_Category($Cat) {
 				);
 		}
 
-		$update = __("Category has been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Category has been successfully deleted.", 'UPC_MC');
 		return $update;
 }
 
@@ -114,7 +114,7 @@ function Add_UPCP_SubCategory($SubCategory_Name, $Category_ID, $SubCategory_Desc
 		if ($WooCommerce_Sync == "Yes" and $WC_term_id != 0) {update_term_meta($WC_term_id, "upcp_ID", $wpdb->insert_id);}
 		if ($WooCommerce_Sync == "Yes" and $WC_Update != "Yes") {UPCP_Add_SubCategory_To_WC($wpdb->get_row("SELECT * FROM $subcategories_table_name WHERE SubCategory_ID=%d", $wpdb->insert_id));}
 
-		$update = __("Sub-Category has been successfully created.", 'ultimate-product-catalogue');
+		$update = __("Sub-Category has been successfully created.", 'UPC_MC');
 		return $update;
 }
 
@@ -149,7 +149,7 @@ function Edit_UPCP_SubCategory($SubCategory_ID, $SubCategory_Name, $Category_ID,
 
 		if ($WooCommerce_Sync == "Yes" and $WC_Update != "Yes") {UPCP_Edit_SubCategory_To_WC($wpdb->get_row($wpdb->prepare("SELECT * FROM $subcategories_table_name WHERE SubCategory_ID=%d", $SubCategory_ID)));}
 
-		$update = __("Sub-Category has been successfully edited.", 'ultimate-product-catalogue');
+		$update = __("Sub-Category has been successfully edited.", 'UPC_MC');
 		return $update;
 }
 
@@ -175,7 +175,7 @@ function Delete_UPCP_SubCategory($Sub_ID) {
 				);
 		}
 
-		$update = __("Sub-Category has been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Sub-Category has been successfully deleted.", 'UPC_MC');
 		return $update;
 }
 
@@ -200,7 +200,7 @@ function Add_UPCP_Tag($Tag_Name, $Tag_Description, $Tag_Group_ID, $WC_Update = "
 		if ($WooCommerce_Sync == "Yes" and $WC_term_id != 0) {update_term_meta($WC_term_id, "upcp_ID", $wpdb->insert_id);}
 		if ($WooCommerce_Sync == "Yes" and $WC_Update != "Yes") {UPCP_Add_Tag_To_WC($wpdb->get_row($wpdb->prepare("SELECT * FROM $tags_table_name WHERE Tag_ID=%d", $wpdb->insert_id)));}
 
-		$update = __("Tag has been successfully created.", 'ultimate-product-catalogue');
+		$update = __("Tag has been successfully created.", 'UPC_MC');
 		return $update;
 }
 
@@ -225,7 +225,7 @@ function Edit_UPCP_Tag($Tag_ID, $Tag_Name, $Tag_Description, $Tag_Group_ID, $WC_
 
 		if ($WooCommerce_Sync == "Yes" and $WC_Update != "Yes") {UPCP_Edit_Tag_To_WC($wpdb->get_row($wpdb->prepare("SELECT * FROM $tags_table_name WHERE Tag_ID=%d", $Tag_ID)));}
 
-		$update = __("Tag has been successfully edited.", 'ultimate-product-catalogue');
+		$update = __("Tag has been successfully edited.", 'UPC_MC');
 		return $update;
 }
 
@@ -248,7 +248,7 @@ function Delete_UPCP_Tag($Tag_ID) {
 			array('Tag_ID' => $Tag_ID)
 		);
 
-		$update = __("Tag has been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Tag has been successfully deleted.", 'UPC_MC');
 		return $update;
 }
 
@@ -264,7 +264,7 @@ function Delete_Products_Tags() {
 			array('Tagged_Item_ID' => $_GET['Tagged_Item_ID'])
 		);
 
-		$update = __("Tag has been successfully deleted from product.", 'ultimate-product-catalogue');
+		$update = __("Tag has been successfully deleted from product.", 'UPC_MC');
 		return $update;
 }
 
@@ -283,7 +283,7 @@ function Add_UPCP_Tag_Group($Tag_Group_Name,$Tag_Group_Description,$Tag_Group_ID
 			'Display_Tag_Group' => $Display_Tag_Group
 		)
 	);
-	$update = __("Tag Group has been successfully created.", 'ultimate-product-catalogue');
+	$update = __("Tag Group has been successfully created.", 'UPC_MC');
 	return $update;
 }
 
@@ -302,7 +302,7 @@ function Edit_UPCP_Tag_Group($Tag_Group_Name,$Tag_Group_Description,$Tag_Group_I
 		array('Tag_Group_ID' => $Tag_Group_ID)
 
 	);
-	$update = __("Tag Group has been successfully edited.", 'ultimate-product-catalogue');
+	$update = __("Tag Group has been successfully edited.", 'UPC_MC');
 	return $update;
 }
 /* Deletes a single tag group with a given ID in the UPCP database, and then changes all occurances of the tag group back to uncatagorized tags.  */
@@ -335,7 +335,7 @@ function Add_Product_Videos($Item_ID, $Item_Video_URL, $Item_Video_Type) {
 
 	$wpdb->query($wpdb->prepare("INSERT INTO $item_videos_table_name (Item_ID, Item_Video_URL, Item_Video_Type) VALUES (%d, %s, %s)", $Item_ID, $Item_Video_URL, $Item_Video_Type));
 
-	$update = __("video has been successfully added to the product.", 'ultimate-product-catalogue');
+	$update = __("video has been successfully added to the product.", 'UPC_MC');
 	return $update;
 }
 /* Deletes video from UPCP database and removes it from the product */
@@ -392,7 +392,7 @@ function Add_UPCP_Custom_Field($Field_Name, $Field_Slug, $Field_Type, $Field_Des
 	}
 
 
-	$update = __("Field has been successfully created.", 'ultimate-product-catalogue');
+	$update = __("Field has been successfully created.", 'UPC_MC');
 	return $update;
 }
 
@@ -437,7 +437,7 @@ function  Edit_UPCP_Custom_Field($Field_ID, $Field_Name, $Field_Slug, $Field_Typ
 		}
 	}
 
-	$update = __("Field has been successfully edited.", 'ultimate-product-catalogue');
+	$update = __("Field has been successfully edited.", 'UPC_MC');
 	return $update;
 }
 
@@ -454,7 +454,7 @@ function Delete_UPCP_Custom_Field($Field_ID) {
 		array('Field_ID' => $Field_ID)
 	);
 
-	$update = __("Field has been successfully deleted.", 'ultimate-product-catalogue');
+	$update = __("Field has been successfully deleted.", 'UPC_MC');
 	return $update;
 }
 
@@ -468,7 +468,7 @@ function Add_UPCP_Catalogue($Catalogue_Name, $Catalogue_Description) {
 							 'Catalogue_Description' => $Catalogue_Description,
 							 'Catalogue_Item_Count' => 0)
 		);
-		$update = __("Catalogue has been successfully created.", 'ultimate-product-catalogue');
+		$update = __("Catalogue has been successfully created.", 'UPC_MC');
 		return $update;
 }
 
@@ -485,7 +485,7 @@ function Edit_UPCP_Catalogue($Catalogue_ID, $Catalogue_Name, $Catalogue_Descript
 									 'Catalogue_Custom_CSS' => $Catalogue_Custom_CSS),
 						array( 'Catalogue_ID' => $Catalogue_ID)
 		);
-		$update = __("Catalogue has been successfully edited.", 'ultimate-product-catalogue');
+		$update = __("Catalogue has been successfully edited.", 'UPC_MC');
 		return $update;
 }
 
@@ -508,7 +508,7 @@ function Add_Products_Catalogue() {
 
 		Update_Catalogue_Item_Count($Catalogue_ID);
 
-		$update = __("Products have been successfully added to the catalogue.", 'ultimate-product-catalogue');
+		$update = __("Products have been successfully added to the catalogue.", 'UPC_MC');
 		return $update;
 }
 /* Adds one or multiple new categories to to a single catalogue in the UPCP database */
@@ -530,7 +530,7 @@ function Add_Categories_Catalogue() {
 
 		Update_Catalogue_Item_Count($Catalogue_ID);
 
-		$update = __("Categories have been successfully added to the catalogue.", 'ultimate-product-catalogue');
+		$update = __("Categories have been successfully added to the catalogue.", 'UPC_MC');
 		return $update;
 }
 
@@ -548,7 +548,7 @@ function AJAX_Add_Categories_Catalogue($Catalogue_ID, $Category_ID) {
 
 		Update_Catalogue_Item_Count($Catalogue_ID);
 
-		$update = __("Category have been successfully added to the catalogue.", 'ultimate-product-catalogue');
+		$update = __("Category have been successfully added to the catalogue.", 'UPC_MC');
 		return $update;
 }
 
@@ -566,7 +566,7 @@ function AJAX_Add_Products_Catalogue($Catalogue_ID, $Item_ID) {
 
 		Update_Catalogue_Item_Count($Catalogue_ID);
 
-		$update = __("Product has been successfully added to the catalogue.", 'ultimate-product-catalogue');
+		$update = __("Product has been successfully added to the catalogue.", 'UPC_MC');
 		return $update;
 }
 
@@ -611,7 +611,7 @@ function Delete_UPCP_Catalogue($Catalogue_ID) {
 				array('Catalogue_ID' => $Catalogue_ID)
 		);
 
-		$update = __("Catalogue has been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Catalogue has been successfully deleted.", 'UPC_MC');
 		return $update;
 }
 
@@ -630,7 +630,7 @@ function Delete_Catalogue_Item($Catalogue_Item_ID) {
 
 		Update_Catalogue_Item_Count($Catalogue_ID);
 
-		$update = __("Product has been successfully deleted from catalogue.", 'ultimate-product-catalogue');
+		$update = __("Product has been successfully deleted from catalogue.", 'UPC_MC');
 		return $update;
 }
 
@@ -660,7 +660,7 @@ function Add_UPCP_Product($Item_Name, $Item_Slug, $Item_Photo_URL, $Item_Descrip
 
 
 		if ($Prod_Count >= 100 and $Full_Version != "Yes") {
-			  $update = __("Maximum number of products (100) has been reached for free version. Upgrade to the premium version to continue.", 'ultimate-product-catalogue');
+			  $update = __("Maximum number of products (100) has been reached for free version. Upgrade to the premium version to continue.", 'UPC_MC');
 				return $update;
 		}
 
@@ -772,7 +772,7 @@ function Add_UPCP_Product($Item_Name, $Item_Slug, $Item_Photo_URL, $Item_Descrip
 											$wpdb->query($wpdb->prepare("DELETE FROM $fields_meta_table_name WHERE Field_ID=%d AND Item_ID=%d", $Field->Field_ID, $Item_ID));
 										}
 								}
-								elseif ($InArray == false) {$CustomFieldError = __(" One or more custom field values were incorrect.", 'ultimate-product-catalogue');}
+								elseif ($InArray == false) {$CustomFieldError = __(" One or more custom field values were incorrect.", 'UPC_MC');}
 								unset($Value);
 								unset($InArray);
 								unset($NoFile);
@@ -786,7 +786,7 @@ function Add_UPCP_Product($Item_Name, $Item_Slug, $Item_Photo_URL, $Item_Descrip
 
 		if ($WooCommerce_Sync == "Yes" and get_option("UPCP_Product_Import") == "None" and $WC_Update != "Yes") {
 			$UPCP_Product = $wpdb->get_row($wpdb->prepare("SELECT * FROM $items_table_name WHERE Item_ID=%d", $Item_ID));
-			update_option("UPCP_Product_Import", 'ultimate-product-catalogue');
+			update_option("UPCP_Product_Import", 'UPC_MC');
 			UPCP_Create_Linked_WC_Product($UPCP_Product);
 			$WC_Item_ID = $Item_ID;
 		}
@@ -794,7 +794,7 @@ function Add_UPCP_Product($Item_Name, $Item_Slug, $Item_Photo_URL, $Item_Descrip
 			$WC_Item_ID = $Item_ID;
 		}
 
-		$update = __("Product has been successfully created.", 'ultimate-product-catalogue');
+		$update = __("Product has been successfully created.", 'UPC_MC');
 		if (isset($CustomFieldError)) {$update .= $CustomFieldError;}
 		return $update;
 }
@@ -967,7 +967,7 @@ function Edit_UPCP_Product($Item_ID, $Item_Name, $Item_Slug, $Item_Photo_URL, $I
 												);
 										}
 								}
-								elseif ($InArray == false) {$CustomFieldError = __(" One or more custom field values were incorrect.", 'ultimate-product-catalogue');}
+								elseif ($InArray == false) {$CustomFieldError = __(" One or more custom field values were incorrect.", 'UPC_MC');}
 								
 								if (isset($NoFile) and $NoFile == "Delete") {$wpdb->query($wpdb->prepare("DELETE FROM $fields_meta_table_name WHERE Item_ID=%d AND Field_ID=%d", $Item_ID, $Field->Field_ID));}
 
@@ -988,11 +988,11 @@ function Edit_UPCP_Product($Item_ID, $Item_Name, $Item_Slug, $Item_Photo_URL, $I
 
 		if ($WooCommerce_Sync == "Yes" and get_option("UPCP_Product_Import") == "None" and $WC_Update != "Yes") {
 			$UPCP_Product = $wpdb->get_row($wpdb->prepare("SELECT * FROM $items_table_name WHERE Item_ID=%d", $Item_ID));
-			update_option("UPCP_Product_Import", 'ultimate-product-catalogue');
+			update_option("UPCP_Product_Import", 'UPC_MC');
 			UPCP_Create_Linked_WC_Product($UPCP_Product);
 		}
 
-		$update = __("Product has been successfully edited." . $CustomFieldError, 'ultimate-product-catalogue');
+		$update = __("Product has been successfully edited." . $CustomFieldError, 'UPC_MC');
 		return $update;
 }
 
@@ -1092,7 +1092,7 @@ function Duplicate_UPCP_Product($Item_ID) {
 
 	if ($WooCommerce_Sync == "Yes") {
 		$UPCP_Product = $wpdb->get_row($wpdb->prepare("SELECT * FROM $items_table_name WHERE Item_ID=%d", $New_Item_ID));
-		update_option("UPCP_Product_Import", 'ultimate-product-catalogue');
+		update_option("UPCP_Product_Import", 'UPC_MC');
 		UPCP_Create_Linked_WC_Product($UPCP_Product);
 	}
 }
@@ -1150,12 +1150,12 @@ function Add_UPCP_Products_From_Spreadsheet($Excel_File_Name) {
 		$Related_Product_ID_Cols = array();
 		foreach ($Titles as $key => $Title) {
 				if ($Title != "" and !array_key_exists($Title, $Allowed_Fields) and !array_key_exists($Title, $Allowable_Custom_Fields) and strpos($Title, "Additional Image") === FALSE and strpos($Title, "Video ID") === FALSE and strpos($Title, "Related Product") === FALSE) {
-					$Error = __("You have a column which is not recognized: ", 'ultimate-product-catalogue') . $Title . __(". <br>Please make sure that the column names match the product field labels exactly.", 'ultimate-product-catalogue');
+					$Error = __("You have a column which is not recognized: ", 'UPC_MC') . $Title . __(". <br>Please make sure that the column names match the product field labels exactly.", 'UPC_MC');
 					$user_update = array("Message_Type" => "Error", "Message" => $Error);
 					return $user_update;
 				}
 				if ($Title == "") {
-					$Error = __("You have a blank column that has been edited.<br>Please delete that column and re-upload your spreadsheet.", 'ultimate-product-catalogue');
+					$Error = __("You have a blank column that has been edited.<br>Please delete that column and re-upload your spreadsheet.", 'UPC_MC');
 					$user_update = array("Message_Type" => "Error", "Message" => $Error);
 					return $user_update;
 				}
@@ -1189,7 +1189,7 @@ function Add_UPCP_Products_From_Spreadsheet($Excel_File_Name) {
 		$New_Product_Count = $Prod_Count + sizeOf($Data);
 
 		if ($New_Product_Count > 100 and $Full_Version != "Yes") {
-			  $Error = __("Maximum number of products (100) for the free version would be exceeded with spreadhseet products. Upgrade to the premium version to continue.", 'ultimate-product-catalogue');
+			  $Error = __("Maximum number of products (100) for the free version would be exceeded with spreadhseet products. Upgrade to the premium version to continue.", 'UPC_MC');
 				$user_update = array("Message_Type" => "Error", "Message" => $Error);
 				return $user_update;
 		}
@@ -1328,7 +1328,7 @@ function Add_UPCP_Products_From_Spreadsheet($Excel_File_Name) {
 
 		UPCP_Create_XML_Sitemap();
 
-		return __("Products added successfully.", 'ultimate-product-catalogue');
+		return __("Products added successfully.", 'UPC_MC');
 }
 
 /* Deletes a single product with a given ID from the UPCP database */
@@ -1387,7 +1387,7 @@ function Delete_UPCP_Product($Item_ID) {
 
 		UPCP_Create_XML_Sitemap();
 
-		$update = __("Product has been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Product has been successfully deleted.", 'UPC_MC');
 		return $update;
 }
 
@@ -1405,7 +1405,7 @@ function Add_Product_Image($Item_ID, $Image_URL, $Image_Description = "") {
 		$Item_Image = $wpdb->get_row($wpdb->prepare("SELECT * FROM $item_images_table_name WHERE Item_Image_ID=%d", $wpdb->insert_id));
 		if ($WooCommerce_Sync == "Yes") {UPCP_Add_WC_Image($Item_Image);}
 
-		$update = __("Image has been successfully added to the product.", 'ultimate-product-catalogue');
+		$update = __("Image has been successfully added to the product.", 'UPC_MC');
 		return $update;
 }
 
@@ -1425,7 +1425,7 @@ function Delete_Product_Image() {
 
 		if ($WooCommerce_Sync == "Yes") {UPCP_Remove_WC_Image($Item_Image);}
 
-		$update = __("Image has been successfully removed.", 'ultimate-product-catalogue');
+		$update = __("Image has been successfully removed.", 'UPC_MC');
 		return $update;
 }
 
@@ -1746,7 +1746,7 @@ function Update_UPCP_Options() {
 
 	UPCP_Create_XML_Sitemap();
 
-	$update = __("Options have been succesfully updated.", 'ultimate-product-catalogue');
+	$update = __("Options have been succesfully updated.", 'UPC_MC');
 	return $update;
 }
 

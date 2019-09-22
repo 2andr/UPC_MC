@@ -48,7 +48,7 @@ function Mass_Delete_UPCP_Maker() {
 				}
 		}
 
-		$update = __("Maker(s) have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Maker(s) have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }
@@ -97,7 +97,7 @@ function Mass_Delete_UPCP_Profuse() {
 				}
 		}
 
-		$update = __("Profuse(s) have been successfully deleted.", 'ultimate-product-catalogue');
+		$update = __("Profuse(s) have been successfully deleted.", 'UPC_MC');
 		$user_update = array("Message_Type" => "Update", "Message" => $update);
 		return $user_update;
 }

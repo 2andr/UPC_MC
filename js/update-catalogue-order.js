@@ -92,7 +92,7 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	//jQuery.getScript("/wp-content/plugins/ultimate-product-catalogue/makers_addon/update-catalogue-order_Makers.js")	
+	//jQuery.getScript("/wp-content/plugins/UPC_MC/makers_addon/update-catalogue-order_Makers.js")	
 
 	jQuery('.makers-list').sortable({
 		items: '.maker-list-item',

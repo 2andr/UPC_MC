@@ -151,7 +151,7 @@ function Update_UPCP_Content() {
 					$upcp_message = UPCP_Save_Additional_Tabs();
 					break;
 			default:
-					$upcp_message = __("The form has not worked correctly. Please contact the plugin developer.", 'ultimate-product-catalogue');
+					$upcp_message = __("The form has not worked correctly. Please contact the plugin developer.", 'UPC_MC');
 					break;
 	 		}
 		}

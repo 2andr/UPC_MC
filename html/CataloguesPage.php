@@ -24,17 +24,17 @@
 <div class="tablenav top">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
-				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'ultimate-product-catalogue') ?>"  />
+				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'UPC_MC') ?>"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -48,17 +48,17 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "Catalogue_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
 						<th scope='col' id='shortcode' class='manage-column column-shortcode'  style="">
-											  <span><?php _e("Shortcode", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Shortcode", 'UPC_MC') ?></span>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Catalogue_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products in Catalog", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products in Catalog", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -71,16 +71,16 @@
 								<input type="checkbox" /></th><th scope='col' id='name' class='manage-column column-name sortable desc'  style="">
 										<?php if ($_GET['OrderBy'] == "Catalogue_Name" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Name&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Name&Order=ASC'>";} ?>
-											  <span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Name", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						<th scope='col' id='shortcode' class='manage-column column-shortcode'  style="">
-											  <span><?php _e("Shortcode", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Shortcode", 'UPC_MC') ?></span>
 						</th>
 						<th scope='col' id='requirements' class='manage-column column-requirements sortable desc'  style="">
 									  <?php if ($_GET['OrderBy'] == "Catalogue_Item_Count" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Item_Count&Order=DESC'>";}
 										 			else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Catalogues&OrderBy=Catalogue_Item_Count&Order=ASC'>";} ?>
-											  <span><?php _e("Products in Catalog", 'ultimate-product-catalogue') ?></span>
+											  <span><?php _e("Products in Catalog", 'UPC_MC') ?></span>
 												<span class="sorting-indicator"></span>
 										</a>
 						</th>
@@ -105,7 +105,7 @@
 								echo "<a href='admin.php?page=UPCP-options&Action=UPCP_Catalogue_Details&Selected=Catalogue&Catalogue_ID=" . $Catalogue->Catalogue_ID ."'>Edit</a>";
 		 						echo " | </span>";*/
 								echo "<span class='delete'>";
-								echo "<a class='delete-tag confirm-delete' href='admin.php?page=UPCP-options&Action=UPCP_DeleteCatalogue&DisplayPage=Catalogues&Catalogue_ID=" . $Catalogue->Catalogue_ID ."'>" . __("Delete", 'ultimate-product-catalogue') . "</a>";
+								echo "<a class='delete-tag confirm-delete' href='admin.php?page=UPCP-options&Action=UPCP_DeleteCatalogue&DisplayPage=Catalogues&Catalogue_ID=" . $Catalogue->Catalogue_ID ."'>" . __("Delete", 'UPC_MC') . "</a>";
 		 						echo "</span>";
 								echo "</div>";
 								echo "<div class='hidden' id='inline_" . $Catalogue->Catalogue_ID ."'>";
@@ -125,17 +125,17 @@
 <div class="tablenav bottom">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
 				</select>
-				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'ultimate-product-catalogue') ?>"  />
+				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'UPC_MC') ?>"  />
 		</div>
 		<div class='tablenav-pages <?php if ($Number_of_Pages == 1) {echo "one-page";} ?>'>
-				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'ultimate-product-catalogue') ?></span>
+				<span class="displaying-num"><?php echo $wpdb->num_rows; ?> <?php _e("items", 'UPC_MC') ?></span>
 				<span class='pagination-links'>
 						<a class='first-page <?php if ($Page == 1) {echo "disabled";} ?>' title='Go to the first page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=1'>&laquo;</a>
 						<a class='prev-page <?php if ($Page <= 1) {echo "disabled";} ?>' title='Go to the previous page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page-1;?>'>&lsaquo;</a>
-						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'ultimate-product-catalogue') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
+						<span class="paging-input"><?php echo $Page; ?> <?php _e("of", 'UPC_MC') ?> <span class='total-pages'><?php echo $Number_of_Pages; ?></span></span>
 						<a class='next-page <?php if ($Page >= $Number_of_Pages) {echo "disabled";} ?>' title='Go to the next page' href='<?php echo $Current_Page_With_Order_By; ?>&Page=<?php echo $Page+1;?>'>&rsaquo;</a>
 						<a class='last-page <?php if ($Page == $Number_of_Pages) {echo "disabled";} ?>' title='Go to the last page' href='<?php echo $Current_Page_With_Order_By . "&Page=" . $Number_of_Pages; ?>'>&raquo;</a>
 				</span>
@@ -153,28 +153,28 @@
 <div class="col-wrap">
 
 <div class="form-wrap">
-<h3><?php _e("Add a New Catalog", 'ultimate-product-catalogue') ?></h3>
+<h3><?php _e("Add a New Catalog", 'UPC_MC') ?></h3>
 <form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_AddCatalogue&DisplayPage=Catalogue" class="validate" enctype="multipart/form-data">
 <input type="hidden" name="action" value="Add_Catalogue" />
 <?php wp_nonce_field('UPCP_Element_Nonce', 'UPCP_Element_Nonce'); ?>
 <?php wp_referer_field(); ?>
 <div class="form-field form-required">
-	<label for="Catalogue_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+	<label for="Catalogue_Name"><?php _e("Name", 'UPC_MC') ?></label>
 	<input name="Catalogue_Name" id="Catalogue_Name" type="text" value="" size="60" />
-	<p><?php _e("The name of the catalog. This is for your own internal use, and to insert the catalog into a page or post.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The name of the catalog. This is for your own internal use, and to insert the catalog into a page or post.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Catalogue_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+	<label for="Catalogue_Description"><?php _e("Description", 'UPC_MC') ?></label>
 	<textarea name="Catalogue_Description" id="Catalogue_Description" rows="5" cols="40"></textarea>
-	<p><?php _e("The description of the catalog. What will it be used to display?", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The description of the catalog. What will it be used to display?", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Catalogue_Custom_CSS"><?php _e("Custom CSS", 'ultimate-product-catalogue') ?></label>
+	<label for="Catalogue_Custom_CSS"><?php _e("Custom CSS", 'UPC_MC') ?></label>
 	<textarea name="Catalogue_Custom_CSS" id="Catalogue_Custom_CSS" rows="5" cols="40"></textarea>
-	<p><?php _e("Custom CSS styles that should be applied to this catalog.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("Custom CSS styles that should be applied to this catalog.", 'UPC_MC') ?></p>
 </div>
 
-<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Catalog', 'ultimate-product-catalogue') ?>"  /></p></form></div>
+<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Add New Catalog', 'UPC_MC') ?>"  /></p></form></div>
 <br class="clear" />
 </div>
 </div>

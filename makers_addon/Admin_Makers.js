@@ -1,6 +1,6 @@
 /*
 // add string to end of file Admin.js
-jQuery.getScript("/wp-content/plugins/ultimate-product-catalogue/makers_addon/Admin_Makers.js")
+jQuery.getScript("/wp-content/plugins/UPC_MC/makers_addon/Admin_Makers.js")
 
 */
 

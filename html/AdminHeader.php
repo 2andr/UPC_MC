@@ -1,5 +1,5 @@
 		<div class="wrap">
-		<div class="Header"><h2><?php _e("Ultimate Product Catalog Settings", 'ultimate-product-catalogue') ?></h2></div>
+		<div class="Header"><h2><?php _e("Ultimate Product Catalog Settings", 'UPC_MC') ?></h2></div>
 
 		<?php if ($Full_Version != "Yes" or get_option("UPCP_Trial_Happening") == "Yes") { ?>
 			<div class="ewd-upcp-dashboard-new-upgrade-banner">

@@ -19,8 +19,8 @@ $myrows = $wpdb->get_results($Sql);
 			<div class="ewd-upcp-dashboard-new-widget-box ewd-widget-box-full">
 				<div class="ewd-upcp-dashboard-new-widget-box-top">
 					<form method="post" action="admin.php?page=UPCP-options" class="ewd-upcp-dashboard-key-widget">
-						<input class="ewd-upcp-dashboard-key-widget-input" name="Key" type="text" placeholder="<?php _e('Enter Product Key Here', 'ultimate-product-catalogue'); ?>">
-						<input class="ewd-upcp-dashboard-key-widget-submit" name="UPCP_Upgrade_To_Full" type="submit" value="<?php _e('UNLOCK PREMIUM', 'ultimate-product-catalogue'); ?>">
+						<input class="ewd-upcp-dashboard-key-widget-input" name="Key" type="text" placeholder="<?php _e('Enter Product Key Here', 'UPC_MC'); ?>">
+						<input class="ewd-upcp-dashboard-key-widget-submit" name="UPCP_Upgrade_To_Full" type="submit" value="<?php _e('UNLOCK PREMIUM', 'UPC_MC'); ?>">
 						<div class="ewd-upcp-dashboard-key-widget-text">Don't have a key? Use the <a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/#buy" target="_blank">Upgrade Now</a> button above to purchase and unlock all premium features.</div>
 					</form>
 				</div>
@@ -38,13 +38,13 @@ $myrows = $wpdb->get_results($Sql);
 						</a>
 					</li>
 					<li>
-						<a href="https://wordpress.org/plugins/ultimate-product-catalogue/#faq" target="_blank">
+						<a href="https://wordpress.org/plugins/UPC_MC/#faq" target="_blank">
 							<img src="<?php echo plugins_url( '../images/ewd-support-icon-faqs.png', __FILE__ ); ?>">
 							<div class="ewd-upcp-dashboard-support-widgets-text">Plugin FAQs</div>
 						</a>
 					</li>
 					<li>
-						<a href="https://wordpress.org/support/plugin/ultimate-product-catalogue" target="_blank">
+						<a href="https://wordpress.org/support/plugin/UPC_MC" target="_blank">
 							<img src="<?php echo plugins_url( '../images/ewd-support-icon-forum.png', __FILE__ ); ?>">
 							<div class="ewd-upcp-dashboard-support-widgets-text">Support Forum</div>
 						</a>
@@ -65,9 +65,9 @@ $myrows = $wpdb->get_results($Sql);
 				<table class='ewd-upcp-overview-table wp-list-table widefat fixed striped posts'>
 					<thead>
 						<tr>
-							<th><?php _e("Name", 'ultimate-product-catalogue'); ?></th>
-							<th><?php _e("Shortcode", 'ultimate-product-catalogue'); ?></th>
-							<th><?php _e("Products in Catalog", 'ultimate-product-catalogue'); ?></th>
+							<th><?php _e("Name", 'UPC_MC'); ?></th>
+							<th><?php _e("Shortcode", 'UPC_MC'); ?></th>
+							<th><?php _e("Products in Catalog", 'UPC_MC'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -81,7 +81,7 @@ $myrows = $wpdb->get_results($Sql);
 									echo "<br />";
 									echo "<div class='row-actions'>";
 									echo "<span class='delete'>";
-									echo "<a class='delete-tag confirm-delete'' href='admin.php?page=UPCP-options&Action=UPCP_DeleteCatalogue&DisplayPage=Catalogues&Catalogue_ID=" . $Catalogue->Catalogue_ID ."'>" . __("Delete", 'ultimate-product-catalogue') . "</a>";
+									echo "<a class='delete-tag confirm-delete'' href='admin.php?page=UPCP-options&Action=UPCP_DeleteCatalogue&DisplayPage=Catalogues&Catalogue_ID=" . $Catalogue->Catalogue_ID ."'>" . __("Delete", 'UPC_MC') . "</a>";
 					 				echo "</span>";
 									echo "</div>";
 									echo "<div class='hidden' id='inline_" . $Catalogue->Catalogue_ID ."'>";
@@ -139,7 +139,7 @@ $myrows = $wpdb->get_results($Sql);
 					<div class="ewd-upcp-dashboard-review-ask">
 						<img src="<?php echo plugins_url( '../images/dash-asset-stars.png', __FILE__ ); ?>">
 						<div class="ewd-upcp-dashboard-review-ask-text">If you enjoy this plugin and have a minute, please consider leaving a 5-star review. Thank you!</div>
-						<a href="https://wordpress.org/plugins/ultimate-product-catalogue/#reviews" class="ewd-upcp-dashboard-review-ask-button" target="_blank">LEAVE A REVIEW</a>
+						<a href="https://wordpress.org/plugins/UPC_MC/#reviews" class="ewd-upcp-dashboard-review-ask-button" target="_blank">LEAVE A REVIEW</a>
 						<form action="admin.php?page=UPCP-options" method="post">
 							<input type="hidden" name="hide_otp_review_box_hidden" value="Yes">
 							<input type="submit" name="hide_otp_review_box_submit" class="ewd-upcp-dashboard-review-ask-dismiss" value="I've already left a review">
@@ -267,9 +267,9 @@ $myrows = $wpdb->get_results($Sql);
 		<ul class="ewd-upcp-dashboard-new-footer-two-menu">
 			<li>SUPPORT</li>
 			<li><a href="https://www.youtube.com/watch?v=z6XL7whjY1Q&list=PLEndQUuhlvSoTRGeY6nWXbxbhmgepTyLi" target="_blank">YouTube Tutorials</a></li>
-			<li><a href="https://wordpress.org/support/plugin/ultimate-product-catalogue" target="_blank">Forums</a></li>
-			<li><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/documentation-ultimate-product-catalogue/" target="_blank">Documentation</a></li>
-			<li><a href="https://wordpress.org/plugins/ultimate-product-catalogue/#faq" target="_blank">FAQs</a></li>
+			<li><a href="https://wordpress.org/support/plugin/UPC_MC" target="_blank">Forums</a></li>
+			<li><a href="https://www.etoilewebdesign.com/plugins/ultimate-product-catalog/documentation-UPC_MC/" target="_blank">Documentation</a></li>
+			<li><a href="https://wordpress.org/plugins/UPC_MC/#faq" target="_blank">FAQs</a></li>
 		</ul>
 	</div>
 </div> <!-- ewd-upcp-dashboard-new-footer-two -->

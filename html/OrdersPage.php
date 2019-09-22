@@ -23,11 +23,11 @@
 <div class="tablenav top">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
-						<option value='hide'><?php _e("Hide", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
+						<option value='hide'><?php _e("Hide", 'UPC_MC') ?></option>
 				</select>
-				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'ultimate-product-catalogue') ?>"  />
+				<input type="submit" name="" id="doaction" class="button-secondary action" value="<?php _e('Apply', 'UPC_MC') ?>"  />
 		</div>
 </div>
 
@@ -40,7 +40,7 @@
 					if ($_GET['OrderBy'] == "title" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=title&Order=DESC'>";}
 				 	else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=title&Order=ASC'>";} 
 				?>
-					<span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+					<span><?php _e("Name", 'UPC_MC') ?></span>
 					<span class="sorting-indicator"></span>
 				</a>
 			</th>
@@ -49,7 +49,7 @@
 					if ($_GET['OrderBy'] == "post_date" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=post_date&Order=DESC'>";}
 				 	else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=post_date&Order=ASC'>";} 
 				?>
-				<span><?php _e("Order Date", 'ultimate-product-catalogue') ?></span>
+				<span><?php _e("Order Date", 'UPC_MC') ?></span>
 			</th>
 		</tr>
 	</thead>
@@ -62,7 +62,7 @@
 					if ($_GET['OrderBy'] == "title" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=title&Order=DESC'>";}
 				 	else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=title&Order=ASC'>";} 
 				?>
-					<span><?php _e("Name", 'ultimate-product-catalogue') ?></span>
+					<span><?php _e("Name", 'UPC_MC') ?></span>
 					<span class="sorting-indicator"></span>
 				</a>
 			</th>
@@ -71,7 +71,7 @@
 					if ($_GET['OrderBy'] == "post_date" and $_GET['Order'] == "ASC") { echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=post_date&Order=DESC'>";}
 				 	else {echo "<a href='admin.php?page=UPCP-options&DisplayPage=Orders&OrderBy=post_date&Order=ASC'>";} 
 				?>
-				<span><?php _e("Order Date", 'ultimate-product-catalogue') ?></span>
+				<span><?php _e("Order Date", 'UPC_MC') ?></span>
 			</th>
 		</tr>
 	</tfoot>
@@ -94,7 +94,7 @@
 				echo "<a href='admin.php?page=UPCP-options&Action=UPCP_Category_Details&Selected=Category&Category_ID=" . $Category->Category_ID ."'>Edit</a>";
 	 			echo " | </span>";*/
 				echo "<span class='delete'>";
-				echo "<a class='delete-tag' href='admin.php?page=UPCP-options&Action=UPCP_DeleteOrder&DisplayPage=Orders&Order_ID=" . $Order->ID ."'>" . __("Delete", 'ultimate-product-catalogue') . "</a>";
+				echo "<a class='delete-tag' href='admin.php?page=UPCP-options&Action=UPCP_DeleteOrder&DisplayPage=Orders&Order_ID=" . $Order->ID ."'>" . __("Delete", 'UPC_MC') . "</a>";
 	 			echo "</span>";
 				echo "</div>";
 				echo "<div class='hidden' id='inline_" . $Order->ID ."'>";
@@ -113,9 +113,9 @@
 <div class="tablenav bottom">
 		<div class="alignleft actions">
 				<select name='action'>
-  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'ultimate-product-catalogue') ?></option>
-						<option value='delete'><?php _e("Delete", 'ultimate-product-catalogue') ?></option>
-						<option value='hide'><?php _e("Hide", 'ultimate-product-catalogue') ?></option>
+  					<option value='-1' selected='selected'><?php _e("Bulk Actions", 'UPC_MC') ?></option>
+						<option value='delete'><?php _e("Delete", 'UPC_MC') ?></option>
+						<option value='hide'><?php _e("Hide", 'UPC_MC') ?></option>
 				</select>
 				<input type="submit" name="" id="doaction" class="button-secondary action" value="Apply"  />
 		</div>
@@ -132,34 +132,34 @@
 <div class="col-wrap">
 
 <div class="form-wrap">
-<h3><?php _e("Add a New Order", 'ultimate-product-catalogue') ?></h3>
+<h3><?php _e("Add a New Order", 'UPC_MC') ?></h3>
 <form id="addcat" method="post" action="admin.php?page=UPCP-options&Action=UPCP_AddOrder&DisplayPage=Orders" class="validate" enctype="multipart/form-data">
 <input type="hidden" name="action" value="Add_Order" />
 <?php wp_nonce_field(); ?>
 <?php wp_referer_field(); ?>
 <div class="form-field form-required">
-	<label for="Order_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label>
+	<label for="Order_Name"><?php _e("Name", 'UPC_MC') ?></label>
 	<input name="Order_Name" id="Order_Name" type="text" value="" size="60" />
-	<p><?php _e("The name of the order that will be displayed.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The name of the order that will be displayed.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field">
-	<label for="Order_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label>
+	<label for="Order_Description"><?php _e("Description", 'UPC_MC') ?></label>
 	<textarea name="Order_Description" id="Order_Description" rows="5" cols="40"></textarea>
-	<p><?php _e("The description of the order, to help with processing it.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The description of the order, to help with processing it.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Order_Items"><?php _e("Items", 'ultimate-product-catalogue') ?></label>
+	<label for="Order_Items"><?php _e("Items", 'UPC_MC') ?></label>
 	<input name="Order_Items" id="Order_Items" type="text" value="" size="60" />
-	<p><?php _e("The items that were purchased in the order.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The items that were purchased in the order.", 'UPC_MC') ?></p>
 </div>
 <div class="form-field form-required">
-	<label for="Order_Sales_Boolean"><?php _e("Sale?", 'ultimate-product-catalogue') ?></label>
+	<label for="Order_Sales_Boolean"><?php _e("Sale?", 'UPC_MC') ?></label>
 	<input name="Order_Sales_Boolean" id="Order_Sales_Boolean" type="radio" value="Yes"/>Yes<br/>
 	<input name="Order_Sales_Boolean" id="Order_Sales_Boolean" type="radio" value="No"/>No
-	<p><?php _e("The items that were purchased in the order.", 'ultimate-product-catalogue') ?></p>
+	<p><?php _e("The items that were purchased in the order.", 'UPC_MC') ?></p>
 </div>
 
-<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Add New Order', 'ultimate-product-catalogue') ?>"  /></p></form></div>
+<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Add New Order', 'UPC_MC') ?>"  /></p></form></div>
 <br class="clear" />
 </div>
 </div>

@@ -7,7 +7,7 @@ $Catalogue = $wpdb->get_row($Query); ?>
 		<!-- Create the form to edit the basic catalogue details -->
 		<div class="OptionTab ActiveTab" id="EditCatalogue">
 				<div class="form-wrap CatalogueDetail">
-						<a href="admin.php?page=UPCP-options&DisplayPage=Catalogues" class="NoUnderline">&#171; <?php _e("Back", 'ultimate-product-catalogue') ?> </a>
+						<a href="admin.php?page=UPCP-options&DisplayPage=Catalogues" class="NoUnderline">&#171; <?php _e("Back", 'UPC_MC') ?> </a>
 						<h3>Edit <?php echo $Catalogue->Catalogue_Name;?> (ID: <?php echo $Catalogue->Catalogue_ID; ?>)</h3>
 						<form id="addtag" method="post" action="admin.php?page=UPCP-options&Action=UPCP_EditCatalogue&Update_Item=Catalogue&Catalogue_ID=<?php echo $Catalogue->Catalogue_ID ?>" class="validate" enctype="multipart/form-data">
 						<input type="hidden" name="action" value="Edit_Catalogue" />
@@ -16,23 +16,23 @@ $Catalogue = $wpdb->get_row($Query); ?>
 						<?php wp_referer_field(); ?>
 						<table class="form-table">
 						<tr>
-								<th><label for="Catalogue_Name"><?php _e("Name", 'ultimate-product-catalogue') ?></label></th>
+								<th><label for="Catalogue_Name"><?php _e("Name", 'UPC_MC') ?></label></th>
 								<td><input name="Catalogue_Name" id="Catalogue_Name" type="text" value="<?php echo $Catalogue->Catalogue_Name;?>" size="60" />
-								<p><?php _e("The name of the catalog. This is for your own internal use, and to insert the catalog into a page or post.", 'ultimate-product-catalogue') ?></p></td>
+								<p><?php _e("The name of the catalog. This is for your own internal use, and to insert the catalog into a page or post.", 'UPC_MC') ?></p></td>
 						</tr>
 						<tr>
-								<th><label for="Catalogue_Description"><?php _e("Description", 'ultimate-product-catalogue') ?></label></th>
+								<th><label for="Catalogue_Description"><?php _e("Description", 'UPC_MC') ?></label></th>
 								<td><textarea name="Catalogue_Description" id="Catalogue_Description" rows="5" cols="40"><?php echo $Catalogue->Catalogue_Description;?></textarea>
-								<p><?php _e("The description of the catalog. What products are included in this?", 'ultimate-product-catalogue') ?></p></td>
+								<p><?php _e("The description of the catalog. What products are included in this?", 'UPC_MC') ?></p></td>
 						</tr>
 						<tr>
-								<th><label for="Catalogue_Custom_CSS"><?php _e("Custom CSS", 'ultimate-product-catalogue') ?></label></th>
+								<th><label for="Catalogue_Custom_CSS"><?php _e("Custom CSS", 'UPC_MC') ?></label></th>
 								<td><textarea name="Catalogue_Custom_CSS" id="Catalogue_Custom_CSS" rows="5" cols="40"><?php echo $Catalogue->Catalogue_Custom_CSS;?></textarea>
-								<p><?php _e("Custom CSS styles that should be applied to this catalog.", 'ultimate-product-catalogue') ?></p></td>
+								<p><?php _e("Custom CSS styles that should be applied to this catalog.", 'UPC_MC') ?></p></td>
 						</tr>
 						</table>
 						
-						<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Edit Catalog', 'ultimate-product-catalogue') ?>"  /></p>
+						<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Edit Catalog', 'UPC_MC') ?>"  /></p>
 						</form>
 						
 						
@@ -46,12 +46,12 @@ $Catalogue = $wpdb->get_row($Query); ?>
 
 <!-- Create a box with a form that users can add products to the catalogue with -->
 <div id="add-page" class="postbox " >
-<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Products", 'ultimate-product-catalogue') ?></span></h3>
+<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Products", 'UPC_MC') ?></span></h3>
 <div class="inside">
 	<div id="posttype-page" class="posttypediv">
 		<ul id="posttype-page-tabs" class="posttype-tabs add-menu-item-tabs">
 			<!--<li  class="tabs"><a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=most-recent#tabs-panel-posttype-page-most-recent">Most Recent</a></li>-->
-			<li class="tabs"><!--<a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=all#page-all">--><?php _e("View All", 'ultimate-product-catalogue') ?><!--</a>--></li>
+			<li class="tabs"><!--<a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=all#page-all">--><?php _e("View All", 'UPC_MC') ?><!--</a>--></li>
 			<!--<li ><a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=search#tabs-panel-posttype-page-search">Search</a></li>-->
 		</ul>
 
@@ -86,7 +86,7 @@ $Catalogue = $wpdb->get_row($Query); ?>
 
 			<div class="upcp-catalogue-select-all upcp-select-products">Select All</div>
 			<span class="add-to-menu upcp-admin-add-button">
-				<input type="submit" class="button-secondary submit-add-to-menu" value="<?php _e('Add to Catalog', 'ultimate-product-catalogue') ?>" name="add-post-type-menu-item" id="submit-posttype-page" />
+				<input type="submit" class="button-secondary submit-add-to-menu" value="<?php _e('Add to Catalog', 'UPC_MC') ?>" name="add-post-type-menu-item" id="submit-posttype-page" />
 			</span>
 
 			<div class="clear"></div>
@@ -98,12 +98,12 @@ $Catalogue = $wpdb->get_row($Query); ?>
 
 <!-- Create a box with a form that users can add categories to the catalogue with -->
 <div id="add-page" class="postbox " >
-<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Categories", 'ultimate-product-catalogue') ?></span></h3>
+<div class="handlediv" title="Click to toggle"><br /></div><h3 class='hndle'><span><?php _e("Categories", 'UPC_MC') ?></span></h3>
 <div class="inside">
 	<div id="posttype-page" class="posttypediv">
 		<ul id="posttype-page-tabs" class="posttype-tabs add-menu-item-tabs">
 			<!--<li  class="tabs"><a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=most-recent#tabs-panel-posttype-page-most-recent">Most Recent</a></li>-->
-			<li class="tabs"><!--<a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=all#page-all">--><?php _e("View All", 'ultimate-product-catalogue') ?><!--</a>--></li>
+			<li class="tabs"><!--<a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=all#page-all">--><?php _e("View All", 'UPC_MC') ?><!--</a>--></li>
 			<!--<li ><a class="nav-tab-link" href="/wp-admin/nav-menus.php?page-tab=search#tabs-panel-posttype-page-search">Search</a></li>-->
 		</ul>
 
@@ -138,7 +138,7 @@ $Catalogue = $wpdb->get_row($Query); ?>
 
 			<div class="upcp-catalogue-select-all upcp-select-categories">Select All</div>
 			<span class="add-to-menu upcp-admin-add-button">
-				<input type="submit" class="button-secondary submit-add-to-menu" value="<?php _e('Add to Catalog', 'ultimate-product-catalogue') ?>" name="add-post-type-menu-item" id="submit-posttype-page" />
+				<input type="submit" class="button-secondary submit-add-to-menu" value="<?php _e('Add to Catalog', 'UPC_MC') ?>" name="add-post-type-menu-item" id="submit-posttype-page" />
 			</span>
 
 			<div class="clear"></div>
@@ -164,16 +164,16 @@ $Catalogue = $wpdb->get_row($Query); ?>
 	<table class="wp-list-table striped widefat tags sorttable catalogue-list">
 	<thead>
 		<tr>
-			<th><?php _e("Delete?", 'ultimate-product-catalogue') ?></th>
-			<th><?php _e("Catalog Item Name", 'ultimate-product-catalogue') ?></th>
-			<th><?php _e("Type of Catalog Item", 'ultimate-product-catalogue') ?></th>
+			<th><?php _e("Delete?", 'UPC_MC') ?></th>
+			<th><?php _e("Catalog Item Name", 'UPC_MC') ?></th>
+			<th><?php _e("Type of Catalog Item", 'UPC_MC') ?></th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<th><?php _e("Delete?", 'ultimate-product-catalogue') ?></th>
-			<th><?php _e("Catalog Item Name", 'ultimate-product-catalogue') ?></th>
-			<th><?php _e("Type of Catalog Item", 'ultimate-product-catalogue') ?></th>
+			<th><?php _e("Delete?", 'UPC_MC') ?></th>
+			<th><?php _e("Catalog Item Name", 'UPC_MC') ?></th>
+			<th><?php _e("Type of Catalog Item", 'UPC_MC') ?></th>
 		</tr>
 	</tfoot>
 	<?php 
@@ -189,7 +189,7 @@ $Catalogue = $wpdb->get_row($Query); ?>
 			</tr>
 	<?php } ?>
  	</table>
- 	<input type='submit' name='Delete_Catalogue_Items' value='<?php _e("Delete Catalog Items", 'ultimate-product-catalogue'); ?>' />
+ 	<input type='submit' name='Delete_Catalogue_Items' value='<?php _e("Delete Catalog Items", 'UPC_MC'); ?>' />
  	</form>				
 </div>
 
